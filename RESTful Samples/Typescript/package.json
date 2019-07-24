@@ -1,0 +1,24 @@
+{
+  "name": "restfulclient",
+  "version": "1.0.0",
+  "description": "Windward's TypeScript Client for the RESTful Engine.",
+  "main": "dist/restfulengine.js",
+  "typings": "dist/restfulengine.d.ts",
+  "scripts": {
+    "test": "cd test && npm install .. && cd .. && tsc -p test && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windwardadmin/restfulclient-typescript.git"
+  },
+  "author": "Windward Studios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/windwardadmin/restfulclient-typescript/issues"
+  },
+  "homepage": "https://github.com/windwardadmin/restfulclient-typescript#readme",
+  "dependencies": {
+    "es6-promise": "^3.1.2",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}

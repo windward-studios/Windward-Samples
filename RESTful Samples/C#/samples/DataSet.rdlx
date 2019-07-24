@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<user-defined-tags version="9.0" vendor="windward">
+  <variables />
+  <datasources>
+    <datasource name="" guid="44c703a3-4886-4d6c-9d8f-1b47e1673b13" full-type="AdoDataSourceInfo" provider-class="System.Data.SqlClient" provider-name="Sql Server" table-owner="241" server="mssql.windward.net" database="AdventureWorks" username="demo" password="demo">
+      <datasets>
+        <dataset type="sql" name="Person" select="select Person.Contact.ContactID, Person.Contact.NameStyle, Person.Contact.Title, Person.Contact.FirstName, Person.Contact.MiddleName, Person.Contact.LastName, Person.Contact.Suffix, Person.Contact.EmailAddress, Person.Contact.EmailPromotion, Person.Contact.Phone, Person.Contact.PasswordHash, Person.Contact.PasswordSalt, Person.Contact.AdditionalContactInfo, Person.Contact.rowguid, Person.Contact.ModifiedDate from Person.Contact" select-format="" select-count="" select-check="">
+          <fields>
+            <field field-name="ContactID" field-type="COLUMN">
+              <meta-element name="ContactID" full-name="ContactID" select="${Person.ContactID}" data-type="Int32" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="NameStyle" field-type="COLUMN">
+              <meta-element name="NameStyle" full-name="NameStyle" select="${Person.NameStyle}" data-type="Boolean" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="Title" field-type="COLUMN">
+              <meta-element name="Title" full-name="Title" select="${Person.Title}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="FirstName" field-type="COLUMN">
+              <meta-element name="FirstName" full-name="FirstName" select="${Person.FirstName}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="MiddleName" field-type="COLUMN">
+              <meta-element name="MiddleName" full-name="MiddleName" select="${Person.MiddleName}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="LastName" field-type="COLUMN">
+              <meta-element name="LastName" full-name="LastName" select="${Person.LastName}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="Suffix" field-type="COLUMN">
+              <meta-element name="Suffix" full-name="Suffix" select="${Person.Suffix}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="EmailAddress" field-type="COLUMN">
+              <meta-element name="EmailAddress" full-name="EmailAddress" select="${Person.EmailAddress}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="EmailPromotion" field-type="COLUMN">
+              <meta-element name="EmailPromotion" full-name="EmailPromotion" select="${Person.EmailPromotion}" data-type="Int32" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="Phone" field-type="COLUMN">
+              <meta-element name="Phone" full-name="Phone" select="${Person.Phone}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="PasswordHash" field-type="COLUMN">
+              <meta-element name="PasswordHash" full-name="PasswordHash" select="${Person.PasswordHash}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="PasswordSalt" field-type="COLUMN">
+              <meta-element name="PasswordSalt" full-name="PasswordSalt" select="${Person.PasswordSalt}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="AdditionalContactInfo" field-type="COLUMN">
+              <meta-element name="AdditionalContactInfo" full-name="AdditionalContactInfo" select="${Person.AdditionalContactInfo}" data-type="String" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="rowguid" field-type="COLUMN">
+              <meta-element name="rowguid" full-name="rowguid" select="${Person.rowguid}" data-type="Object" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+            <field field-name="ModifiedDate" field-type="COLUMN">
+              <meta-element name="ModifiedDate" full-name="ModifiedDate" select="${Person.ModifiedDate}" data-type="DateTime" meta-type="COLUMN">
+                <data-map />
+              </meta-element>
+            </field>
+          </fields>
+        </dataset>
+      </datasets>
+    </datasource>
+  </datasources>
+  <items />
+</user-defined-tags>

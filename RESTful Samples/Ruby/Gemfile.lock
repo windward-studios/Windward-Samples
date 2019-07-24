@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    builder (3.2.2)
+    ci_reporter (1.9.1)
+      builder (>= 2.1.2)
+    json_pure (1.8.2)
+    test-unit (2.5.5)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  ci_reporter (= 1.9.1)
+  json_pure (= 1.8.2)
+  test-unit (= 2.5.5)
