@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<demo title="Basic Web App" img="basic_web_app.png" >
+	<launch>
+		<link title="MS SQL" path="RunReportSQL\RunReportSQL.sln" img="mssql.png" summary="Create an ASP.NET reporting application using MS SQL.">
+		</link>
+		<link title="Oracle" path="RunReportOracle\RunReportOracle.sln" img="oracle.png" summary="Create an ASP.NET reporting application using Oracle.">
+			<dependency>Oracle Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="MySQL" path="RunReportMySQL\RunReportMySQL.sln" img="mysql.png" summary="Create an ASP.NET reporting application using MySQL.">
+			<dependency>MySQL Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="DB2" path="RunReportDB2\RunReportDB2.sln" img="db2.png" summary="Create an ASP.NET reporting application using DB2.">
+			<dependency>DB2 Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<!--<link title="Excel" path="RunReportExcel\RunReportExcel.sln" img="excel.png" summary="Create an ASP.NET reporting application using Excel.">
+			<dependency>Excel Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Access" path="RunReportAccess\RunReportAccess.sln" img="access.png" summary="Create an ASP.NET reporting application using Access.">
+			<dependency>Access Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>remove comment to show access-->
+		<link title="XML" path="RunReportXML\RunReportXML.sln" img="xml.png" summary="Create an ASP.NET reporting application using XML.">
+		</link>
+    <link title="JSON" path="RunReportJSON\RunReportJSON.sln" img="json.png" summary="Create an ASP.NET reporting application using JSON.">
+    </link>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link type="readPdf" path="BasicASPNETExampleCS.pdf"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" img="read.png" url="http://rpt.me/DotNetWiki"/>
+		<link title="Installing Oracle Connector" img="read.png" path="Installing Oracle Connector.pdf"/>
+		<link title="Problems with Oracle Connector" img="read.png" url="http://rpt.me/WikiOracle"/>
+	</links>
+</demo>

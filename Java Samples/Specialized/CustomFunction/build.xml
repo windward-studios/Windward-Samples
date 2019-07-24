@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CustomFunctions" default="compile">
+
+	<property name="windward_jars" value="../../../../../jars"/>
+	
+	<property name="src" value="src"/>
+	<property name="build" value="classes"/>
+	<property name="classpath" value="${windward_jars}/*"/>
+  <property name="dist" value="dist"/>
+  <property name="jarfile" value="${dist}/WindwardCustomFunctions.jar"/>
+
+	<target name="compile">
+		<echo message="jdk = ${java.home}, version = ${java.version}"/>
+		<mkdir dir="${build}"/>
+		
+		<javac srcdir="${src}" destdir="${build}" source="1.8" target="1.8" fork="yes" debug="on" classpath="${classpath}"/>
+	</target>
+
+  <target name="jar" depends="compile">
+    <echo message="Building ${jarfile}"/>
+    <mkdir dir="${dist}"/>
+    <jar jarfile="${jarfile}">
+      <fileset dir="${build}"/>
+    </jar>
+  </target>
+
+  <target name="dist" depends="jar">
+    <copy todir="${windward_jars}" file="${jarfile}"/>
+  </target>
+</project>

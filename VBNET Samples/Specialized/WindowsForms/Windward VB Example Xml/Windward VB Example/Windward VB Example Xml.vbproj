@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1124D88-E3C6-4C69-8108-5A3B22AAA18E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Windward_VB_Example.My.MyApplication</StartupObject>
+    <RootNamespace>Windward_VB_Example</RootNamespace>
+    <AssemblyName>Windward VB Example</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Windward VB Example.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Windward VB Example.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\ICSharpCode.SharpZipLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Jakarta.POI, Version=2.5.1.3, Culture=neutral, PublicKeyToken=5d06445cb20af076, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Jakarta.POI.dll</HintPath>
+    </Reference>
+    <Reference Include="JSharpLib, Version=1.2.2.1, Culture=neutral, PublicKeyToken=3668067e1360e81e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\JSharpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Kailua, Version=10.1.0.0, Culture=neutral, PublicKeyToken=86d340ffca32cc5b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\Kailua.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="log4j, Version=1.2.12.0, Culture=neutral, PublicKeyToken=a03dd7a39948a7d3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindwardCustomFunctions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fa98aa88d96a4149, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\WindwardCustomFunctions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="WindwardInterfaces, Version=11.1.16.0, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\WindwardInterfaces.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="WindwardReports, Version=11.1.12.0, Culture=neutral, PublicKeyToken=34ffe15f4bbb8e53, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\WindwardReports.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="WindwardReportsAPI, Version=11.1.12.0, Culture=neutral, PublicKeyToken=9159ad800b91f253, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\WindwardReportsAPI.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="WindwardReportsDrivers, Version=11.1.12.0, Culture=neutral, PublicKeyToken=adf7e40e645242d1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\dll\WindwardReportsDrivers.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft" />
+    <Import Include="Microsoft.CSharp" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="net" />
+    <Import Include="net.windward" />
+    <Import Include="net.windward.api" />
+    <Import Include="net.windward.api.csharp" />
+    <Import Include="net.windward.bean" />
+    <Import Include="net.windward.chart" />
+    <Import Include="net.windward.datasource" />
+    <Import Include="net.windward.datasource.recorder" />
+    <Import Include="net.windward.document" />
+    <Import Include="net.windward.env" />
+    <Import Include="net.windward.env.image" />
+    <Import Include="net.windward.env.iText" />
+    <Import Include="net.windward.env.printer" />
+    <Import Include="net.windward.env.xml" />
+    <Import Include="net.windward.format" />
+    <Import Include="net.windward.format.csv" />
+    <Import Include="net.windward.format.docx" />
+    <Import Include="net.windward.format.excel" />
+    <Import Include="net.windward.format.htm" />
+    <Import Include="net.windward.format.pdf" />
+    <Import Include="net.windward.format.pptx" />
+    <Import Include="net.windward.format.printer" />
+    <Import Include="net.windward.format.rtf" />
+    <Import Include="net.windward.format.txt" />
+    <Import Include="net.windward.format.wordml" />
+    <Import Include="net.windward.format.xls" />
+    <Import Include="net.windward.format.xlsx" />
+    <Import Include="net.windward.tags" />
+    <Import Include="net.windward.util" />
+    <Import Include="net.windward.util.macro" />
+    <Import Include="net.windward.xmlreport" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Net" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="WindwardReportsDrivers" />
+    <Import Include="WindwardReportsDrivers.net" />
+    <Import Include="WindwardReportsDrivers.net.windward" />
+    <Import Include="WindwardReportsDrivers.net.windward.chart" />
+    <Import Include="WindwardReportsDrivers.net.windward.chart.mschart" />
+    <Import Include="WindwardReportsDrivers.net.windward.datasource" />
+    <Import Include="WindwardReportsDrivers.net.windward.datasource.ado" />
+    <Import Include="WindwardReportsDrivers.net.windward.datasource.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="VBexample.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBexample.Designer.vb">
+      <DependentUpon>VBexample.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBexample.resx">
+      <DependentUpon>VBexample.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

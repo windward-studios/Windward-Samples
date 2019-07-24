@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="BasicSalesforce" default="compile">
+  <property name="windward_jars" value="../../../../../jars"/>
+  <property name="src" value="src" />
+  <property name="build" value="classes" />
+  <!-- ****************************************************************
+  This property must be defined in the build.xml file and point to a directory
+  where all third party .jar files reside.
+  -->
+  <property name="baselib.dir" value="${windward_jars}" />
+  <!--
+  This is auto generated property.  DO NOT edit it manually.
+  It holds a semicolon separated list of all third party .jar files found in
+  'base.lib.dir'.
+  To update this property, run the common/update-baselib-classpath.sh script.
+  -->
+  <property name="baselib.classpath" value="${baselib.dir}/jfreesvg-3.1.jar;${baselib.dir}/saxon9ee.jar;${baselib.dir}/ChartDirector-6.0.0.jar;${baselib.dir}/WindwardCustomCallbacks.jar;${baselib.dir}/WindwardCustomFunctions.jar;${baselib.dir}/commons-codec-1.9.jar;${baselib.dir}/commons-io-2.1.jar;${baselib.dir}/commons-lang-2.6.jar;${baselib.dir}/commons-logging-1.2.jar;${baselib.dir}/dom4j-1.6.1.jar;${baselib.dir}/jaxen.jar;${baselib.dir}/httpclient-4.5.2.jar;${baselib.dir}/httpcore-4.4.4.jar;${baselib.dir}/json-smart-2.2.jar;${baselib.dir}/json-path-2.5.0.jar;${baselib.dir}/slf4j-api-1.7.5.jar;${baselib.dir}/slf4j-nop-1.7.5.jar;${baselib.dir}/jooq-3.6.4.jar;${baselib.dir}/log4j.jar;${baselib.dir}/metadata.jar;${baselib.dir}/mongo-java-driver-2.11.1.jar;${baselib.dir}/odata4j-0.7.0-clientbundle.jar;${baselib.dir}/partner.jar;${baselib.dir}/relaxngDatatype.jar;${baselib.dir}/stax2-api-3.1.1.jar;${baselib.dir}/woodstox-core-asl-4.2.0.jar;${baselib.dir}/wsc-23.jar;${baselib.dir}/xmlParserAPIs.jar;${baselib.dir}/xsdlib.jar;${baselib.dir}/bcprov-jdk14-138.jar;${baselib.dir}/bcmail-jdk14-138.jar;${baselib.dir}/bctsp-jdk14-1.38.jar;${baselib.dir}/PDFCompare.jar;${baselib.dir}/itext-2.1.7.jar;${baselib.dir}/xmlgraphics-commons-2.2.jar;${baselib.dir}/jaxb-api-2.2.12.jar;" />
+  <!-- **************************************************************** -->
+  <property name="classpath" value="${windward_jars}/*;${baselib.classpath}" />
+  <target name="compile">
+    <echo message="jdk = ${java.home}, version = ${java.version}" />
+    <mkdir dir="${build}" />
+    <javac srcdir="${src}" destdir="${build}" source="1.8" target="1.8" fork="yes" debug="on" classpath="${classpath}" />
+  </target>
+</project>

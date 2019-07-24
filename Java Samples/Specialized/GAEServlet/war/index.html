@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Windward Reports - Calling Windward in a Servlet</title>
+		<style type="text/css">
+			em {
+				color: #FF0000;
+			}
+			h1, h3, h4 {
+				color: #0077c0;
+			}
+			li {
+				margin: .2em 0;
+			}
+			.footer {
+				font-size:60%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Windward Reports Java Servlet Example</h1>
+		<p>
+			This is a basic example on how to use the Windward Reports Java engine in a web application.
+			This example is a pure servlet implementation (no JSPs or EJBs).
+		</p>
+		<p>
+			You are free to use this sample in any way you wish.  The instructions are for Windows systems, but the setup
+			process is very similar for any other system that Tomcat supports.
+		</p>
+		<p> 
+			There are two front-end sites for this example.
+			<ul>
+				<li>
+					The first is static, where you are looking at information on a specific employee.  There is a single
+					button to generate a report for that individual.
+				</li>
+				<li>
+					The second one is more dynamic.  You choose which leave request number you want the report to be on and 
+					the output format.
+				</li>
+			</ul>
+		</p>
+		
+		<h3>Installation of Tomcat - (all links assume you are running on localhost)</h3>
+		<ol>
+			<li>
+				First, install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE JDK</a> 
+				Either the 32 or 64 bit version will work. 
+			</li>
+			<li>
+				Setup environment variable JAVA_HOME (point this to the root installation of your Java installation; for example "C:\Program Files\Java\jdk1.6.0_23").
+			</li>
+			<li>
+				Download the <a href="http://tomcat.apache.org/download-60.cgi">ZIP file for Tomcat 6.0</a> 
+				and NOT THE WINDOWS INSTALLATION. The code in Tomcat that runs the windows service does not work.
+			</li>
+			<li>
+				Extract the ZIP file to a directory on your system, IE C:\tomcat6.
+			</li>
+			<li>
+				Startup Tomcat: Go to C:\tomcat6\bin from a command prompt and run 'startup.bat'.
+			</li>
+			<li>
+				Open a web browser and navigate to <a href="http://localhost:8080">http://localhost:8080</a>. 
+				If you see the Tomcat webpage, you have successfully installed Apache Tomcat.
+			</li>
+			<li>
+				If Tomcat is not running on your local computer, change &quot;localhost&quot; to the name of 
+				the remote computer's name.
+			</li>
+			<li>
+				Shutdown Tomcat: Go to C:\tomcat6\bin from a command prompt and run 'shutdown.bat'.
+			</li>
+			<li>
+				Follow the directions below to setup the Windward Reports Java Servlet example.
+			</li>
+		</ol>
+		
+		<h3>Setup Windward Java Servlet on Tomcat</h3>
+		<ol>
+			<li>
+				Copy the contents of the example 'htmlhelp\examples\JavaServletExample' into the 'C:\tomcat6\webapps\JavaServletExample folder'.
+				You will end up with the following items in 'C:\tomcat6\webapps\ServletExample':
+				  <ul>
+					<li>'files' folder</li>
+					<li>'META-INF' folder</li>
+                    <li>'src' folder (contains the source code for this example)</li>
+					<li>'WEB-INF' folder</li>
+					<li>'index.html' file</li>
+                    <li>'ServletExample.iml' file (IntelliJ project file)</li>
+                    <li>'ServletExample.ipr' file (IntelliJ project file)</li>
+                    <li>'ServletExample.iws' file (IntelliJ project file)</li>
+				</ul>
+			</li>
+			<li>
+				If you did not enter your license key during the install or you installed using the ZIP file, copy and paste your Java Engine key into the 'C:\tomcat6\webapps\JavaServletExample\WEB-INF\WindwardReports.properties' file. 
+				<br/><em>(The key already in the WindwardReports.properties file is not valid).</em>
+			</li>
+			<li>Startup Tomcat: Go to 'C:\tomcat6\bin' from a command prompt and run 'startup.bat'.</li>
+		</ol>
+
+		<h3>Testing the sample</h3>
+		<ol>
+		  <li>Once you have done all that go to <a href="http://localhost:8080/JavaServletExample/">http://localhost:8080/JavaServletExample/</a> and you should see the servlet. </li>
+		  <li><a href="http:static">Click here to go to the first example.</a> </li>
+		  <li><a href="http:dynamic">Click here to go to the second example.</a> </li>
+		</ol>
+		
+		<h3>Notes</h3>
+		<ul>
+			<li>All of the source code calling the Windward Java Engine can be found at 'C:\tomcat6\webapps\ServletExample\src'.</li>
+            <li>To build from the source, either
+                <ul>
+                    <li>Run build.bat in the 'c:\tomcat6\webapps\JavaServletExample\src\com\windwardreports' directory. NOTE: You will need to have javac.exe in your PATH or specify the full path location in build.bat.</li>
+                    <li>Open the ServletExample.ipr in IntelliJ and build the project using the UI.</li>
+                    <li>Note:  The Free Community Edition of IntelliJ for Linux and Windows can be found here: <a href="http://www.jetbrains.com/idea/download/">IntelliJ</a></li>
+                </ul>
+            </li>
+		</ul>
+		<div class="footer"> 
+			Copyright 2017 by Windward Studios, Inc. All Rights Reserved<br />
+			<a href="http://www.WindwardReports.com">Windward Reports</a>
+		</div>
+		
+	</body>
+</html>

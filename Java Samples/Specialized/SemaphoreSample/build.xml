@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BasicXML" default="compile">
+
+	<property name="windward_jars" value="../../../../../jars"/>
+	
+	<property name="src" value="src"/>
+	<property name="build" value="classes"/>
+	<property name="classpath" value="${windward_jars}/*"/>
+
+	<target name="compile">
+		<echo message="jdk = ${java.home}, version = ${java.version}"/>
+		<mkdir dir="${build}"/>
+		
+		<javac srcdir="${src}" destdir="${build}" source="1.8" target="1.8" fork="yes" debug="on" classpath="${classpath}"/>
+	</target>
+	
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<demo title="Advanced" img="advanced.png">
+	<launch>
+		<link title="Command Line" path="CommandLineAdvanced\RunReportSQL\RunReportSQL.sln" img="open_vs.png" summary="Create an advanced command line reporting application.">
+			<dependency>Access Connector</dependency>
+			<dependency>Oracle Connector</dependency>
+			<dependency>MySQL Connector</dependency>
+			<dependency>DB2 Connector</dependency>
+			<dependency>Excel Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="ASP.NET" path="ASP.NET\windward.sln" img="open_vs.png" summary="Create an advanced ASP.NET reporting application."/>
+		<link title="Datasets" path="Datasets\UsingDatasets\UsingDatasets.sln" img="open_vs.png" summary="Use datasets from a .rdlx file to generate a report.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link title="Read Command Line Tutorial" img="read.png" path="CommandLineAdvanced\CSCommandLineWalkthrough.pdf"/>
+		<link title="Read Datasets Tutorial" path="Datasets\DataSetsExampleCS.pdf" img="read.png"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" img="read.png" url="http://rpt.me/DotNetWiki"/>
+	</links>
+</demo>

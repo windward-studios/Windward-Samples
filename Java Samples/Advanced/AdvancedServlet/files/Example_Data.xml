@@ -1,0 +1,31 @@
+<data>
+	<employees>
+		<employee id="5023" name="Hanna Moos" email="hannam@windward.com" job_protection="no" denial_code="" manager="" manager_email="" />
+		<employee id="12209" name="Maria Anders" email="mariaa@windward.com" job_protection="yes" denial_code="" manager="Hanna Moos" manager_email="hannam@windward.com" />
+		<employee id="13008" name="Laurence Lebihan" email="laurencel@windward.com" job_protection="no" denial_code="Code 4" manager="Hanna Moos" manager_email="hannam@windward.com" />
+		<employee id="28023" name="Frederique Citeaux" email="frederiquec@windward.com" job_protection="no" denial_code="Code 5" manager="Hanna Moos" manager_email="hannam@windward.com" />
+		<employee id="67000" name="Thomas Hardy" email="thomash@windward.com" job_protection="no" denial_code="Code 6" manager="Hanna Moos" manager_email="hannam@windward.com" />
+		<employee id="68306" name="Christina Berglund" email="christinab@windward.com" job_protection="no" denial_code="Code 7" manager="Hanna Moos" manager_email="hannam@windward.com" />
+	</employees>
+	<leave_requests>
+		<request id="1" employee_id="12209" leave_start_date="5/12/2009" leave_end_date="5/27/2009" waiting_period="0" leave_type="Basic" date="5/1/2009" />
+		<request id="2" employee_id="28023" leave_start_date="5/20/2009" leave_end_date="5/23/2009" waiting_period="0" leave_type="Immediate" date="4/12/2009" />
+		<request id="3" employee_id="12209" leave_start_date="7/1/2009" leave_end_date="7/9/2009" waiting_period="0" leave_type="Basic" date="6/29/2009" />
+		<request id="4" employee_id="13008" leave_start_date="7/4/2009" leave_end_date="7/7/2009" waiting_period="14" leave_type="Advanced" date="6/1/2009" />
+		<request id="5" employee_id="68306" leave_start_date="8/27/2009" leave_end_date="9/13/2009" waiting_period="0" leave_type="Maternity" date="8/12/2009" />
+		<request id="6" employee_id="67000" leave_start_date="7/19/2009" leave_end_date="7/23/2009" waiting_period="0" leave_type="None" date="7/1/2009" />
+	</leave_requests>
+	<tk_codes>
+		<code id="1" type="Basic" name="BA001" description="First basic time keeping code" />
+		<code id="2" type="Basic" name="BA002" description="Second basic time keeping code" />
+		<code id="3" type="Advanced" name="AD001" description="First advanced time keeping code" />
+		<code id="4" type="Immediate" name="IM001" description="First immediate code" />
+		<code id="5" type="Immediate" name="IM002" description="Second immediate code" />
+		<code id="6" type="None" name="NO001" description="First no leave benefits code" />
+		<code id="7" type="None" name="NO002" description="Second no leave benefits code" />
+		<code id="8" type="Maternity" name="MA001" description="First maternity time keeping code" />
+		<code id="9" type="Maternity" name="MA002" description="Second maternity time keeping code" />
+		<code id="10" type="Maternity" name="MA003" description="Third maternity time keeping code" />
+		<code id="12" type="Maternity" name="MA004" description="Fourth maternity time keeping code" />
+	</tk_codes>
+</data>

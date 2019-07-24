@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<demo title="Advanced" img="advanced.png">
+	<launch>
+		<link title="Command Line" path="AdvancedCommandLine\RunReport.ipr" img="open_intellij.png" summary="Create an advanced command line reporting application."/>
+		<link title="Servlet" path="AdvancedServlet\ServletExample.ipr" img="open_intellij.png" summary="Create an advanced reporting servlet."/>
+		<link title="Datasets" path="Datasets\UsingDatasets\UsingDatasets.ipr" img="open_intellij.png" summary="Use datasets from a .rdlx file to generate a report."/>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link title="Read Command Line Tutorial" img="read.png" path="AdvancedCommandLine\JavaCommandLineWalkthrough.pdf"/>
+		<link title="Read Servlet Tutorial" img="read.png" path="AdvancedServlet\JavaServletWalkthrough.pdf"/>
+		<link title="Read Datasets Tutorial" img="read.png" path="Datasets\SQL\README.txt"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" img="read.png" url="http://rpt.me/JavaWiki"/>
+	</links>
+</demo>

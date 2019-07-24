@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!--  A sample invoice -->
+
+<order
+    date="1 April 2002"
+    number="233"
+	entered="Shirley Clawson"
+    >
+
+	<customer>
+		<name>John Smith</name>
+		<company>Acme Industries</company>
+		<address street="1 Main St." city="Boulder" state="CO" zip="80302" />
+		<phone>303-555-1212</phone>
+		<order-number>53</order-number>
+	</customer>
+
+	<item>
+		<description>Windward Reports Server</description>
+		<quantity>1</quantity>
+		<unit>$1,495.00</unit>
+		<total>$1,495.00</total>
+	</item>
+
+	<item>
+		<description>Windward Reports Developer System</description>
+		<quantity>3</quantity>
+		<unit>$149.00</unit>
+		<total>$447.00</total>
+	</item>
+
+	<item>
+		<description>Support &amp; Updates - Server</description>
+		<quantity>1</quantity>
+		<unit>$299.00</unit>
+		<total>$299.00</total>
+	</item>
+
+	<item>
+		<description>Support &amp; Updates - Developer</description>
+		<quantity>3</quantity>
+		<unit>$29.80</unit>
+		<total>$89.40</total>
+	</item>
+
+	<price>
+		<subtotal>$2330.40</subtotal>
+		<shipping>$25.00</shipping>
+		<state-taxes>$69.91</state-taxes>
+		<local-taxes>$104.87</local-taxes>
+		<total>$2530.18</total>
+		<terms days="30" interest="18"/>
+	</price>
+
+</order>

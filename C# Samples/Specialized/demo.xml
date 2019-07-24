@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<demo title="Specialized" img="specialized.png">
+	<launch>
+		<link title="Ad-hoc XML" path="AdhocAPI\FilterVariablesXML\FilterVariablesXML.sln" img="open_vs.png" summary="Pass ad-hoc criteria to a template in the engine using XML."/>
+		<link title="Ad-hoc SQL" path="AdhocAPI\FilterVariablesSQL\FilterVariablesSQL.sln" img="open_vs.png" summary="Pass ad-hoc criteria to a template in the engine using SQL."/>
+		<link title="Variables" path="Variable\VariableExample.sln" img="open_vs.png" summary="Pass variables to a template in the engine.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Semaphore" path="SemaphoreSample\SemaphoreSample.sln" img="open_vs.png" summary="Limit number of threads generating a report."/>
+		<link title="Email" path="Email\EmailExample.sln" img="open_vs.png" summary="Email a report."/>
+		<link title="Windows Forms - DB2" path="WindowsForms\WindwardDB2\WindwardDB2.sln" img="open_vs.png" summary="Create a Windows Forms reporting application using DB2.">
+			<dependency>DB2 Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Windows Forms - MySql" path="WindowsForms\WindwardMySql\WindwardMySql.sln" img="open_vs.png" summary="Create a Windows Forms reporting application using MySql.">
+			<dependency>MySQL Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Windows Forms - Oracle" path="WindowsForms\WindwardOracle\WindwardOracle.sln" img="open_vs.png" summary="Create a Windows Forms reporting application using Oracle.">
+			<dependency>Oracle Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Windows Forms - Sql Server" path="WindowsForms\WindwardSQL\WindwardSQL.sln" img="open_vs.png" summary="Create a Windows Forms reporting application using SQL Server.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Windows Forms - XML" path="WindowsForms\WindwardXML\WindwardXML.sln" img="open_vs.png" summary="Create a Windows Forms reporting application using XML.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Custom Functions" path="CustomFunctions\WindwardCustomFunctions.sln" img="open_vs.png" summary="Create a custom function."/>
+		<link title="Custom Callbacks" path="CustomCallbacks\WindwardCustomCallbacks.sln" img="open_vs.png" summary="Create a custom callback."/>
+		<link title="OData Advanced Connection" path="ODataAdvancedConnection/ODataAdvancedConnection.sln" img="open_vs.png" summary="Create a connection with OData."/>
+		<link title="Error Handling and Verify" path="ErrorHandlingVerify/ErrorHandlingVerify.sln" img="open_vs.png" summary="Enable Error Handling and Verify in the .NET engine."/>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link title="Read Variables Tutorial" img="read.png" path="Variable\VariableExampleCS.pdf"/>
+		<link title="Read Email Tutorial" img="read.png" path="Email\EmailExampleCS.pdf"/>
+		<link title="Read Windows Forms Tutorial" img="read.png" path="WindowsForms\WindowsFormExampleCS.pdf"/>
+		<link title="Read Custom Functions Tutorial" img="read.png" path="CustomFunctions\CSCustomFunctionWalkthrough.pdf"/>
+<link title="Read Custom Callbacks Tutorial" img="read.png" path="CustomCallbacks\CSCustomCallbacksWalkthrough.pdf"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" img="read.png" url="http://rpt.me/DotNetWiki"/>
+	</links>
+</demo>

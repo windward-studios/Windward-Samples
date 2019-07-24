@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<demo title="Basics" img="basic_cmd_line.png">
+	<launch>
+		<link title="DB2" path="BasicDB2\BasicDb2.ipr" img="db2.png" summary="Basic command line engine application using DB2."/>
+		<link title="MySQL" path="BasicMysql\BasicMysql.ipr" img="mssql.png" summary="Basic command line engine application using MySQL."/>
+		<link title="MS SQL" path="BasicSql\BasicSql.ipr" img="mysql.png" summary="Basic command line engine application using MS SQL."/>
+		<link title="Oracle" path="BasicOracle\BasicOracle.ipr" img="oracle.png" summary="Basic command line engine application using Oracle."/>
+		<link title="XML" path="BasicXml\BasicXml.ipr" img="xml.png" summary="Basic command line engine application using XML."/>
+		<link title="JSON" path="BasicJson\BasicJson.ipr" img="json.png" summary="Basic command line engine application using JSON."/>
+		<link title="OData" path="BasicOData\BasicOData.ipr" img="db2.png" summary="Basic command line engine application using OData."/>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link type="readPdf" path="JavaEngineBasicsWalkthrough.pdf"/>
+		<link title="Read How to Setup in Eclipse" path="JavaEngineBasicsEclipseSetUp.pdf" img="read.png"/>
+		<link title="Read How to Setup in IntelliJ" path="JavaEngineBasicsIntelliJSetUp.pdf" img="read.png"/>
+		<link title="Line-by-line through the code" path="JavaEngineBasicsCode.pdf" img="read.png"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" url="http://rpt.me/JavaWiki" img="read.png"/>
+	</links>
+</demo>

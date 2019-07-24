@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>Example</groupId>
+    <artifactId>BasicSqlWithMaven</artifactId>
+	<version>16.5.0.36</version>
+
+    <repositories>
+        <repository>
+            <id>windward-maven-repo</id>
+            <name>windward-maven-repo</name>
+            <url>http://maven-repository.windward.net/artifactory/libs-snapshot-local</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.windward</groupId>
+            <artifactId>WindwardReports</artifactId>
+	<version>16.5.0.36</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

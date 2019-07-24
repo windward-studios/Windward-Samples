@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes"?>
+<exhibits>
+  <accountname>WINDWARD REPORTS</accountname>
+  <billingaddress>2945 CENTER GREEN COURT SOUTH, SUITE H</billingaddress>
+  <city>BOULDER</city>
+  <state>CO</state>
+  <zip>80301</zip>
+  <contact>MR. CHRIS CONLEY</contact>
+  <phone>303-499-2544 ext. 1183</phone>
+  <fax>303-478-2792</fax>
+  <email>mailto:chrisc@windward.net</email>
+  <salesagreement>
+    <quoteno>105</quoteno>
+    <date>8/18/2010</date>
+    <accountexecutive>ROLAND</accountexecutive>
+    <graphics>8/27/2010</graphics>
+    <shipdate>8/27/2010</shipdate>
+  </salesagreement>
+  <terms>
+    <term>100% PREPAID IN ADVANCE</term>
+  </terms>
+  <items>
+    <item>
+      <qty>1</qty>
+      <mcode>MISC</mcode>
+      <description>1 PIECE INKJET GRAPHIC PANEL W/VELCRO (70%)</description>
+      <color></color>
+      <unitprice>840</unitprice>
+    </item>
+    <item>
+      <qty>1</qty>
+      <mcode>261002</mcode>
+      <description>33.5" ECONOMY RETRACTOR</description>
+      <color></color>
+      <unitprice>299</unitprice>
+    </item>
+    <shipping>105</shipping>
+    <salestax>EXEMPT</salestax>
+    <deposit></deposit>
+  </items>
+  <creditcard>
+    <type>VISA</type>
+    <owner>John Smith</owner>
+    <number>123456789123</number>
+    <exp>08/19</exp>
+  </creditcard>
+</exhibits>

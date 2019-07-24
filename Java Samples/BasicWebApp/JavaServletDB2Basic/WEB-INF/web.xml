@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <display-name>Windward Reports Servlet</display-name>
+    <description>Sample program for using Windward Reports in a servlet</description>
+
+	<!-- Where to find the WindwardReports.properties file -->
+	<context-param>
+	    <param-name>PropFile</param-name>
+	    <param-value>WEB-INF/WindwardReports.properties</param-value>
+	</context-param>
+
+	<!-- Purposely use different names for servlet-name, servlet-class, & url-pattern -->
+	<servlet>
+		<servlet-name>ReportStatic</servlet-name>
+		<servlet-class>com.windwardreports.BasicReportForm</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>WaitNotice</servlet-name>
+		<servlet-class>com.windwardreports.Wait</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Processing</servlet-name>
+		<servlet-class>com.windwardreports.GenerateDB2Report</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>FileNotFoundError</servlet-name>
+		<servlet-class>com.windwardreports.NoFileError</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LicenseExceptionError</servlet-name>
+		<servlet-class>com.windwardreports.NoLicenseError</servlet-class>
+	</servlet>
+
+	<!-- Servlet mapping to URL -->
+	<servlet-mapping>
+		<servlet-name>ReportStatic</servlet-name>
+		<url-pattern>/static</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>WaitNotice</servlet-name>
+		<url-pattern>/notice</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Processing</servlet-name>
+		<url-pattern>/generate</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FileNotFoundError</servlet-name>
+		<url-pattern>/errorFileNotFound</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LicenseExceptionError</servlet-name>
+		<url-pattern>/errorLicenseException</url-pattern>
+	</servlet-mapping>
+
+	<!-- Error pages -->
+	<error-page>
+		<exception-type>java.io.FileNotFoundException</exception-type>
+		<location>/errorFileNotFound</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>net.windward.util.LicenseException</exception-type>
+		<location>/errorLicenseException</location>
+	</error-page>
+
+</web-app>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<demo title="Basic Command Line" img="basic_cmd_line.png">
+	<launch>
+		<link title="MS SQL" path="VBRunReportSQL\VBRunReportSQL.sln" img="mssql.png" summary="Create a command line reporting application using MS SQL.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="MySQL" path="VBRunReportMySQL\VBRunReportMySQL.sln" img="mysql.png" summary="Create a command line reporting application using MySQL.">
+			<dependency>MySQL Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="DB2" path="VBRunReportDB2\VBRunReportDB2.sln" img="db2.png" summary="Create a command line reporting application using DB2.">
+			<dependency>DB2 Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Oracle" path="VBRunReportOracle\VBRunReportOracle.sln" img="oracle.png" summary="Create a command line reporting application using Oracle.">
+			<dependency>Oracle Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Excel" path="VBRunReportExcel\VBRunReportExcel.sln" img="excel.png" summary="Create a command line reporting application using Excel.">
+			<dependency>Excel Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>
+		<!--<link title="Access" path="VBRunReportAccess\VBRunReportAccess.sln" img="access.png" summary="Create a command line reporting application using Access.">
+			<dependency>Access Connector</dependency>
+			<dependency>PDF Reader</dependency>
+		</link>uncomment to show access-->
+		<link title="XML" path="VBRunReportXml\VBRunReportXml.sln" img="xml.png" summary="Create a command line reporting application using XML.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link type="readPdf" path="CommandLineExampleVB.pdf"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" img="read.png" url="http://rpt.me/DotNetWiki"/>
+		<link title="Problems with Oracle Connector" img="read.png" url="http://rpt.me/WikiOracle"/>
+	</links>
+</demo>

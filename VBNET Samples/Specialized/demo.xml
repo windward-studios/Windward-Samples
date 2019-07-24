@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<demo title="Specialized" img="specialized.png">
+	<launch>
+		<link title="Variables" path="Variable\VB Variable Example.sln" img="open_vs.png" summary="Pass variables to a template in the engine.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link title="Email" path="Email\VB Email Example.sln" img="open_vs.png" summary="Email a report."/>
+		<link title="Windows Forms" path="WindowsForms\Windward VB Example SQL\Windward VB Example SQL.sln" img="open_vs.png" summary="Create a Windows Forms reporting application.">
+			<dependency>PDF Reader</dependency>
+		</link>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link title="Read Variables Tutorial" img="read.png" path="Variable\VB VariableExample.pdf"/>
+		<link title="Read Email Tutorial" img="read.png" path="Email\VB EmailExample.pdf"/>
+		<link title="Read Windows Forms Tutorial" img="read.png" path="WindowsForms\VB WindowsFormExample.pdf"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" img="read.png" url="http://rpt.me/DotNetWiki"/>
+	</links>
+</demo>

@@ -1,0 +1,3 @@
+Please copy all Windward DLLs to this folder. 
+
+An ASP.NET app wants the DLLs here instead of the GAC.

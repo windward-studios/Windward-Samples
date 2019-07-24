@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:element name="windward-studios">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Employees">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Employee" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="LastName" type="xsd:string"/>
+										<xsd:element name="FirstName" type="xsd:string"/>
+										<xsd:element name="Title" type="xsd:string"/>
+										<xsd:element name="TitleOfCourtesy" type="xsd:string"/>
+										<xsd:element name="BirthDate" type="xsd:date"/>
+										<xsd:element name="HireDate" type="xsd:date"/>
+										<xsd:element name="Address" type="xsd:string"/>
+										<xsd:element name="City" type="xsd:string"/>
+										<xsd:element name="Region" type="xsd:string"/>
+										<xsd:element name="PostalCode" type="xsd:string"/>
+										<xsd:element name="Extension" type="xsd:int"/>
+										<xsd:element name="Photo" type="xsd:string"/>
+										<xsd:element name="Notes" type="xsd:string"/>
+										<xsd:element name="ReportsTo" type="xsd:int"/>
+										<xsd:element name="EmployeeTerritories">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="EmployeeTerritorie" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="TerritoryID" type="xsd:int"/>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="EmployeeID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Orders">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Order" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="CustomerID" type="xsd:string"/>
+										<xsd:element name="EmployeeID" type="xsd:int"/>
+										<xsd:element name="OrderDate" type="xsd:dateTime"/>
+										<xsd:element name="RequiredDate" type="xsd:dateTime"/>
+										<xsd:element name="ShippedDate" type="xsd:dateTime" minOccurs="0"/>
+										<xsd:element name="ShipVia" type="xsd:int"/>
+										<xsd:element name="Freight" type="xsd:decimal"/>
+										<xsd:element name="ShipName" type="xsd:string"/>
+										<xsd:element name="ShipAddress" type="xsd:string"/>
+										<xsd:element name="ShipCity" type="xsd:string"/>
+										<xsd:element name="ShipRegion" type="xsd:string"/>
+										<xsd:element name="ShipPostalCode" type="xsd:string"/>
+										<xsd:element name="ShipCountry" type="xsd:string"/>
+										<xsd:element name="OrderDetails">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="OrderDetail" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="ProductID" type="xsd:int"/>
+																<xsd:element name="UnitPrice" type="xsd:decimal"/>
+																<xsd:element name="Quantity" type="xsd:int"/>
+																<xsd:element name="Discount" type="xsd:decimal"/>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="OrderID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Territories">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Territory" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="TerritoryDescription" type="xsd:string"/>
+										<xsd:element name="RegionID" type="xsd:int"/>
+									</xsd:sequence>
+									<xsd:attribute name="TerritoryID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Customers">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Customer" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="CompanyName" type="xsd:string"/>
+										<xsd:element name="ContactName" type="xsd:string"/>
+										<xsd:element name="ContactTitle" type="xsd:string"/>
+										<xsd:element name="Address" type="xsd:string"/>
+										<xsd:element name="City" type="xsd:string"/>
+										<xsd:element name="Region" type="xsd:string"/>
+										<xsd:element name="PostalCode" type="xsd:string"/>
+										<xsd:element name="Country" type="xsd:string"/>
+										<xsd:element name="Phone" type="xsd:string"/>
+										<xsd:element name="Fax" type="xsd:string"/>
+									</xsd:sequence>
+									<xsd:attribute name="CustomerID" type="xsd:string"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Regions">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Region" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="RegionDescription" type="xsd:string"/>
+									</xsd:sequence>
+									<xsd:attribute name="RegionID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Products">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Product" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ProductName" type="xsd:string"/>
+										<xsd:element name="SupplierID" type="xsd:int"/>
+										<xsd:element name="CategoryID" type="xsd:int"/>
+										<xsd:element name="QuantityPerUnit" type="xsd:string"/>
+										<xsd:element name="UnitPrice" type="xsd:decimal"/>
+										<xsd:element name="UnitsInStock" type="xsd:int"/>
+										<xsd:element name="UnitsOnOrder" type="xsd:int"/>
+										<xsd:element name="ReorderLevel" type="xsd:int"/>
+										<xsd:element name="Discontinued" type="xsd:boolean"/>
+									</xsd:sequence>
+									<xsd:attribute name="ProductID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Categories">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Category" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="CategoryName" type="xsd:string"/>
+										<xsd:element name="Description" type="xsd:string"/>
+										<xsd:element name="Picture" type="xsd:string"/>
+									</xsd:sequence>
+									<xsd:attribute name="CategoryID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Shippers">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Shipper" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="CompanyName" type="xsd:string"/>
+										<xsd:element name="Phone" type="xsd:string"/>
+									</xsd:sequence>
+									<xsd:attribute name="ShipperID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Suppliers">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Supplier" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="CompanyName" type="xsd:string"/>
+										<xsd:element name="ContactName" type="xsd:string"/>
+										<xsd:element name="ContactTitle" type="xsd:string"/>
+										<xsd:element name="Address" type="xsd:string"/>
+										<xsd:element name="City" type="xsd:string"/>
+										<xsd:element name="Region" type="xsd:string"/>
+										<xsd:element name="PostalCode" type="xsd:string"/>
+										<xsd:element name="Country" type="xsd:string"/>
+										<xsd:element name="Phone" type="xsd:string"/>
+										<xsd:element name="Fax" type="xsd:string"/>
+										<xsd:element name="HomePage" type="xsd:string"/>
+									</xsd:sequence>
+									<xsd:attribute name="SupplierID" type="xsd:int"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

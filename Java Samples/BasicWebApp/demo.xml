@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<demo title="Basic Web App" img="basic_web_app.png">
+	<launch>
+		<link title="DB2" path="JavaServletDB2Basic\ServletExample.ipr" img="db2.png" summary="Create a Tomcat servlet report server using DB2."/>
+		<link title="MySQL" path="JavaServletMySQLBasic\ServletExample.ipr" img="mssql.png" summary="Create a Tomcat servlet report server using MySQL."/>
+		<link title="MS SQL" path="JavaServletMSSQL\ServletExample.ipr" img="mysql.png" summary="Create a Tomcat servlet report server using MS SQL."/>
+		<link title="Oracle" path="JavaServletOracleBasic\ServletExample.ipr" img="oracle.png" summary="Create a Tomcat servlet report server using Oracle."/>
+		<link title="XML" path="JavaServletXMLBasic\ServletExample.ipr" img="xml.png" summary="Create a Tomcat servlet report server using XML."/>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link type="readPdf" path="JavaServletBasicWalkthrough.pdf"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" url="http://rpt.me/JavaWiki" img="read.png"/>
+	</links>
+</demo>

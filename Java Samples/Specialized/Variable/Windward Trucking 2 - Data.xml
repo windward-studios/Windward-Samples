@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trucking_Data>
+    <metadata>
+        <PeriodStart>01-11-2007</PeriodStart>
+        <PeriodEnd>01-25-2007</PeriodEnd>
+        <Title>Windward Dashboard Summary Report</Title>
+        <Address1>123 Main Street</Address1>
+        <Address2>Suite F</Address2>
+        <City>Boulder</City>
+        <State>CO</State>
+        <ZipCode>80301</ZipCode>
+    </metadata>
+    <Definitions>
+        <Loads>Count of Loads</Loads>
+        <Shipments>Count of Shipments</Shipments>
+        <Density>Average Cube per Pound</Density>
+        <CPHC>Cost per Hundred Cube</CPHC>
+        <CPHM>Cost per Hundred Mile</CPHM>
+        <CWT>Cost per Hundred Weight</CWT>
+        <SHC>Cuber per Shipment</SHC>
+        <SHM>Mile per Shipment</SHM>
+        <SHW>Wieght per Shipment</SHW>
+    </Definitions>
+    <ShippingLoad>
+         <Date>1/11/2007</Date>
+        <Load>253</Load>
+        <Shipments>321</Shipments>
+        <Density>18.26</Density>
+        <CPHC>98.68</CPHC>
+        <CPHM>59.01</CPHM>
+        <CWT>5.40</CWT>
+        <SHC>192.86</SHC>
+        <SHM>322.50</SHM>
+        <SHW>352.12</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/12/2007</Date>
+        <Load>212</Load>
+        <Shipments>245</Shipments>
+        <Density>17.20</Density>
+        <CPHC>101.22</CPHC>
+        <CPHM>40.36</CPHM>
+        <CWT>5.89</CWT>
+        <SHC>160.18</SHC>
+        <SHM>401.72</SHM>
+        <SHW>275.49</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/15/2007</Date>
+        <Load>241</Load>
+        <Shipments>289</Shipments>
+        <Density>19.65</Density>
+        <CPHC>96.57</CPHC>
+        <CPHM>57.02</CPHM>
+        <CWT>4.92</CWT>
+        <SHC>204.07</SHC>
+        <SHM>345.59</SHM>
+        <SHW>400.96</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/16/2007</Date>
+        <Load>268</Load>
+        <Shipments>317</Shipments>
+        <Density>20.16</Density>
+        <CPHC>126.75</CPHC>
+        <CPHM>47.55</CPHM>
+        <CWT>6.29</CWT>
+        <SHC>131.49</SHC>
+        <SHM>350.55</SHM>
+        <SHW>265.11</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/17/2007</Date>
+        <Load>212</Load>
+        <Shipments>235</Shipments>
+        <Density>22.19</Density>
+        <CPHC>115.28</CPHC>
+        <CPHM>92.90</CPHM>
+        <CWT>5.19</CWT>
+        <SHC>220.36</SHC>
+        <SHM>273.44</SHM>
+        <SHW>489.01</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/18/2007</Date>
+        <Load>272</Load>
+        <Shipments>324</Shipments>
+        <Density>19.77</Density>
+        <CPHC>100.99</CPHC>
+        <CPHM>65.73</CPHM>
+        <CWT>5.11</CWT>
+        <SHC>177.48</SHC>
+        <SHM>272.70</SHM>
+        <SHW>350.94</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/19/2007</Date>
+        <Load>265</Load>
+        <Shipments>276</Shipments>
+        <Density>22.30</Density>
+        <CPHC>126.57</CPHC>
+        <CPHM>64.86</CPHM>
+        <CWT>5.88</CWT>
+        <SHC>140.47</SHC>
+        <SHM>274.13</SHM>
+        <SHW>313.28</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/22/2007</Date>
+        <Load>271</Load>
+        <Shipments>302</Shipments>
+        <Density>22.61</Density>
+        <CPHC>114.05</CPHC>
+        <CPHM>72.97</CPHM>
+        <CWT>5.05</CWT>
+        <SHC>182.31</SHC>
+        <SHM>284.97</SHM>
+        <SHW>412.15</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/23/2007</Date>
+        <Load>314</Load>
+        <Shipments>379</Shipments>
+        <Density>21.52</Density>
+        <CPHC>118.85</CPHC>
+        <CPHM>60.61</CPHM>
+        <CWT>5.52</CWT>
+        <SHC>156.25</SHC>
+        <SHM>306.38</SHM>
+        <SHW>336.32</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/24/2007</Date>
+        <Load>203</Load>
+        <Shipments>233</Shipments>
+        <Density>23.11</Density>
+        <CPHC>123.57</CPHC>
+        <CPHM>59.75</CPHM>
+        <CWT>5.35</CWT>
+        <SHC>179.13</SHC>
+        <SHM>370.53</SHM>
+        <SHW>413.95</SHW>
+    </ShippingLoad>
+    <ShippingLoad>
+        <Date>1/24/2007</Date>
+        <Load>237</Load>
+        <Shipments>253</Shipments>
+        <Density>23.79</Density>
+        <CPHC>134.36</CPHC>
+        <CPHM>56.86</CPHM>
+        <CWT>5.65</CWT>
+        <SHC>177.20</SHC>
+        <SHM>418.70</SHM>
+        <SHW>421.60</SHW>
+    </ShippingLoad>
+ </Trucking_Data>

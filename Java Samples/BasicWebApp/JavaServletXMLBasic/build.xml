@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JavaServletXMLBasic" default="compile">
+
+	<property name="servlet_jar" value="C:\Program Files\Apache Software Foundation\Tomcat 9.0\lib\servlet-api.jar"/>
+	<property name="windward_jars" value="../../../../../jars"/>
+
+	<property name="src" value="src"/>
+	<property name="build" value="WEB-INF/classes"/>
+	<property name="classpath" value="${windward_jars}/*;${servlet_jar}"/>
+
+	<target name="compile">
+		<echo message="jdk = ${java.home}, version = ${java.version}"/>
+		<mkdir dir="${build}"/>
+		
+		<javac srcdir="${src}" destdir="${build}" source="1.8" target="1.8" fork="yes" debug="on" classpath="${classpath}"/>
+	</target>
+	
+</project>

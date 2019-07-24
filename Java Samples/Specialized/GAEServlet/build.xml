@@ -1,0 +1,115 @@
+<project>
+    <!-- assumes appengine-java-sdk is in this directory; required for servlet-api.jar -->
+	<property environment="env"/>
+	<property name="sdk.dir" location="${env.APPENGINE_HOME}" />
+	<!-- If broken here, make sure APPENGINE_HOME environment variable is set
+		and that you have the appengine-java-sdk -->
+    <import file="${sdk.dir}/config/user/ant-macros.xml" />
+
+    <property name="gaeservlet.port" value="8080"/>
+
+    <!-- this is the URL pattern defined in web.xml of GAETestingServlet to run RunAllTemplates -->
+    <property name="gaeservlet.runall" value="runall"/>
+
+    <!-- some gaeservlet directories -->
+    <property name="gaeservlet.war" value="war"/>
+    <property name="gaeservlet.war.web" value="${gaeservlet.war}/WEB-INF"/>
+    <property name="gaeservlet.classes" value="${gaeservlet.war.web}/classes"/>
+    <property name="gaeservlet.lib.dir" value="${gaeservlet.war.web}/lib"/>
+
+    <!-- placeholder values for targets that should be called from the main javaEngine/build.xml file -->
+    <property name="wrcopy.relbasedir" value=""/>
+    <property name="wrcopy.lib.pathstr" value=""/>
+    <property name="wrcopy.jar" value=""/>
+
+    <path id="project.classpath">
+        <pathelement path="${gaeservlet.classes}" />
+        <fileset dir="${gaeservlet.lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${sdk.dir}/lib">
+            <include name="shared/**/*.jar" />
+        </fileset>
+    </path>
+
+    <target name="clean"
+            description="Deletes all generated/copied files">
+        <delete includeemptydirs="true" failonerror="false">
+            <fileset dir="${gaeservlet.classes}"/>
+        </delete>
+        <delete includeemptydirs="true" failonerror="false">
+            <fileset dir="${gaeservlet.lib.dir}" includes="**/*.jar"/>
+        </delete>
+    </target>
+
+    <target name="copyjars_appengine"
+            description="Copies the App Engine JARs to the WAR.">
+        <copy
+                todir="${gaeservlet.lib.dir}"
+                flatten="true">
+            <fileset dir="${sdk.dir}/lib/user">
+                <include name="**/*.jar" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile" depends="copyjars_appengine"
+            description="Compiles Java source and copies other source files to the WAR.">
+		<mkdir dir="${gaeservlet.classes}" />
+        <copy todir="${gaeservlet.classes}">
+            <fileset dir="src">
+                <exclude name="**/*.java" />
+            </fileset>
+        </copy>
+        <javac
+                srcdir="src"
+                destdir="${gaeservlet.classes}"
+                classpathref="project.classpath"
+                debug="on" />
+    </target>
+
+    <target name="datanucleusenhance" depends="compile"
+            description="Performs JDO enhancement on compiled data classes.">
+        <enhance_war war="${gaeservlet.war}" />
+    </target>
+
+    <target name="runserver" depends="compile"
+            description="Starts the development server.">
+        <dev_appserver war="${gaeservlet.war}" port="${gaeservlet.port}" />
+    </target>
+
+    <target name="update" depends="compile"
+            description="Uploads the application to App Engine.">
+        <echo message="A browser window may have opened and had you log into Google."/>
+        <echo message="If so, paste the authentication code here."/>
+        <echo message="Note: you may have to run ant from the command line for this to work"/>
+        <appcfg action="update" war="${gaeservlet.war}">
+            <options>
+                <arg value="--oauth2"/>
+            </options>
+        </appcfg>
+    </target>
+
+    <target name="update_indexes" depends="compile"
+            description="Uploads just the datastore index configuration to App Engine.">
+        <appcfg action="update_indexes" war="${gaeservlet.war}" />
+    </target>
+
+    <target name="rollback" depends="compile"
+            description="Rolls back an interrupted application update.">
+        <appcfg action="rollback" war="${gaeservlet.war}" />
+    </target>
+
+    <target name="request_logs"
+            description="Downloads log data from App Engine for the application.">
+        <appcfg action="request_logs" war="${gaeservlet.war}">
+            <options>
+                <arg value="--num_days=5"/>
+            </options>
+            <args>
+                <arg value="logs.txt"/>
+            </args>
+        </appcfg>
+    </target>
+
+</project>

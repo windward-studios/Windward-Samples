@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user-defined-tags version="9.0" vendor="windward">
+	<variables/>
+	<datasources>
+		<datasource name="SW" guid="b726a5a4-8fc0-451a-ac22-b03dc0bd8f79" full-type="XmlDataSourceInfo" url="C:\test\SouthWind.xml" schema="URL" schema-url="C:\test\SouthWind.xsd" windows-identity="true">
+			<datasets>
+				<dataset type="xpath" name="employeesUnder5" select="/windward-studios/Employees/Employee[@EmployeeID &lt; 5]" select-format="" select-count="" select-check=""/>
+				<dataset type="xpath" name="CustStartA" select="/windward-studios/Customers/Customer[starts-with(CompanyName, 'A')]" select-format="" select-count="" select-check=""/>
+			</datasets>
+		</datasource>
+		<datasource name="MSSQL" guid="c8b06490-110f-4c1f-868e-66384605fcbc" full-type="AdoDataSourceInfo" provider-class="System.Data.SqlClient" provider-name="Sql Server" table-owner="241" server="mssql.windward.net" database="Northwind" username="demo" password="demo">
+			<datasets>
+				<dataset name="EmpMoreThan5" rootDirectory="" select="SELECT * FROM dbo.Employees WHERE(dbo.Employees.EmployeeID &gt; 5)"/>
+				<dataset name="CustStartWithB" rootDirectory="" select="SELECT * FROM dbo.Customers WHERE(dbo.Customers.CompanyName like 'B%')"/>
+			</datasets>
+		</datasource>
+	</datasources>
+	<items/>
+</user-defined-tags>

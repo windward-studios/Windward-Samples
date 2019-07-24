@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<demo title="Specialized" img="specialized.png">
+	<launch>
+		<link title="Variables" path="Variable\Variable.ipr" img="open_intellij.png" summary="Pass variables to a template in the Engine."/>
+		<link title="Semaphore" path="SemaphoreSample\SemaphoreSample.ipr" img="open_intellij.png" summary="Limit number of threads generating a report."/>
+		<link title="Email" path="Email\Email.ipr" img="open_intellij.png" summary="Send a report through email."/>
+		<link title="HTML Output" path="ProcessHTML\ProcessHTML.ipr" img="open_intellij.png" summary="Use ProcessHTML class for Windward Reports output to HTML."/>
+		<link title="Swing Form" path="BasicSwingForm\BasicSwingForm.ipr" img="open_intellij.png" summary="Create a Swing-based reporting application."/>
+		<link title="Custom Functions" path="CustomFunction\CustomFunctionExample.ipr" img="open_intellij.png" summary="Use custom functions in Windward Reports."/>
+		<link title="Custom Callbacks" path="WindwardCallbacks\WindwardCallbacks.ipr" img="open_intellij.png" summary="Use custom callbacks to Windward Reports."/>
+		<link title="Ad-hoc - SQL" path="Adhoc\AdhocAPISQL\FilterVariables.ipr" img="open_intellij.png" summary="Use adhoc filters on MS SQL data."/>
+		<link title="Ad-hoc - XML" path="Adhoc\AdhocAPIXML\FilterVariables.ipr" img="open_intellij.png" summary="Use adhoc filters on XML data."/>
+		<link title="Google App Engine Servlet" path="GAEServlet/GAEServlet.ipr" img="open_intellij.png" summary="Use the Windward Engine on Google App Engine"/>
+		<link title="Error Handling and Verify" path="ErrorHandlingVerify/ErrorHandlingVerify.ipr" img="open_intellij.png" summary="Enable Error Handling and Verify in the Java engine."/>
+		<link type="openFolder"/>
+	</launch>
+	<walkthrough>
+		<link title="Read Variables Tutorial" img="read.png" path="Variable\JavaVariableExampleWalkThrough.pdf"/>
+		<link title="Read Email Tutorial" img="read.png" path="Email\EmailExampleWalkthrough.pdf"/>
+		<link title="Read ProcessHTML Tutorial" img="read.png" path="ProcessHTML\ProcessHtmlWalkthrough.pdf"/>
+		<link title="Read Swing Form Tutorial" img="read.png" path="BasicSwingForm\BasicSwingExample.pdf"/>
+		<link title="Read Custom Function Tutorial" img="read.png" path="CustomFunction\JavaCustomFunctionWalkthrough.pdf"/>
+		<link title="Read Custom Callback Tutorial" img="read.png" path="WindwardCallbacks\JavaCustomCallbacksWalkthrough.pdf"/>
+
+		<link title="Read Ad-hoc Tutorial" img="read.png" path="Adhoc\JavaAdhocWalkthrough.pdf"/>
+	</walkthrough>
+	<links>
+		<link title="Documentation Wiki" img="read.png" url="http://rpt.me/JavaWiki"/>
+	</links>
+</demo>

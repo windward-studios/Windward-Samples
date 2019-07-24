@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!--  A sample invoice -->
+
+<orders>
+	<order
+		date="1 April 2012"
+		number="233"
+		entered="Shirley Clawson"
+		>
+
+		<customer>
+			<name>John Smith</name>
+			<company>Acme Industries</company>
+			<address street="1 Main St." city="Boulder" state="CO" zip="80302" />
+			<phone>303-555-1212</phone>
+			<order-number>53</order-number>
+		</customer>
+
+		<item>
+			<description>Windward Server</description>
+			<quantity>1</quantity>
+			<unit>1495.00</unit>
+			<total>1495.00</total>
+		</item>
+
+		<item>
+			<description>Windward Developer System</description>
+			<quantity>3</quantity>
+			<unit>149.00</unit>
+			<total>447.00</total>
+		</item>
+
+		<item>
+			<description>Support &amp; Updates - Server</description>
+			<quantity>1</quantity>
+			<unit>299.00</unit>
+			<total>299.00</total>
+		</item>
+
+		<item>
+			<description>Support &amp; Updates - Developer</description>
+			<quantity>3</quantity>
+			<unit>29.80</unit>
+			<total>89.40</total>
+		</item>
+
+		<price>
+			<subtotal>2330.40</subtotal>
+			<shipping>25.00</shipping>
+			<state-taxes>69.91</state-taxes>
+			<local-taxes>104.87</local-taxes>
+			<total>2530.18</total>
+			<terms days="30" interest="18"/>
+		</price>
+
+	</order>
+	<order
+		date="30 May 2012"
+		number="234"
+		entered="Billy the Intern"
+		>
+
+		<customer>
+			<name>Joe Brown</name>
+			<company>Acme Industries</company>
+			<address street="1 Main St." city="Boulder" state="CO" zip="80302" />
+			<phone>303-555-1212</phone>
+			<order-number>54</order-number>
+		</customer>
+
+		<item>
+			<description>Windward Server</description>
+			<quantity>1</quantity>
+			<unit>1885.00</unit>
+			<total>1885.00</total>
+		</item>
+
+		<item>
+			<description>Support &amp; Updates - Server</description>
+			<quantity>1</quantity>
+			<unit>349.00</unit>
+			<total>349.00</total>
+		</item>
+
+		<price>
+			<subtotal>2234.00</subtotal>
+			<shipping>25.00</shipping>
+			<state-taxes>68.52</state-taxes>
+			<local-taxes>101.37</local-taxes>
+			<total>2403.89</total>
+			<terms days="90" interest="17"/>
+		</price>
+		
+	</order>
+</orders>
