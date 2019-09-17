@@ -1,0 +1,9 @@
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\bin\Debug\CSharpClient.Tests.dll
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\bin\Debug\CSharpClient.Tests.pdb
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\bin\Debug\RESTfulEngine.CSharpClient.dll
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\bin\Debug\RESTfulEngine.CSharpClient.pdb
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\obj\Debug\CSharpClient.Tests.csprojAssemblyReference.cache
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\obj\Debug\CSharpClient.Tests.csproj.CoreCompileInputs.cache
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\obj\Debug\CSharpClient.Tests.csproj.CopyComplete
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\obj\Debug\CSharpClient.Tests.dll
+C:\Jenova\restfulengine\Clients\CSharpClient.Tests\obj\Debug\CSharpClient.Tests.pdb

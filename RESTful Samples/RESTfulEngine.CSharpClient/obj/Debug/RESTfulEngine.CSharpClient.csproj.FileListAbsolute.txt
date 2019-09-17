@@ -1,0 +1,6 @@
+C:\Jenova\restfulengine\Clients\RESTfulEngine.CSharpClient\bin\Debug\RESTfulEngine.CSharpClient.dll
+C:\Jenova\restfulengine\Clients\RESTfulEngine.CSharpClient\bin\Debug\RESTfulEngine.CSharpClient.pdb
+C:\Jenova\restfulengine\Clients\RESTfulEngine.CSharpClient\obj\Debug\RESTfulEngine.CSharpClient.csproj.CoreCompileInputs.cache
+C:\Jenova\restfulengine\Clients\RESTfulEngine.CSharpClient\obj\Debug\RESTfulEngine.CSharpClient.dll
+C:\Jenova\restfulengine\Clients\RESTfulEngine.CSharpClient\obj\Debug\RESTfulEngine.CSharpClient.pdb
+C:\Jenova\restfulengine\Clients\RESTfulEngine.CSharpClient\obj\Debug\RESTfulEngine.CSharpClient.csprojAssemblyReference.cache

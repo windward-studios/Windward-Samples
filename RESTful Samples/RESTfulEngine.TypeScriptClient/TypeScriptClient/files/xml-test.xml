@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trucking_Data>
+    <metadata>
+        <PeriodStart>04-25-2007</PeriodStart>
+        <PeriodEnd>06-25-2007</PeriodEnd>
+        <Title>Windward Dashboard Summary Report</Title>
+        <Address1>123 Main Stree</Address1>
+        <Address2></Address2>
+        <City>Boulder</City>
+        <State>CO</State>
+        <ZipCode>80301</ZipCode>
+    </metadata>
+     <Cost>
+            <Cube>1.33</Cube>
+            <Pound>0.06</Pound>
+            <Mile>1.00</Mile>
+            <Hundred_Cube>132.87</Hundred_Cube>
+            <Hundred_Weight>5.58</Hundred_Weight>
+            <Hundred_Mile>100.19</Hundred_Mile>
+            <Hundred_Cube-Mile>0.002237</Hundred_Cube-Mile>
+            <Hundred_Pound-Mile>0.000094</Hundred_Pound-Mile>
+    </Cost>
+    <ShippingLoad type="IM">
+        <Average>
+        <Type>IM</Type>
+        <Loads>1</Loads>
+        <Shipments>32.00</Shipments>
+        <Cost>20341.00</Cost>
+        <Mileage>2075</Mileage>
+        <Volume>893</Volume>
+        <Weight>22744</Weight>
+    </Average>
+        <Total>
+            <Type>IM</Type>
+            <Loads>1</Loads>
+            <Shipments>32</Shipments>
+            <Cost>20341.00</Cost>
+            <Mileage>2075</Mileage>
+            <Volume>893</Volume>
+            <Weight>22744</Weight>
+        </Total>
+    </ShippingLoad>
+    <ShippingLoad type="LTL">
+        <Average>
+            <Type>LTL</Type>
+            <Loads>174</Loads>
+            <Shipments>1.14</Shipments>
+            <Cost>148.19</Cost>
+            <Mileage>213</Mileage>
+            <Volume>86</Volume>
+            <Weight>2069</Weight>
+        </Average>
+        <Total>
+            <Type>LTL</Type>
+            <Loads>174</Loads>
+            <Shipments>198</Shipments>
+            <Cost>25785.73</Cost>
+            <Mileage>37073</Mileage>
+            <Volume>14917</Volume>
+            <Weight>360025</Weight>
+        </Total>
+    </ShippingLoad>
+    <ShippingLoad type="TL">
+        <Average>
+            <Type>TL</Type>
+            <Loads>4</Loads>
+            <Shipments>1.00</Shipments>
+            <Cost>830.84</Cost>
+            <Mileage>422</Mileage>
+            <Volume>647</Volume>
+            <Weight>15219</Weight>
+        </Average>
+        <Total>
+            <Type>TL</Type>
+            <Loads>4</Loads>
+            <Shipments>4</Shipments>
+            <Cost>3323.34</Cost>
+            <Mileage>1688</Mileage>
+            <Volume>2587</Volume>
+            <Weight>60878</Weight>
+        </Total>
+    </ShippingLoad>
+    <ShippingLoad type="TLR">
+    <Average>
+        <Type>TLR</Type>
+        <Loads>23</Loads>
+        <Shipments>7.22</Shipments>
+        <Cost>1220.25</Cost>
+        <Mileage>807</Mileage>
+        <Volume>1148</Volume>
+        <Weight>27059</Weight>
+    </Average>
+    <Total>
+        <Type>TLR</Type>
+        <Loads>23</Loads>
+        <Shipments>166</Shipments>
+        <Cost>28065.85</Cost>
+        <Mileage>18569</Mileage>
+        <Volume>26393</Volume>
+        <Weight>622362</Weight>
+    </Total>
+    </ShippingLoad>
+</Trucking_Data>

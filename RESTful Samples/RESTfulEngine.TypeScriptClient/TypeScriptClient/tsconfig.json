@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true
+    },
+    "filesGlob": [
+        "**/*.ts",
+        "!node_modules/**"
+    ],
+    "files": [
+        "app.ts",
+        "sample-index.ts",
+        "Scripts/typings/express/express.d.ts",
+        "Scripts/typings/jquery/jquery.d.ts",
+        "Scripts/typings/node/node.d.ts",
+        "Scripts/typings/stylus/stylus.d.ts",
+        "src/Client.ts",
+        "src/datasource/AdoDataSource.ts",
+        "src/datasource/DataSource.ts",
+        "src/datasource/JsonDataSource.ts",
+        "src/datasource/ODataDataSource.ts",
+        "src/datasource/TemplateVariable.ts",
+        "src/datasource/XmlDataSource.ts",
+        "src/report/Report.ts",
+        "src/report/ReportCsv.ts",
+        "src/report/ReportDocx.ts",
+        "src/report/ReportHtml.ts",
+        "src/report/ReportPdf.ts",
+        "src/report/ReportPptx.ts",
+        "src/report/ReportRtf.ts",
+        "src/report/ReportXlsx.ts",
+        "src/Version.ts",
+        "tests/TestClient.ts",
+        "tests/TestDataSource.ts",
+        "tests/TestJsonDataSource.ts",
+        "tests/TestODataDataSource.ts",
+        "Utils.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
