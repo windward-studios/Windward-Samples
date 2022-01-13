@@ -1,0 +1,3 @@
+Containerizing a Custom Java Engine Solution with Docker
+========
+This sample contains the files necessary for creating a custom implementation of the Windward Java engine inside a Docker Container. This sample creates an image that will run the included sample template to generate the Report.pdf file as output. The guide that walks through this process is located [here](https://ohana.windwardstudios.com/m/79484).
