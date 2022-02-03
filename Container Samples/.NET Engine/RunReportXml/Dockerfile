@@ -26,6 +26,7 @@ WORKDIR /app
 RUN mkdir Release
 COPY --from=build /app/RunReportXml/bin/Release ./Release
 
+# copy over the files for output using pdftron
 COPY ./pdftronredist ./
 
 RUN mkdir Samples
