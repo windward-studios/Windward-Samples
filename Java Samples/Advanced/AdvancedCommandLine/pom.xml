@@ -14,16 +14,6 @@
     </properties>
     <repositories>
         <repository>
-            <id>InternalJenovaRepo</id>
-            <url>https://windwardstudios.pkgs.visualstudio.com/Jenova/_packaging/InternalJenovaRepo/maven/v1</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
             <id>windward-maven-repo</id>
             <name>windward-maven-repo</name>
             <url>https://windward.mycloudrepo.io/public/repositories/windward-group</url>
