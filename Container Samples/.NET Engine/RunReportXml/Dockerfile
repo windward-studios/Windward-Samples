@@ -5,9 +5,7 @@ WORKDIR /app
 # Copy the Necessary Files over to the image
 COPY RunReportXml.sln .
 RUN mkdir RunReportXml
-RUN mkdir Samples
 COPY RunReportXml/RunReportXml.csproj RunReportXml/App.config RunReportXml/RunReportXml.cs ./RunReportXml/
-COPY Samples ./Samples
 WORKDIR /app/RunReportXml
 RUN mkdir Properties
 COPY RunReportXml/Properties/AssemblyInfo.cs Properties
@@ -27,8 +25,12 @@ FROM mcr.microsoft.com/dotnet/framework/runtime:4.8 AS runtime
 WORKDIR /app
 RUN mkdir Release
 COPY --from=build /app/RunReportXml/bin/Release ./Release
+
+# copy over the files for output using pdftron
+COPY ./pdftronredist ./
+
 RUN mkdir Samples
-COPY --from=build /app/Samples ./Samples
+COPY ./Samples ./Samples
 
 # Set the Entry point of the container to the application
 WORKDIR /app/Release
