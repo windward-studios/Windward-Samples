@@ -9,7 +9,7 @@ import java.io.*;
 import net.windward.datasource.DataSourceProvider;
 import net.windward.datasource.xml.SaxonDataSource;
 import net.windward.xmlreport.ProcessPdf;
-import net.windward.xmlreport.ProcessReportAPI;
+import net.windward.xmlreport.ProcessReport;
 import net.windward.env.SystemWrapper;
 
 /*
@@ -28,7 +28,7 @@ public class BasicXml {
             File fileReport = new File("out/report.pdf");
 			FileInputStream template = new FileInputStream("data/template.docx");
 			FileOutputStream reportStream = new FileOutputStream(fileReport);
-            ProcessReportAPI report = new ProcessPdf(template, reportStream);
+            ProcessReport report = new ProcessPdf(template, reportStream);
             
 			// Preparation...
 			report.processSetup();
