@@ -1,5 +1,5 @@
 ### Overview
-These files are used to create a command-line `.class` file which is the equivalent of the sample located in the `/test` folder of the [Windward Reports Java Engine](https://www.windwardstudios.com/version/version-downloads) zip file.
+These files are used to create a command-line `.class` file utilizing the [Windward Reports Java Engine](https://www.windwardstudios.com/version/version-downloads) jars from the zip file. This example enables easy configuration and run shell commands.
 
 ### Requirements
 - [Windward Reports Java Engine](https://www.windwardstudios.com/version/version-downloads)
