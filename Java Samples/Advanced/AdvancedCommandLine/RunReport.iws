@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6ed513-5ecc-4640-a99b-d510d1d253ec" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/JavaCommandLineWalkthrough.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaCommandLineWalkthrough.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunReport.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RunReport.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunReport.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/RunReport.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RunReport.iws" beforeDir="false" afterPath="$PROJECT_DIR$/RunReport.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adv_cmd_line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/open_intellij.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/read.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdvancedServlet/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../AdvancedServlet/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdvancedServlet/advanced_servlet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdvancedServlet/open_intellij.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdvancedServlet/read.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +91,9 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
@@ -154,7 +167,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/RunReport.ipr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../jars" />
     <property name="options.lastSelected" value="preferences.pathVariables" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -162,13 +175,14 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunReportXml">
+  <component name="RunManager" selected="Application.RunReport">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -202,8 +216,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunReportXml" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="RunReportXml" />
+    <configuration name="RunReportWithoutLaunch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="RunReport" />
       <module name="RunReport" />
       <option name="PROGRAM_PARAMETERS" value="samples\InvoiceTemplate.docx Invoice2.pdf -xml samples\Order.xml" />
       <RunnerSettings RunnerId="Debug">
@@ -237,7 +251,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.RunReport" />
-      <item itemvalue="Application.RunReportXml" />
+      <item itemvalue="Application.RunReportWithoutLaunch" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -307,7 +321,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
