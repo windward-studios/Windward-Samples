@@ -1,4 +1,4 @@
 JSON Batch Processing with C#
 ========
 This sample contains the files necessary to demonstrate batch processing with a JSON data source. The JSON file provided in the Data folder in the sample directory contains a list of records, with each entry corresponding to an order. The sample will parse this list of records, and create a request to process a simple Invoice template for each record. The completed documents will then be saved in the GeneratedDocs folder. 
-In order for this sample to work, simply provide a valid Windward RESTful engine license (a trial license will work) in the Program.cs file, and run it. 
+In order for this sample to work, open the JsonBatchProcessing.sln file with Visual Studio, enter a valid Windward RESTful engine license (a trial license will work) in the JsonBatchProcessing.cs file, and run it. 
