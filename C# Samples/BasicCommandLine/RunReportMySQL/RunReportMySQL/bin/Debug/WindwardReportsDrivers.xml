@@ -1,0 +1,2371 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WindwardReportsDrivers</name>
+    </assembly>
+    <members>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag and to access url (and file) based datasources.
+            Each access provider can be treated as a singleton.
+            This extends BaseAccessProvider to include properties needed by AutoTag.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.Name">
+            <summary>
+            The name of this access provider. Should be of the form "Anonymous". This should never change.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.Display">
+            <summary>
+            true if this provider should be displayed in AutoTag.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.NeedCredentials(System.String)">
+            <summary>
+            Returns true if this connection string is missing some required settings.
+            </summary>
+            <param name="connectionString"></param>
+            <returns>true if needs some properties set.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.GetPropStatus(System.Collections.Generic.List{WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus})">
+            <summary>
+            Sets the IsEnabled and IsRequired appropiately for each property.
+            </summary>
+            <param name="propStatus">The Key and Value must be set on entry.</param>
+            <returns>The propStatus passed in, with the updated values.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.CanUseWindowsIdentity">
+            <summary>
+            true if this provider can be set to use WindowsIdentity for credentials.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ConnectionAuthenticated">
+            <summary>
+            true if the connection to the remote server is authenticated. false if it needs to be authenticated.
+            This is for the OAuth2 case where the authentication occurs outside of our code.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.AuthenticateConnection(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Authenticate the connection for the user involved. This is for the OAuth2 case where the authentication
+            occurs outside of our code.
+            </summary>
+            <param name="props">The connection string properties.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.getName">
+            <summary>
+            Do not implement this. Only use it in the common Java engine. This builds the name from Name.
+            </summary>
+            <returns>The name of this access provider. Should be of the form "Anonymous". This should never change.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.getDescription">
+            <summary>
+            Do not implement this. Only use it in the common Java engine. This builds the description from Description.
+            </summary>
+            <returns>A long tooltip type description of this provider.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.GetAllProperties(System.String)">
+            <summary>
+            Turn a connection string into a hashmap. All props are copied across.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <returns>The connection string as a dictionary of name value pairs.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.readImport(System.String,System.String)" -->
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.getConnectionStringProperties(System.String)">
+            <summary>
+            Do not implement this. Only use it in the common Java engine. This builds the map from GetConnectionStringProperties.
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.createConnectionString(java.util.Map)">
+            <summary>
+            Do not implement this. Only use it in the common Java engine. This builds the string from CreateConnectionString.
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.GetStream(System.String)">
+            <summary>
+            Create the correct provider, read from it and return the response.
+            </summary>
+            <param name="connectionString">The file to read.</param>
+            <returns>The read in file contents.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ResponseFull">
+            <summary>
+            Use this instead of BaseAccessProvider.Response. Provides a .NET stream.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ResponseFull.#ctor(net.windward.util.AccessProviders.BaseAccessProvider.Response)">
+            <summary>
+            Copy constructor. Shallow copy (the stream object is copied across).
+            </summary>
+            <param name="src">Create a clone of this.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ResponseFull.Filename">
+            <summary>
+            The full filename of the file.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ResponseFull.getStream">
+            <summary>
+            Called by .NET JSON datasource because the .NET part is a wrapper over the Java datasource.
+            </summary>
+            <returns>The response stream as a Java dotnetStream.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ResponseFull.GetResponseStream">
+            <summary>
+            The response stream. Same as calling getStream().
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ResponseFull.close">
+            <summary>
+            Close the stream held by this.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ResponseFull.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ConnectionFull">
+            <summary>
+            Use this instead of BaseAccessProvider.Connection. Provides .NET streams.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ConnectionFull.request(System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ConnectionFull.Request(System.String,System.String)" -->
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.ConnectionFull.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo">
+            <summary>
+            The info describing an authentication property.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.#ctor(System.String,System.String,System.String,System.String,System.Type,System.Boolean)">
+            <summary>
+            Create the object
+            </summary>
+            <param name="prompt">The prompt for this property. This can be different from the Key.</param>
+            <param name="description">A tooltip length description of this property.</param>
+            <param name="key">The key= part of this property in the connection string.</param>
+            <param name="defaultValue">The default value for this property. Set to null if none.</param>
+            <param name="propType">The type for the value. While the connection string is all text, if this is Int32 for 
+                example, then the string for the value for this needs to be in the form "123".</param>
+            <param name="isPassword">true if this is a password and should be displayed as *****.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.#ctor(System.String,System.String,System.String,System.String,System.Type,System.Boolean,System.String[])">
+            <summary>
+            Create the object
+            </summary>
+            <param name="prompt">The prompt for this property. This can be different from the Key.</param>
+            <param name="description">A tooltip length description of this property.</param>
+            <param name="key">The key= part of this property in the connection string.</param>
+            <param name="defaultValue">The default value for this property. Set to null if none.</param>
+            <param name="propType">The type for the value. While the connection string is all text, if this is Int32 for 
+                example, then the string for the value for this needs to be in the form "123".</param>
+            <param name="isPassword">true if this is a password and should be displayed as *****.</param>
+            <param name="allowedValues">If set then these are the only allowed value for this value. If Required is 
+                false, then the empty string is also allowed.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.Prompt">
+            <summary>
+            The prompt for this property. This can be different from the Key.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.Description">
+            <summary>
+            A tooltip length description of this property.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.Key">
+            <summary>
+            The key= part of this property in the connection string.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.DefaultValue">
+            <summary>
+            The default value for this property. Set to null if none.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.PropType">
+            <summary>
+            The type for the value. While the connection string is all text, if this is Int32 for example, then
+            the string for the value for this needs to be in the form "123".
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.IsPassword">
+            <summary>
+            true if this is a password and should be displayed as *****.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.IsValueListPlus">
+            <summary>
+            A ValueList is provided, but any string can be entered, not just items in the list.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.IsValueListFlags">
+            <summary>
+            The provided ValueList is flag values. Multiple items on the list can be selected.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropertyInfo.AllowedValues">
+            <summary>
+            If set then these are the only allowed value for this value. If Required is false, then the empty string is also allowed.
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus">
+            <summary>
+            Use to pass in and get back if each property is required and/or enabled.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus.#ctor(System.String,System.String)">
+            <summary>
+            Create the object.
+            </summary>
+            <param name="key">The key= part of this property in the connection string.</param>
+            <param name="value">The value for this property.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus.Key">
+            <summary>
+            The key= part of this property in the connection string.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus.Value">
+            <summary>
+            The value for this property.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus.IsRequired">
+            <summary>
+            true if this must be set. false if it can be left blank.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus.IsEnabled">
+            <summary>
+            true if this property should be enabled. false if disabled (can't enter anything).
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.FullAccessProviderFactory">
+            <summary>
+            Factory to return all access providers. Custom providers with identical names to the standard providers will replace
+            the standard ones.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.FullAccessProviderFactory.GetAccessProvider(System.String)">
+            <summary>
+            Get the access provider for this connection string.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <returns>The requested provider. null if not found.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.FullAccessProviderFactory.GetAccessProviderNoDefault(System.String)">
+            <summary>
+            Get the access provider for this connection string. Will not return the anonymous provider if none is specified.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <returns>The requested provider. null if not found.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.FullAccessProviderFactory.Providers">
+            <summary>
+            Get all the providers.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.FullAccessProviderFactory.getProviders">
+            <summary>
+            This is for the engine's use only. It needs the providers as a Java list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag and to access url based datasources
+            using Digest access.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider.Name">
+            <summary>
+            Returns "Digest".
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider.NeedCredentials(System.String)">
+            <summary>
+            Returns true if this connection string is missing some required settings.
+            </summary>
+            <param name="connectionString"></param>
+            <returns>true if needs some properties set.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AllHttpAccessProvider.Request(System.String,System.Net.NetworkCredential,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Used to do the actual request by ConnectionHttp.
+            </summary>
+            <param name="url">The url to read. Can be full or added to base defined in the connection.</param>
+            <param name="credentials">The credentials for the read. Can be null (for anonymous).</param>
+            <param name="headers">All http header values to set, including accept and content-type.</param>
+            <param name="allProps">All the properties in the connection string.</param>
+            <returns>The response to this request.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag and to access url based datasources
+            using Anonymous access.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.GetPropStatus(System.Collections.Generic.List{WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus})">
+            <summary>
+            Sets the IsEnabled and IsRequired appropiately for each property.
+            </summary>
+            <param name="propStatus">The Key and Value must be set on entry.</param>
+            <returns>The propStatus passed in, with the updated values.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.NeedCredentials(System.String)">
+            <summary>
+            Returns true if this connection string is missing some required settings.
+            </summary>
+            <param name="connectionString"></param>
+            <returns>true if needs some properties set.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.Name">
+            <summary>
+            The name of this access provider. Should be of the form "Anonymous". This should never change.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.AnonymousAccessProvider.Request(System.String,System.Net.NetworkCredential,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Used to do the actual request by ConnectionHttp.
+            </summary>
+            <param name="url">The url to read. Can be full or added to base defined in the connection.</param>
+            <param name="credentials">The credentials for the read. Can be null (for anonymous).</param>
+            <param name="headers">All http header values to set, including accept and content-type.</param>
+            <returns>The response to this request.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.BasicAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag and to access url based datasources
+            using Basic access.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.BasicAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.BasicAccessProvider.Name">
+            <summary>
+            Returns "Basic".
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.BasicAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.BasicAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.BasicAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.BasicAccessProvider.Request(System.String,System.Net.NetworkCredential,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Used to do the actual request by ConnectionHttp.
+            </summary>
+            <param name="url">The url to read. Can be full or added to base defined in the connection.</param>
+            <param name="credentials">The credentials for the read. Can be null (for anonymous).</param>
+            <param name="headers">All http header values to set, including accept and content-type.</param>
+            <returns>The response to this request.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.DigestAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag and to access url based datasources
+            using Digest access.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.DigestAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.DigestAccessProvider.Name">
+            <summary>
+            Returns "Digest".
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.DigestAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.DigestAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.DigestAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.DigestAccessProvider.Request(System.String,System.Net.NetworkCredential,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Used to do the actual request by ConnectionHttp.
+            </summary>
+            <param name="url">The url to read. Can be full or added to base defined in the connection.</param>
+            <param name="credentials">The credentials for the read. Can be null (for anonymous).</param>
+            <param name="headers">All http header values to set, including accept and content-type.</param>
+            <returns>The response to this request.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag reading from the apps resources. This would
+            probably work for a datasource too, but that would be an unusual use case to say the least.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.Name">
+            <summary>
+            The name of this access provider. Should be of the form "EmbeddedResource". This should never change.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.Display">
+            <summary>
+            true if this provider should be displayed in AutoTag. Returns false.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.establishConnection(System.String,System.String)" -->
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.EmbeddedResourceAccessProvider.EmbeddedResourceConnection.Request(System.String,System.String)" -->
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag and to access file based datasources.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.Name">
+            <summary>
+            The name of this access provider. Should be of the form "Anonymous". This should never change.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.GetPropStatus(System.Collections.Generic.List{WindwardReportsDrivers.net.windward.AccessProviders.BaseFullAccessProvider.PropInfoStatus})">
+            <summary>
+            Sets the IsEnabled and IsRequired appropiately for each property.
+            </summary>
+            <param name="propStatus">The Key and Value must be set on entry.</param>
+            <returns>The propStatus passed in, with the updated values.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.establishConnection(System.String,System.String)" -->
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.FileSystemAccessProvider.FileSystemConnection.Request(System.String,System.String)" -->
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider">
+            <summary>
+            Base class for all the http authentication protocols.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.InitializeSecurityProtocol">
+            <summary>
+            Initialize the ServicePointManager.SecurityProtocol to maximum protocols allowed.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.NeedCredentials(System.String)">
+            <summary>
+            Returns true if this connection string is missing some required settings.
+            </summary>
+            <param name="connectionString"></param>
+            <returns>true if needs some properties set.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.establishConnection(System.String,System.String)" -->
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.GetUrl(System.String,System.String)">
+            <summary>
+            Get the site URL.
+            </summary>
+            <param name="url">url to the host.</param>
+            <param name="baseDirectory">the optional base directory to the site.</param>
+            <returns>The url of the site.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.GetAllConnectionStringProperties(System.String)">
+            <summary>
+            Get every prop in the connection string
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>All the properties in the connection string</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.Request(System.String,System.Net.NetworkCredential,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Used to do the actual request by ConnectionHttp.
+            </summary>
+            <param name="url">The url to read. Can be full or added to base defined in the connection.</param>
+            <param name="credentials">The credentials for the read. Can be null (for anonymous).</param>
+            <param name="headers">All http header values to set, including accept and content-type.</param>
+            <returns>The response to this request.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.CallRequest(System.String,System.Net.NetworkCredential,System.Collections.Generic.IDictionary{System.String,System.String},System.Action{System.String,System.Net.NetworkCredential,System.Net.WebRequest})">
+            <summary>
+            Make the request and get the response. This can do several tries using different protocol versions.
+            </summary>
+            <param name="url">The url we are going to request.</param>
+            <param name="credentials">The credentials for the read. Can be null (for anonymous).</param>
+            <param name="headers">Headers for the request.</param>
+            <param name="populate">The protocol specific code to populate the request.</param>
+            <returns>The response to this request.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.BuildRequest(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Version)">
+            <summary>
+            Create the request and add all headers.
+            </summary>
+            <param name="url">The url we are going to request.</param>
+            <param name="headers">Headers for the request.</param>
+            <returns>The request object, that can now be called to get the response.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ResponseHttp">
+            <summary>
+            The response returned by an http request.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ResponseHttp.getFilename">
+            <summary>
+            Get the file name from the HTTP response headers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ResponseHttp.Response">
+            <summary>
+            The web response from the request.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ResponseHttp.close">
+            <summary>
+            close the WebResponse resource.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ResponseHttp.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ConnectionHttp">
+            <summary>
+            An authenticated connection that can now make multiple requests of the client.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ConnectionHttp.#ctor(WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider,System.String,System.Uri)">
+            <summary>
+            Create the object. This can then perform multiple requests.
+            </summary>
+            <param name="provider">The provider that created this object.</param>
+            <param name="connectionString">The connection string to connect to a web service.</param>
+            <param name="root">The root url.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ConnectionHttp.Request(System.String,System.String)" -->
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.HttpAccessProvider.ConnectionHttp.getRoot">
+            <summary>
+            The root URL, file, etc. for this connection. This will be pre-pended to any request if the request url is not fully qualified.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.AccessProviders.protocols.NegotiateAccessProvider">
+            <summary>
+            This implements a system to import files requested via the import tag and to access url based datasources
+            using NTLM access.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.NegotiateAccessProvider.Properties">
+            <summary>
+            Definition of all properties for this provider.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.NegotiateAccessProvider.Name">
+            <summary>
+            Returns "NTLM".
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.AccessProviders.protocols.NegotiateAccessProvider.Description">
+            <summary>
+            A long tooltip type description of this provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.NegotiateAccessProvider.GetConnectionStringProperties(System.String)">
+            <summary>
+            Pass in a connection string and it will return it as a hashmap. This will ignore any invalid properties in the
+            connection string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>The properties pulled from the connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.NegotiateAccessProvider.CreateConnectionString(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            For a set of properties creates a connection string. This will ignore any invalid properties in the connection
+            string and will add any hard-coded values(overwriting existing ones if they are wrong).
+            </summary>
+            <param name="properties">The properties to build the connection string from.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.AccessProviders.protocols.NegotiateAccessProvider.Request(System.String,System.Net.NetworkCredential,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Used to do the actual request by ConnectionHttp.
+            </summary>
+            <param name="url">The url to read. Can be full or added to base defined in the connection.</param>
+            <param name="credentials">The credentials for the read. Can be null (for anonymous).</param>
+            <param name="headers">All http header values to set, including accept and content-type.</param>
+            <returns>The response to this request.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper">
+            <summary>
+                This represents a node in the datasource. Every time a forEach loop is entered one of these nodes must be created
+                and
+                is pushed on to the stack of forEach nodes.When a forEach is exited, the node is pop'ed off the stack. The base
+                node is the DataSourceProvider.getRootNode().
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper.AdjustSelect(net.windward.datasource.abstract_datasource.AbstractDataSourceNode,System.String,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+                Will return the select that will be passed down to the database with all
+                the ${vars}, etc substituted in.
+            </summary>
+            <param name="select">The select to adjust.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document
+                node so this will always have length of at least 1.
+            </param>
+            <returns>The adjusted select.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper.GetForEach(net.windward.datasource.abstract_datasource.AbstractDataSourceNode,net.windward.tags.ForEachTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+            This method is only called by AutoTag.  It returns a DataTable of the rows a ForEach tag will return.
+            </summary>
+            <param name="dataSourceNode">The data source node to operate on.</param>
+            <param name="tag">The ForEach tag.</param>
+            <param name="stack">The node stack at the ForEach tag location.</param>
+            <returns>The DataTable of the rows returned.  May return something else.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper.GetQuery(net.windward.datasource.abstract_datasource.AbstractDataSourceNode,net.windward.tags.BaseTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+                This method is only called by AutoTag. It returns a DataTable of the row a query tag will return. Even if the
+                select in a
+                query could return multiple rows, this returns just the first row.
+            </summary>
+            <param name="tag">The query tag.</param>
+            <param name="stack">The node stack at the query tag location.</param>
+            <returns>The DataTable with the row returned.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper.GetSet(net.windward.datasource.abstract_datasource.AbstractDataSourceNode,net.windward.tags.SetTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode},java.util.Locale)">
+            <summary>
+                This method is only called by AutoTag. It returns the text a set tag will return.
+            </summary>
+            <param name="tag">The set tag.</param>
+            <param name="stack">The node stack at the forEach tag location.</param>
+            <returns>The result of a set tag.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper.GetMetaData(net.windward.datasource.abstract_datasource.AbstractDataSourceNode,net.windward.tags.BaseTag,System.Int32,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+                Calls the select for a tag and returns the nodes returned by the select.
+            </summary>
+            <param name="tag">The tag to run.</param>
+            <param name="index">For a chart tag this is which graph in the chart to run the select on.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document
+                node so this will always have length of at least 1.
+            </param>
+            <returns>The metadata for the select.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper.GetDbType(System.String)">
+            <summary>
+                Convert a RDL parameter type to a DbType.
+            </summary>
+            <param name="typeName">The name of the type.</param>
+            <returns>The equivalent DbType.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.AbstractDataSourceMetaDataHelper.GetDbType(System.Type)">
+            <summary>
+                Convert a variable type to a DbType.
+            </summary>
+            <param name="type">The variable type.</param>
+            <returns>The equivilent DbType.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.IDataSourceDotNetQueryHelper.IsSelect(System.String)">
+            <summary>
+                Called by the AbstractDataSourceProvider to determine if a string is a select. Note that this
+                string may have un-substituted variables, so it may not yet be a valid select
+            </summary>
+            <param name="select"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.IDataSourceDotNetResultSet">
+            <summary>
+                A result set from a query. This extends the Java interface with calls needed for AutoTag.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.IDataSourceDotNetResultSet.GetDataTable(net.windward.tags.BaseTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode},System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Gets the full result set as a DataTable. This method is used by the abstract datasource
+                to populate wizard results in AT.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.abstract_datasource.IDataSourceDotNetResultSet.GetColumnType(System.String)">
+            <summary>
+                Used for metadata, returns the type of the field.
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource">
+            <summary>
+                This supplies a data source to Windward Reports using ADO.NET. The DataSourceProvider class is built on the concept
+                of
+                xml nodes. For this class, a node is a DbDataReader returned by a ADO call to DbCommand.ExecuteReader().<br />
+                An xml file always has the concept of the current node. This is not the case with a sql database - there is no
+                current
+                DbDataReader. A DbDataReader is only generated by the wr:query and the wr:foreach tags. Therefore, all other tags
+                only
+                make sense if they use the var attribute from a query or foreach to identify the DbDataReader they are to be
+                applied
+                to. A tag not identifying a DbDataReader will throw an exception.<br />
+                A query or foreach tag can reference a var from another query or foreach tag using ${var.item}.. An XPath query can
+                describe a node as well as an element. In this class a query defines a DbDataReader and is only an element.<br />
+                Also, with xml you can use xpath in each tag performing complex logic in determining what text to return. It
+                is very different for sql. The foreach or query can have complex logic. But the other tags can only return
+                an element from a result set that the foreach/query earlier returned or do a single select.<br />
+                When using a var (&lt;wr:forEach var="result"/&gt;) that identifies a result set, you can use the following in a
+                tag:
+                <ul>
+                    <li>${result[1]} - is column element [1] in the row presently on (1-based)</li>
+                    <li>${result[2][1]} - is column element [1] in the row + 2 presently on (0-based)</li>
+                    <li>${result.NAME} - is the column element named NAME in the row presently on</li>
+                    <li>${result[2].NAME} - is the column element named NAME in the row + 2 presently on</li>
+                    <li>${result.columnNames[1]} - is the name of column 1 (1-based)</li>
+                </ul>
+                The use of result[N] where N is a row number is limited to values of 0...N where N is step-1. result[1] is treated
+                as column 1 of the row presently on, it is only result[0][1] and result[0].NAME that can hit rows other than the
+                row presently on. This functionality requires a result set that can move to previous as well as next. If the ADO
+                driver you use cannot handle a call to previous, you cannot use this functionality.
+                An &lt;if select= ... &gt; will return true if the passed in select returns a DbDataReader with one or more rows.
+                An
+                &lt;if select="select count (*) from customers" <b>notEmpty="true"</b>&gt; will perform two steps. The first step
+                is it will
+                return false if there are no results returned. If results are returned it assumes the select is a count and will do
+                a
+                <code>return DbDataReader.getInt(1) > 0;</code>. This does not look at the select statement, it is the
+                notEmpty="true" that
+                puts it in this mode.
+            </summary>
+            <author>
+                David Thielen
+            </author>
+            <version>
+                4.0 3 November 2005
+            </version>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.stripConditionsOnSchemaSelect" -->
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.closeConnectionsImmediately">
+            <summary>if true then we close connections when called. If false (the default), it's in a worker thread.</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.OpenConnection" -->
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.getDatasourceName">
+            <summary>
+                Returns the name of this type in the form "sql", "xml", etc.
+            </summary>
+            <returns>"sql"</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode">
+            <summary>
+                Implementation of DataSourceNode for this datasource.
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.AdoIterator">
+            <summary>
+                The DataSourceIterator implementation for this datasource provider.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.AdoIterator.#ctor(net.windward.tags.ForEachTag,net.windward.datasource.DataSourceNode[],WindwardReportsDrivers.net.windward.datasource.abstract_datasource.IDataSourceDotNetResultSet,WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource)">
+            <summary>
+                Create the iterator object.
+            </summary>
+            <param name="parent">The parent node iterating on.</param>
+            <param name="tag">The tag requestiong the iteration.</param>
+            <param name="stack">The node stack at the tag location.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.AdoIterator.next">
+            <summary>
+                Returns the next node in the iteration. This will always return an object of type AdoNode.
+            </summary>
+            <returns>the next element in the iteration.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.#ctor(net.windward.datasource.abstract_datasource.IDataSourceResultRow,WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource)">
+            <summary>
+                Create the object.
+            </summary>
+            <param name="parent">Parent datasource.</param>
+            <param name="ddr">DataRecord for this node.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.makeDataSourceIterator(net.windward.tags.ForEachTag,net.windward.datasource.DataSourceNode[],net.windward.datasource.abstract_datasource.IDataSourceResultSet)">
+            <summary>
+                Create a DataSourceIterator for a given DataSourceResultSet. This is implemented in the class that subclasses
+                the AbstractDataSource to use the DataSourceIterator derived class for its class.
+            </summary>
+            <param name="tag">The forEach tag that creates the iteration.</param>
+            <param name="stack">The stack of tags it is inside.</param>
+            <param name="data">The data to be iterated over</param>
+            <returns></returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.isSelect(System.String,System.Boolean)">
+            <summary>
+                Returns true if the passed in string is a select, false if it's a value= or evaluate= string.
+            </summary>
+            <param name="select">The select.</param>
+            <param name="textIsNode">not used.</param>
+            <returns>true if a select, false if an evalute.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.getQueryMode(System.String,net.windward.tags.BaseTag)">
+            <summary>
+                Determine the query mode of a given string
+            </summary>
+            <param name="query">Query string to determine the mode of.</param>
+            <param name="tag">The tag this select is for. This may be null.</param>
+            <returns>BaseTag.MODE_NONE, BaseTag.MODE_VALUE, BaseTag.MODE_EVALUATE, or BaseTag.MODE_SELECT</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.AdoNode.TopNSelect(System.String,System.Int32)">
+            <summary>
+            Convert the select to return just the top N row from the results. 
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="num">The max number of rows to return. Warning, if reducing for a forEach iteration, must be the step size (or larger).</param>
+            <returns>The select with "top N" added.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.#ctor(System.Type,System.String)">
+            <summary>
+                Create a DataSourceProvider that uses Ado to access a SQL database. This constructor calls
+                new IDbConnection(connectionString) to create a connection. Each forEach and query tag will also cause
+                a connection to be created.
+                Example:
+                Access: typeof(System.Data.Odbc), "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=Northwind.mdb"
+                DB2: typeof(IBM.Data.DB2), "server=db2.windwardreports.com;database=SAMPLE;Uid=demo;Pwd=demo;"
+                Excel: typeof(System.Data.OleDb), "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Northwind Mini -
+                Data.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\""
+                MySql: typeof(MySql.Data.MySqlClient), "server=mysql.windwardreports.com;database=sakila;user
+                id=demo;password=demo;"
+                ODBC: typeof(System.Data.Odbc), "Driver={Sql Server};Server=localhost;Database=Northwind;User
+                ID=test;Password=pass;"
+                OleDB: typeof(System.Data.OleDb), "Provider=sqloledb;Data Source=localhost;Initial Catalog=Northwind;User
+                ID=test;Password=pass;"
+                Oracle: typeof(Oracle.DataAccess.Client), "Data Source=oracle.windwardreports.com:1521/HR;Persist Security
+                Info=True;Password=HR;User ID=HR"
+                Do not use System.Data.OracleClient - even Microsoft discourages its use.
+                SqlServer: typeof(System.Data.SqlClient), "Data Source=mssql.windwardreports.com;Initial
+                Catalog=Northwind;user=demo;password=demo;"
+            </summary>
+            <param name="type">
+                The type of the IDbConnection driver. For example, for SqlServer this would be
+                typeof(SqlConnection).
+            </param>
+            <param name="connectionString">The connection string used in the IDbConnection constructor.</param>
+            <throws>  DataSourceException thrown if anything goes wrong. </throws>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.#ctor(System.String,System.String)">
+            <summary>
+                Create a DataSourceProvider that uses Ado to access a SQL database. This constructor calls
+                DbProviderFactories.GetFactory(providerName) to get a provider and uses that provider and the connection
+                string to create a connection. Each forEach and query tag will also cause
+                a connection to be created.
+                Example:
+                Access: "System.Data.Odbc", "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=Northwind.mdb"
+                DB2: "IBM.Data.DB2", "server=db2.windwardreports.com;database=SAMPLE;Uid=demo;Pwd=demo;"
+                Excel: "System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Northwind Mini - Data.xlsx;Extended
+                Properties=\"Excel 12.0 Xml;HDR=YES\""
+                MySql: "MySql.Data.MySqlClient", "server=mysql.windwardreports.com;database=sakila;user id=demo;password=demo;"
+                ODBC: "System.Data.Odbc", "Driver={Sql Server};Server=localhost;Database=Northwind;User ID=test;Password=pass;"
+                OleDB: "System.Data.OleDb", "Provider=sqloledb;Data Source=localhost;Initial Catalog=Northwind;User
+                ID=test;Password=pass;"
+                Oracle: "Oracle.DataAccess.Client", "Data Source=oracle.windwardreports.com:1521/HR;Persist Security
+                Info=True;Password=HR;User ID=HR"
+                Do not use System.Data.OracleClient - even Microsoft discourages its use.
+                SqlServer: "System.Data.SqlClient", "Data Source=mssql.windwardreports.com;Initial
+                Catalog=Northwind;user=demo;password=demo;"
+            </summary>
+            <param name="providerName">The invariant name of the provider. For example, for SqlServer this would be "System.Data.SqlClient".</param>
+            <param name="connectionString">The connection string used in the IDbConnection constructor.</param>
+            <throws>  DataSourceException thrown if anything goes wrong. </throws>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.Vendor">
+            <summary>
+            Used to create connections - not the parent vendor object.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.ConnectionString">
+            <summary>
+            The connection string to this datasource. This includes the password in plaintext.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.close">
+            <summary>
+                Called when processing is complete. Used to close any resources opened by this object. Will close the Ado
+                connection if this object created the connection.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.getQueryMode(System.String,net.windward.tags.BaseTag)">
+            <summary>
+                Determine the query mode of a given string
+            </summary>
+            <param name="query">Query string to determine the mode of.</param>
+            <param name="tag">The tag this select is for. This may be null.</param>
+            <returns>BaseTag.MODE_NONE, BaseTag.MODE_VALUE, BaseTag.MODE_EVALUATE, or BaseTag.MODE_SELECT</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.getTagAttributes">
+            <summary> Returns the allowed attributes for all tags.</summary>
+            <returns> The tag attributes.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.ado.AdoDataSource.Properties">
+            <summary>
+                All of the properties for this datasource connection. May Include the password unencrypted.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.ado.AdoQueryHelper.Vendor">
+            <summary>
+            The vendor for this datasource.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:WindwardReportsDrivers.net.windward.datasource.ado.AdoQueryHelper.OpenConnection" -->
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoQueryHelper.CloseConnection">
+            <summary>
+            Close the connection property
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoQueryHelper.getQueryResults(System.String,System.String)">
+            <summary>
+                Get the results for this SQL select.
+            </summary>
+            <param name="query">The query to run on the DB.</param>
+            <param name="tagType">The tag type for the query. Ignored.</param>
+            <returns>The results of the query. Can be 0 rows.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoResult.#ctor(WindwardReportsDrivers.net.windward.datasource.ado.AdoResult)">
+            <summary>
+                copy constructor.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.ado.AdoResultRow.columnMetaData">
+            <summary>The metadata for each column, in the order the columns are returned.</summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoResultRow.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.List{WindwardInterfaces.net.windward.datasource.MetaDataElement},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="row">The data for this row.</param>
+            <param name="columnMetaData">The metadata for each column, in the order the columns are returned.</param>
+            <param name="query">The query that returned the data.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoResultRow.getValue(System.Int32,System.String)">
+            <summary>
+                Get the value in this result row. Return null if don't have a value (ie SQL row of data).
+            </summary>
+            <param name="mode">One of the BaseTag.MODE_ values.</param>
+            <param name="tagType">the type= for the tag.</param>
+            <returns>The value in this result. null if this does not have value.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.ado.AdoResultRow.getAllFields">
+            <summary>
+            All the fields and their values in this result row. Used to populate DataSourceException, do not use for normal
+            processing in the program.May return the internal object so treat as read-only.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.ado.AdoResultSet.columnMetaData">
+            <summary>The metadata for each column, in the order the columns are returned.</summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.dataset.DataSetDataSourceDotNet">
+            <summary>
+             This class acts as a wrapper around a different datasource simplifying the data that is available in the document by
+            only showing a subset of data returned by a specific select.You should be able to do anything with that data that you
+            could do if it came directly from the datasource. This works by just combining selects at run time.
+            Created by mattb on 1/27/2017.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.dataset.DataSetDataSourceDotNet.DataSetDataSouceNodeDotNet.TopNSelect(System.String,System.Int32)">
+            <summary>
+            Convert the select to return just the top N row from the results. 
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="num">The max number of rows to return. Warning, if reducing for a forEach iteration, must be the step size (or larger).</param>
+            <returns>The select with "top N" added.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase">
+            <summary>
+                The base class for all .net datasources
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE">
+            <summary>
+                What method used to connect.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.IDENTITY">
+            <summary>
+                Use windows identity. This is also used for no username/password required.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.CREDENTIALS">
+            <summary>
+                Provide username and password.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.REST">
+            <summary>
+                REST protocol providing Accept and Content-Type.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.SHAREPOINT">
+            <summary>
+                Read from SharePoint - Forms Based Authentication mode.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.HTTP_AUTH">
+            <summary>
+                HTTP using one of the standard authentication types, Basic, Digest, Anonymous and NTLM
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.BASIC">
+            <summary>
+                HTTP using basic authentication, alias for HTTP_STANDARD_AUTH_TYPES
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.WINDOWS_AUTH">
+            <summary>
+                http request using windows authentication (NTLM and Negotiate)
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.CONNECT_MODE.SECURITY_TOKEN">
+            <summary>
+                http request with an OAuth security token obtained externally
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.DotNetDatasourceBase.convertToInputStream(System.Object)">
+            <summary>
+                Used for cases where an evaluate can return a byte[] or other object and the engine needs the data as an
+                InputStream.
+                Converts if needed(does nothing if passed in an InputStream).
+            </summary>
+            <param name="data">The data that may need to be converted.</param>
+            <returns>The data placed in an InoutStream.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.json.JsonDataSourceDotNet.MODE">
+            <summary>
+                To define what the string passed in to the constructor is.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.json.JsonDataSourceDotNet.MODE.CONNECTION_STRING">
+            <summary>
+                It's a full-blown connection string.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.json.JsonDataSourceDotNet.MODE.RAW_TEXT">
+            <summary>
+                constructor using mode the string is the JSON in the string.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.json.JsonDataSourceDotNet.JsonDataNodeDotNet.TopNSelect(System.String,System.Int32)">
+            <summary>
+            Convert the select to return just the top N row from the results. 
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="num">The max number of rows to return. Warning, if reducing for a forEach iteration, must be the step size (or larger).</param>
+            <returns>The select with "top N" added.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.json.JsonDataSourceDotNet.JsonDataNodeDotNet.AddMetaDataNode(System.Collections.Generic.List{WindwardInterfaces.net.windward.datasource.MetaDataElement},WindwardInterfaces.net.windward.datasource.MetaDataElement)">
+            <summary>
+                This method will either add toAdd to the metaData list,
+                or if a matching element already exists it will verfy that the one in the list has all of the children in the
+                matching one.
+            </summary>
+            <param name="metaData"></param>
+            <param name="toAdd"></param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.json.JsonResultSetDotNet.#ctor(java.util.List,System.String,System.String)">
+            <summary>
+                Creates a new instance of this class.
+            </summary>
+            <param name="records">
+                records The set of objects.  Each record is a pair of an actual JSON object and its path in the
+                data source.
+            </param>
+            <param name="query">The query that returned the set of objects.</param>
+            <param name="tagType">The tag type.</param>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.literal.LiteralDataSourceDotNet">
+            <summary>
+                Provides a datasource for literal data. Normally uses the Iterator class and the rest is to support that.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.literal.LiteralDataSourceDotNet.RootNode">
+            <summary>
+                Returns the node for the entire template (all other nodes are tied to a forEach).
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.literal.LiteralDataSourceDotNet.Properties">
+            <summary>
+                All of the properties for this datasource connection. Includes the password unencrypted.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.literal.LiteralDataSourceDotNet.GetQueryHelper">
+            <summary>
+                Gets the query helper from the subclass.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.literal.LiteralDataSourceDotNet.LiteralDataSourceNodeDotNet.#ctor(net.windward.datasource.literal.LiteralDataSourceNode)">
+            <summary>
+            Create an instance out of a Java object.
+            </summary>
+            <param name="jNode">Java literal node object.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.literal.LiteralDataSourceDotNet.LiteralDataSourceNodeDotNet.makeDataSourceIterator(net.windward.tags.ForEachTag,net.windward.datasource.DataSourceNode[],net.windward.datasource.abstract_datasource.IDataSourceResultSet)">
+            <summary>
+                Create a DataSourceIterator for a given DataSourceResultSet. This is implemented in the class that subclasses
+                the AbstractDataSource to use the DataSourceIterator derived class for its class.
+            </summary>
+            <param name="tag">The forEach tag that creates the iteration.</param>
+            <param name="stack">The stack of tags it is inside.</param>
+            <param name="data">The data to be iterated over</param>
+            <returns>The iterator object.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.literal.LiteralDataSourceDotNet.LiteralDataSourceNodeDotNet.TopNSelect(System.String,System.Int32)">
+            <summary>
+            Convert the select to return just the top N row from the results. 
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="num">The max number of rows to return. Warning, if reducing for a forEach iteration, must be the step size (or larger).</param>
+            <returns>The select with "top N" added.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.literal.LiteralQueryHelperDotNet.IsSelect(System.String)">
+            <summary>
+                Called by the AbstractDataSourceProvider to determine if a string is a select. Note that this
+                string may have un-substituted variables, so it may not yet be a valid select
+            </summary>
+            <param name="select"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.InvalidXPathException">
+            <summary>
+                Exception for invalid XPath.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.InvalidXPathException.#ctor(System.String,System.Exception)">
+            <summary>
+                Create the exception.
+            </summary>
+            <param name="xpath">The illegal xpath.</param>
+            <param name="cause">The underlying exception thrown.</param>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet">
+             <summary>
+             This supplies a data source to Windward Reports using Saxon. Saxon is a fast, efficient XPath processor. This class is the
+             reference implementation for net.windward.datasource.<br/>
+            
+             Starting with Windward 20.2, this is using Saxon 10.1 which supports XPath 3.1 for queries and adds support for json files
+             as datasources.
+            
+             @since 14.1
+             </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.#ctor(System.String,System.String)">
+            <summary>
+                Create a SaxonDataSource using the passed in connection strings. The schema connection string can be null.
+            </summary>
+            <param name="xmlConnectionString">Connection string to read the XML file.</param>
+            <param name="schemaConnectionString">Connection string to read the schema. null if no schema.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.#ctor(System.IO.Stream,System.IO.Stream)">
+             Create a DataSourceProvider that uses an xml stream as the data and Saxon to traverse it.
+            
+             @param xmlData	A well formed xml data file.
+             @param schemaFile the schema file.
+             @throws net.windward.env.DataConnectionException
+                      thrown if anything goes wrong.
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.#ctor(System.IO.Stream)">
+            		/**
+            		* Create a DataSourceProvider that uses an xml stream as the data and dom4j to traverse it.
+            		*
+            		* @param xmlData A well formed xml data file.
+            		* @throws DataConnectionException thrown if anything goes wrong.
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.#ctor(System.String)">
+             Create a DataSourceProvider that uses an xml string as the data and dom4j to traverse it.
+            
+             @param xmlData Well formed xml (not a filename to an XML file - this is XML in a string).
+             @throws DataConnectionException thrown if anything goes wrong.
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.ConvertStream(System.IO.Stream)">
+            <summary>
+            Convert a .NET stream to a JavaInputStream. This wraps the .Net stream in our wrapper.
+            </summary>
+            <param name="stream">The .NET stream to read from.</param>
+            <returns>The Java nputStream containing the contents from the input stream.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.XpathDataSourceNodeDotNet.makeDataSourceIterator(net.windward.tags.ForEachTag,net.windward.datasource.DataSourceNode[],net.windward.datasource.abstract_datasource.IDataSourceResultSet)">
+            <summary>
+                Create a DataSourceIterator for a given DataSourceResultSet. This is implemented in the class that subclasses
+                the AbstractDataSource to use the DataSourceIterator derived class for its class.
+            </summary>
+            <param name="tag">The forEach tag that creates the iteration.</param>
+            <param name="stack">The stack of tags it is inside.</param>
+            <param name="data">The data to be iterated over</param>
+            <returns>The iterator object.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.XpathDataSourceNodeDotNet.TopNSelect(System.String,System.Int32)">
+            <summary>
+            Convert the select to return just the top N row from the results. 
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="num">The max number of rows to return. Warning, if reducing for a forEach iteration, must be the step size (or larger).</param>
+            <returns>The select with "top N" added.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.XpathDataSourceNodeDotNet.ConvertToDotNetType(net.sf.saxon.type.SchemaType)">
+            <summary>
+            For a given Saxon SchemaType, get the matching .Net type.
+            </summary>
+            <param name="schemaType">The Saxon schema type to convert.</param>
+            <returns>The matching .Net type.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.XpathDataSourceNodeDotNet.GetFullName(net.sf.saxon.s9api.XdmNode)">
+            <summary>
+            Get the full name of a node. prefix:localName if there's a prefix.
+            </summary>
+            <param name="node">The node we want the full name of.</param>
+            <returns>The nodes full name.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.XpathDataSourceNodeDotNet.MoveTo(net.sf.saxon.s9api.XdmNode@,net.sf.saxon.s9api.Axis)">
+            <summary>
+            Move a node as set by the axis. Return an iterator to move through all nodes at the new level.
+            </summary>
+            <param name="node">The node to move from. On return this will be the new node moved to.</param>
+            <param name="axis">The direction in which to move.</param>
+            <returns>An iterator to now walk all peer items.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonDataSourceDotNet.XpathDataSourceNodeDotNet.MoveToNextInCurrentSequence(net.sf.saxon.s9api.XdmNode@,net.sf.saxon.s9api.XdmSequenceIterator)">
+            <summary>
+            Move to the next node via the iterator.
+            </summary>
+            <param name="node">The node to move from. On return this will be the new node moved to.</param>
+            <param name="seqIter">The iterator to move across peer nodes.</param>
+            <returns>true if moved to the next node. False if nothing more to iterate.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonQueryHelperDotNet.IsSelect(System.String)">
+            <summary>
+            true if the passed in query is an XPath select. This is not perfect, but is usually right.
+            </summary>
+            <param name="query">The query to evaluate.</param>
+            <returns>true (can be wrong - on either value) if the passed in query is an XPath select.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.saxon.SaxonResultSetDotNet">
+            <summary>
+                Holds a list of XPathRows.
+                Created by kylied on 7/20/2015.
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.MODE">
+            <summary>
+            What type of item it is.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.MODE.TEXT">
+            <summary>
+            /node/node
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.MODE.INDEX">
+            <summary>
+            ${var[4]...}
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.MODE.VAR">
+            <summary>
+            ${var.item}
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.Mode">
+            <summary>
+            MODE of this item.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.Text">
+            <summary>
+            The text of MODE.TEXT.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.Key">
+            <summary>
+            The var in ${var for MODE.INDEX or MODE.VAR.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.Value">
+            <summary>
+            The value in ${var[value] for MODE.INDEX or MODE.VAR.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.SelectItem.Index">
+            <summary>
+            The index in ${var[index] for MODE.INDEX.
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext">
+            <summary>
+                Handle custom macros and variable substitution in XPathDataSource.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.Prefix">
+            <summary>
+                The prefix for windward functions.
+            </summary>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.Namespace">
+            <summary>
+                The uri for windward functions.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.#ctor(System.Xml.NameTable)">
+            <summary>
+                Create the object.
+            </summary>
+            <param name="table">The name table to work with. Needs to come from XmlDocument.NameTable.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.ArgList">
+            <summary>
+                All arguments to substitute.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.Whitespace">
+            <summary>
+                When overridden in a derived class, gets a value indicating whether to include white space nodes in the output.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.ResolveVariable(System.String,System.String)">
+            <summary>
+                When overridden in a derived class, resolves a variable reference and returns an IXsltContextVariable representing
+                the variable.
+            </summary>
+            <param name="prefix">The prefix of the variable as it appears in the XPath expression.</param>
+            <param name="name">The name of the variable. </param>
+            <returns>An IXsltContextVariable representing the variable at runtime.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.CompareDocument(System.String,System.String)">
+            <summary>
+                When overridden in a derived class, compares the base Uniform Resource Identifiers (URIs) of two documents based
+                upon the order the documents were loaded by the XSLT processor (that is, the XslTransform class).
+            </summary>
+            <param name="baseUri">The base URI of the first document to compare.</param>
+            <param name="nextbaseUri">The base URI of the second document to compare.</param>
+            <returns>
+                An integer value describing the relative order of the two base URIs: -1 if baseUri occurs before nextbaseUri;
+                0 if the two base URIs are identical; and 1 if baseUri occurs after nextbaseUri.
+            </returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.PreserveWhitespace(System.Xml.XPath.XPathNavigator)">
+            <summary>
+                When overridden in a derived class, evaluates whether to preserve white space nodes or strip them for the given
+                context.
+            </summary>
+            <param name="node">The white space node that is to be preserved or stripped in the current context.</param>
+            <returns>Returns true if the white space is to be preserved or false if the white space is to be stripped.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.ResolveFunction(System.String,System.String,System.Xml.XPath.XPathResultType[])">
+            <summary>
+                When overridden in a derived class, resolves a function reference and returns an IXsltContextFunction representing
+                the function. The IXsltContextFunction is used at execution time to get the return value of the function.
+            </summary>
+            <param name="prefix">The prefix of the function as it appears in the XPath expression.</param>
+            <param name="name">The name of the function.</param>
+            <param name="ArgTypes">
+                An array of argument types for the function being resolved. This allows you to select between
+                methods with the same name (for example, overloaded methods).
+            </param>
+            <returns>An IXsltContextFunction representing the function.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.XPathExtensionVariable.Evaluate(System.Xml.Xsl.XsltContext)">
+            <summary>
+                Evaluates the variable at runtime and returns an object that represents the value of the variable.
+            </summary>
+            <returns>
+                An object representing the value of the variable. Possible return types include number,
+                string, Boolean, document fragment, or node set.
+            </returns>
+            <param name="xsltContext">An XsltContext representing the execution context of the variable.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.XPathExtensionVariable.IsLocal">
+            <summary>
+                Gets a value indicating whether the variable is local.
+            </summary>
+            <returns>
+                true if the variable is a local variable in the current context; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.XPathExtensionVariable.IsParam">
+            <summary>
+                Gets a value indicating whether the variable is an Extensible Stylesheet Language Transformations (XSLT)
+                parameter. This can be a parameter to a style sheet or a template.
+            </summary>
+            <returns>
+                true if the variable is an XSLT parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.XPathExtensionVariable.VariableType">
+            <summary>
+                Gets the XPathResultType representing the XML Path Language (XPath) type of the variable.
+            </summary>
+            <returns>
+                The XPathResultType representing the XPath type of the variable.
+            </returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.IWindwardContextFunction.FunctionName">
+            <summary>
+                The function name.
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.EndsWithFunction">
+            <summary>
+                Handles the ends-with(strTest, strEndText) function
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.EndsWithFunction.ArgTypes">
+            <summary>
+                Gets the supplied XML Path Language (XPath) types for the function's argument list. This information can be used
+                to discover the signature of the function which allows you to differentiate between overloaded functions.
+            </summary>
+            <returns>An array of XPathResultType representing the types for the function's argument list.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.EndsWithFunction.FunctionName">
+            <summary>
+                The function name.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.EndsWithFunction.Invoke(System.Xml.Xsl.XsltContext,System.Object[],System.Xml.XPath.XPathNavigator)">
+            <summary>
+                Provides the method to invoke the function with the given arguments in the given context.
+            </summary>
+            <returns>An object representing the return value of the function.</returns>
+            <param name="xsltContext">The XSLT context for the function call.</param>
+            <param name="args">The arguments of the function call. Each argument is an element in the array.</param>
+            <param name="docContext">The context node for the function call.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.EndsWithFunction.Maxargs">
+            <summary>
+                Gets the maximum number of arguments for the function. This enables the user to differentiate between overloaded
+                functions.
+            </summary>
+            <returns>The maximum number of arguments for the function.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.EndsWithFunction.Minargs">
+            <summary>
+                Gets the minimum number of arguments for the function. This enables the user to differentiate between overloaded
+                functions.
+            </summary>
+            <returns>The minimum number of arguments for the function.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.EndsWithFunction.ReturnType">
+            <summary>
+                Gets the XPathResultType representing the XPath type returned by the function.
+            </summary>
+            <returns>An XPathResultType representing the XPath type returned by the function.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.MatchFunction">
+            <summary>
+                Handles the match (strTest, strRegex) function.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.MatchFunction.ArgTypes">
+            <summary>
+                Gets the supplied XML Path Language (XPath) types for the function's argument list. This information can be used
+                to discover the signature of the function which allows you to differentiate between overloaded functions.
+            </summary>
+            <returns>An array of XPathResultType representing the types for the function's argument list.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.MatchFunction.FunctionName">
+            <summary>
+                The function name.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.MatchFunction.Invoke(System.Xml.Xsl.XsltContext,System.Object[],System.Xml.XPath.XPathNavigator)">
+            <summary>
+                Provides the method to invoke the function with the given arguments in the given context.
+            </summary>
+            <returns>An object representing the return value of the function.</returns>
+            <param name="xsltContext">The XSLT context for the function call.</param>
+            <param name="args">The arguments of the function call. Each argument is an element in the array.</param>
+            <param name="docContext">The context node for the function call.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.MatchFunction.Maxargs">
+            <summary>
+                Gets the maximum number of arguments for the function. This enables the user to differentiate between overloaded
+                functions.
+            </summary>
+            <returns>The maximum number of arguments for the function.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.MatchFunction.Minargs">
+            <summary>
+                Gets the minimum number of arguments for the function. This enables the user to differentiate between overloaded
+                functions.
+            </summary>
+            <returns>The minimum number of arguments for the function.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathCustomContext.MatchFunction.ReturnType">
+            <summary>
+                Gets the XPathResultType representing the XPath type returned by the function.
+            </summary>
+            <returns>An XPathResultType representing the XPath type returned by the function.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource">
+            <summary>
+                This supplies a data source to Windward Reports using XPathDatasource.
+                To reference a data element from a &lt;wr:forEach ... var="item" &gt; or &lt;wr:query ... var="item" &gt; tag
+                inside
+                another tag, use the following construct: '${item}/xpath' where xpath is an xpath reference from the node defined
+                by
+                item and the reference will return a single element.
+                When inside a forEach where step='N' where N &gt; 1, you can also use ${item[1]}/xpath ... ${item[N-1]}/xpath to
+                reference data for the N rows in each step. ${item[0]}/xpath is legal but redundent. You can also use &lt;wr:if
+                test='$item[1]}'&gt; which will return true if the row[1] exists. Keep in mind that [1], [2], ... is not an
+                absolute
+                count but an offset from the base row presently on in the loop. And you cannot index past the set of rows that are
+                the row presently on and the rows that will be skipped by step.
+                useful info on namespaces at
+                http://www.hanselman.com/blog/GetNamespacesFromAnXMLDocumentWithXPathDocumentAndLINQToXML.aspx
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getDatasourceName">
+            <summary>
+                Returns the name of this type in the form "sql", "xml", etc.
+            </summary>
+            <returns>"xml"</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator">
+            <summary>
+                The DataSourceIterator inside XPathNode.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.getTag">
+            <summary>
+                Return the forEach tag in use for this iterator. This is the tag that is the start of a block in the report that
+                this iterator is iterating through.
+            </summary>
+            <returns>the forEach tag in use for this iterator.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.hasNext">
+            <summary>
+                Returns true if the iteration has more nodes. (In other words, returns true if next would return a
+                node rather than throwing an exception.)
+            </summary>
+            <returns>true if the iterator has more elements.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.next">
+            <summary>
+                Returns the next node in the iteration. This will always return an object of type DataSourceNode.
+            </summary>
+            <returns>the next element in the iteration.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.getNode(System.Int32)">
+            <summary>
+                Returns the requested node from the set of nodes presently on. Index must be less than the step size. Unlike
+                next() calling this method does not advance the dataset.
+            </summary>
+            <param name="offset">The offset from the base node on. A value of 0 is identical to the value returned by next.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.remove">
+            <summary>
+                This will throw a NotSupportedException.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.getIndex">
+            <summary>
+                Return the index the iteration is on. This is a 0-based number of the index into the node list and counts all
+                nodes including those skipped if step > 1. This is undefined before the first call to next and is 0 after the
+                first call to next.
+            </summary>
+            <returns>The index presently on.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.getCount">
+            <summary>
+                Return the count the iteration is on. This is a 1-based number of the number of nodes returned so far. It only
+                counts nodes returned. This is undefined before the first call to next and is 1 after the first call to next.
+            </summary>
+            <returns>The number of nodes returned so far.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.isFirst">
+            <summary>
+                Return true if on the first node returned. This is undefined before the first call to next and is true after the
+                first call to next.
+            </summary>
+            <returns>true if on the first node, false otherwise.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.isLast">
+            <summary>
+                Return true if on the last node returned. This is undefined before the first call to next and is true after the
+                call to next which returns the last node that will be returned.
+            </summary>
+            <returns>true if on the last node, false otherwise.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.close">
+            <summary>
+                We are done with this iterator. Used to close any resources opened by this object. Does nothing in this class.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocIterator.getResultSet">
+            <summary>
+                Returns the result set this iterator presently holds. This is implementation specific.
+            </summary>
+            <returns>The result set this iterator presently holds.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.isLiteralDataSourceNode">
+            <summary>
+                This is needed in parts of the code that do not know about the .NET version of the LiteralDataSourceNode,
+                for example if we are in cross compiled java code and we need to know if a DataSourceNode is an instance of
+                WindwardReportDrivers.net.windward.datasource.LiteralDatasource.LiteralDataSourceNode.
+                This is necessary in the charting code as the series data select resulted in a LiteralDataSourceNode instead of a
+                node of the original type.
+                In this case we need to know it is a LiteralDataSourceNode, so that we can run row data selects against a query
+                higher up the stack.
+            </summary>
+            <returns>true if this is an instane of a literal datasource node</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getBitmap(net.windward.tags.OutTag,net.windward.datasource.DataSourceNode[],net.windward.util.macro.IMacroState)">
+            <summary>
+                Called when tag is of type BITMAP. Returns the fileimage of the bitmap from the datasource. Return a 0 length
+                array for an empty bitmap. Return null if the requested node does not exist.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="state">The Macro state, passed in to all macro calls.</param>
+            <returns>A file image of the referenced bitmap.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getImport(net.windward.tags.ImportTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+                Called for an import tag. Returns the name of the resource to be parsed and inserted into the report. Windward
+                Reports will process the returned string based on the tag type attribute. Return a 0 length string for an empty
+                node. Return null if the requested node does not exist. Windward Reports uses the type and source attributes on
+                this returned value. This method cannot affect those attributes.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <returns>The text to insert into the report.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getLink(net.windward.tags.BaseTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+                Called for a link tag. Returns the link text that is the url for the link. Return a 0 length string
+                for an empty node. Return null if the requested node does not exist.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <returns>The url for a link.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getOut(net.windward.tags.OutTag,net.windward.datasource.DataSourceNode[],java.util.Locale,net.windward.util.macro.IMacroState)">
+            <summary>
+                Called for an out tag. Returns the text to be inserted into the report. Return a 0 length string
+                for an empty node. Return null if the requested node does not exist and there is no default value.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="locale">The locale to produce the output in.</param>
+            <param name="state">The Macro state, passed in to all macro calls.</param>
+            <returns>The text to insert into the report.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getOutStream(net.windward.tags.OutTag,net.windward.datasource.DataSourceNode[],net.windward.util.macro.IMacroState)">
+            <summary>
+                Called for an out tag. Returns the raw bytes of a node. This is used to read a rtf or xml file from the database.
+                Return a 0 length stream for an empty node. Return null if the requested node does not exist and there is no
+                default value.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="state">The Macro state, passed in to all macro calls.</param>
+            <returns>The text to insert into the report.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getData(net.windward.tags.ChartTag,net.windward.datasource.DataSourceNode[],java.util.Locale)">
+            <summary>
+                Returns a set of data used to create a chart. The structure of this is tied tightly to the chart package.
+            </summary>
+            <param name="tag">The wr:chart tag with the select setting to use.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="locale">The locale to produce the output in.</param>
+            <returns>The data used by the charting functions to create the chart.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.isExistingNode(net.windward.tags.BaseTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+                Return true if the passed in node exists. This should return true even if the passed in node is empty. This
+                method needs to be fast.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <returns>True if the node exists, false otherwise.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.evaluate(System.String,net.windward.datasource.DataSourceNode[],net.windward.util.macro.IMacroState)">
+            <summary>
+                Evaluate an expression for the bool result.
+            </summary>
+            <param name="text">The expression to evaluate.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="state">The Macro state, passed in to all macro calls.</param>
+            <returns>true or false.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.isIf(net.windward.tags.IfTag,net.windward.datasource.DataSourceNode[],net.windward.util.macro.IMacroState)">
+            <summary>
+                Called for an if tag. Returns if the node exists. This normally is identical to isExistingNode() but can be
+                different as this determines if an &lt;wr:if ... &gt; tag will return true while isExistingNode is used
+                in numerous other cases.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="state">The Macro state, passed in to all macro calls.</param>
+            <returns>True if the node exists, false otherwise.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.addSwitch(net.windward.tags.SwitchTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+                Called for a switch tag. Adds this switch to the list of switch the document holds. This switch will continue
+                until the endSwitch is called.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <returns>true if no select. For a select, true if returned 1 or more rows of data. false if no data.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.isCase(net.windward.tags.CaseTag,net.windward.datasource.DataSourceNode[],net.windward.util.macro.IMacroState)">
+            <summary>
+                Called for a case tag. Returns if the case is true. This normally is identical to isExistingNode() but can be
+                different as this determines if an &lt;wr:case ... &gt; tag will return true while isExistingNode is used
+                in numerous other cases.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="state">The Macro state, passed in to all macro calls.</param>
+            <returns>True if the case is true, false otherwise.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.endSwitch(net.windward.tags.EndSwitchTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+                Called when a switch ends. Will pop the innermost switch off the internal stack.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.iterator(net.windward.tags.ForEachTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+                Called for a forEach tag. Returns an iterator used to walk through the nodes that match the forEach tag. It
+                is the responsibility of this iterator to handle begin, step, and end in the tag. If there are no nodes, an
+                iterator that will return false on the first call to hasNext() should be returned.
+                Windward Reports will never request multiple simultaneous iterators from a DataSourceNode. When this method
+                is called, any iterators from previous calls to this method are no longer in use. This restriction is critical
+                for the functionality of the method getIterator().
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <returns>An iterator to walk the nodes that match.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getIterator">
+            <summary>
+                Returns the iterator presently in use for this node. This is <b>not</b> the method called when processing
+                a forEach tag. The method called to process a forEach tag is iterator(). This method is called to get the
+                iterator in use for a node.
+                Windward Reports will never request multiple simultaneous iterators from a DataSourceNode. This restriction
+                is critical for the functionality of this method.
+                This is <b>not</b> the iterator that returned this in it's iteration. It is the iterator created by this node
+                and is returning nodes 1 level higher in the node stack. For example, stack[0] holds the iterator for the
+                node at stack[1]. And by definition, the node at the top of the stack cannot have an iterator (because if it
+                did, the first node returned by that iterator would then be on the top of the stack).
+            </summary>
+            <returns>The iterator in use for this node. Will return null if no iterator is in use for this node.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.addQuery(net.windward.tags.QueryTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+                Called for a query tag. Adds this query to the list of queries the document holds. This query will continue
+                to exist after this node is gone.
+            </summary>
+            <param name="tag">The values that identify the datasource node to read.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <returns>true if returned 1 or more rows of data. false if no data.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.addSet(net.windward.tags.SetTag,net.windward.datasource.DataSourceNode[],java.util.Locale,net.windward.util.macro.IMacroState)">
+            <summary>
+                Called for a set tag. Adds this set to the list of name:value pairs in the document map. This set will continue
+                to exist after this node is gone. This is also called in psuedo mode (always a value=) for OutTags that have a var.
+            </summary>
+            <param name="tag">The tag with a name value pair.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <param name="state">The Macro state, passed in to all macro calls.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.close">
+            <summary>
+                We are done with this node. Used to close any resources opened by this object. Does nothing in this class.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getCursor">
+            <summary>
+                Returns the underlying XPathNavigator this node presently holds.
+            </summary>
+            <returns>the underlying XPathNavigator this node presently holds.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getVariableValue(System.String,net.windward.datasource.DataSourceNode[],java.util.Locale)">
+            <summary>
+                Evaluate a variable
+            </summary>
+            <param name="variable">The name of the variable</param>
+            <param name="stack">Data sources</param>
+            <param name="locale">The set locale</param>
+            <returns>The evaluated result of a variable</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getEquationData(System.String,net.windward.datasource.DataSourceNode[],java.util.Locale)">
+            <summary>
+                Evaluate a data query for the equation system
+            </summary>
+            <param name="quer">The data query</param>
+            <param name="stack"> Data sources</param>
+            <param name="locale">The set locale</param>
+            <returns>The evaluated result of a variable</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getQueryMode(System.String,net.windward.tags.BaseTag)">
+            <summary>
+                Determine the query mode of a given string
+            </summary>
+            <param name="query">Query string to determine the mode of.</param>
+            <param name="tag">The tag this select is for. This may be null.</param>
+            <returns>BaseTag.MODE_NONE, BaseTag.MODE_VALUE, BaseTag.MODE_EVALUATE, or BaseTag.MODE_SELECT</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.AdjustSelect(System.String,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+                This method is only called by AutoTag. It is never called by the engine and can just throw an exception for
+                a datasource written for the engine only. This will adjust a select statement to use the "column as alias"
+                construct if there are multiple identical columns in the select.
+            </summary>
+            <param name="select">The select to adjust.</param>
+            <param name="stack">
+                The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.
+            </param>
+            <returns>The adjusted select.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.TopNSelect(System.String,System.Int32)">
+            <summary>
+            Convert the select to return just the top N row from the results. 
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="num">The max number of rows to return. Warning, if reducing for a forEach iteration, must be the step size (or larger).</param>
+            <returns>The select with "top N" added.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getNativeVariable(net.windward.datasource.DataSourceNode[],System.String)">
+            <summary>
+            Gets the variable from a data provider on the stack. The stack is queried in order from top to bottom and if
+            the provider in turn owns the variable its value is returned. The base implementation simply returns null. 
+            Override it in the derived provider.
+            </summary>
+            <param name="stack">The current stack of data providers.</param>
+            <param name="var">A variable to look up. It's in the form of ${...}.</param>
+            <returns>The variable's value or null if the variable does not exist.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.GetSelectTable(net.windward.tags.BaseTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get the metadata for this select
+            </summary>
+            <returns>A typed value or an XPathNavigator[].</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.getVariable(System.Collections.Generic.IList{net.windward.datasource.DataSourceNode},System.Int32,System.String,System.String)">
+            <summary>
+                for a given variable name, we return its value. Depending on its format we do different things, but it will be
+                primarily from either
+                the userMap, the queriesMap, the rdlDatasets map, or from a forEach loop.
+            </summary>
+            <param name="stack">
+                The stack of forEach nodes we are in at this point. stack[0] is the document root (which has no
+                iterator).
+            </param>
+            <param name="mode">One of BaseTag.MODE_SELECT/VALUE/EVALUATE listing what we want to get back.</param>
+            <param name="fullSelect">The original select (for error messages).</param>
+            <param name="var">The var to get.</param>
+            <returns>The value of the var.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.SelectNodes(System.Xml.XPath.XPathNavigator,System.String,System.Xml.Xsl.XsltArgumentList)">
+            <summary>
+            Get an XPathNodeIterator for the requested select.
+            </summary>
+            <param name="nav">The navigator to run the select from.</param>
+            <param name="xpath">The xpath to select.</param>
+            <param name="parameters">The parameters for this select. Must be a 0 length list for none.</param>
+            <returns>The node iterator.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.SelectNodesOrValue(System.Xml.XPath.XPathNavigator,System.String,System.Xml.Xsl.XsltArgumentList)">
+            <summary>
+            Get an XPathNodeIterator for the requested select.
+            </summary>
+            <param name="nav">The navigator to run the select from.</param>
+            <param name="xpath">The xpath to select.</param>
+            <param name="parameters">The parameters for this select. Must be a 0 length list for none.</param>
+            <returns>The typed value if the result is a value, an XPathNodeIterator if it's a list.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.SelectNodeNavigator(System.Xml.XPath.XPathNavigator,System.String,System.Xml.Xsl.XsltArgumentList)">
+            <summary>
+                Get an XPathNavigator for the requested select.
+            </summary>
+            <param name="nav">The navigator to run the select from.</param>
+            <param name="xpath">The xpath to select.</param>
+            <param name="parameters">The parameters for this select. Must be a 0 length list for none.</param>
+            <returns>The navigator.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.SelectSingleNode(System.Xml.XPath.XPathNavigator,System.String,System.Xml.Xsl.XsltArgumentList)">
+            <summary>
+                Selects a single node, returns a string.
+            </summary>
+            <param name="nav">Perform the select on this navigartor.</param>
+            <param name="xpath">The XPath select.</param>
+            <param name="parameters">The parameters for this select.</param>
+            <returns>The result of the select.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.SelectSingleNodeTyped(System.Xml.XPath.XPathNavigator,System.String,System.Xml.Xsl.XsltArgumentList)">
+            <summary>
+                Selects a single node, if possible returns a typed object.
+            </summary>
+            <param name="nav">Perform the select on this navigartor.</param>
+            <param name="xpath">The XPath select.</param>
+            <param name="parameters">The parameters for this select.</param>
+            <returns>The result of the select, if possible returns a typed object.</returns>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.XPathDocNode.SortComparer">
+            <summary>
+                This sorts by number if the two strings passed in can both be converted to a number
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.NodeLocator">
+            <summary>
+                For an XmlNode in an XmlDocument, can determine the XPath to return that specific node. Can also then determine the
+                non-specific
+                XPath to a subsequent child node (the XPath that will return that node AND ALSO any peer nodes of the same
+                name(s)).
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.NodeLocator.GetUniqueLocation(System.Collections.Generic.Dictionary{System.String,System.String},System.Xml.XmlNode)">
+            <summary>
+                Get the unique XPath for the passed in node.
+            </summary>
+            <param name="namespaceMap">
+                If namespace prefixes are different from the raw XmlDocument, this dictionaru is key=uri,
+                value=prefix.
+            </param>
+            <param name="node">The node to get the unique XPath to.</param>
+            <returns>The unique XPath to node.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.NodeLocator.GetLocation(System.Collections.Generic.Dictionary{System.String,System.String},System.Xml.XmlNode,System.Xml.XmlNode)">
+            <summary>
+                Get the unique XPath for the passed in node. It uses the unique XPath from the root to the parent and then
+                non-unique XPath from the parent to the node.
+            </summary>
+            <param name="namespaceMap">
+                If namespace prefixes are different from the raw XmlDocument, this dictionaru is key=uri,
+                value=prefix.
+            </param>
+            <param name="parent">The node to get the unique XPath to.</param>
+            <param name="node">The node to get the NON-unique XPath to.</param>
+            <returns>The unique XPath to node.</returns>
+        </member>
+        <member name="F:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.parameters">
+            <summary>We need to use this collection directly as all the datasources share the same object.</summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.String,System.String)">
+            <summary>
+                Create a XPathDataSource using the passed in connection strings. The schema connection string can be null.
+            </summary>
+            <param name="xmlConnectionString">Connection string to read the XML file.</param>
+            <param name="schemaConnectionString">Connection string to read the schema. null if no schema.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.Xml.XPath.XPathNavigator)">
+            <summary>
+                Create a DataSourceProvider that uses an XPathNavigator as the data.
+            </summary>
+            <param name="xmlData">The xml for the data.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.Xml.XPath.XPathDocument)">
+            <summary>
+                Create a DataSourceProvider that uses an XPathDocument as the data source.
+            </summary>
+            <param name="xmlData">xmlData A well formed xml data file.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+                Create a DataSourceProvider that uses an XmlNode DOM as it's datasource. This can be XmlDocument.DocumentElement.
+            </summary>
+            <param name="xmlData">A well formed xml data file.</param>
+            <param name="preserveWhitespace">true if whitespace is to be preserved. This will mean a slightly slower process.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.IO.Stream,System.IO.Stream,System.Boolean)">
+            <summary>
+                Create a datasource provider from the passed in stream.
+            </summary>
+            <param name="xmlData">A well formed xml data file.</param>
+            <param name="schemaStream">A well formed schema document for the data file.</param>
+            <param name="preserveWhitespace">true if whitespace is to be preserved. This will mean a slightly slower process</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.Xml.XmlReader,System.Boolean)">
+            <summary>
+                Create a datasource provider from the passed in reader.
+            </summary>
+            <param name="xmlData">A well formed xml data file.</param>
+            <param name="preserveWhitespace">true if whitespace is to be preserved. This will mean a slightly slower process</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.IO.Stream,System.Boolean)">
+            <summary>
+                Create a DataSourceProvider that uses an xml stream as the data.
+            </summary>
+            <param name="xmlData">A well formed xml data file.</param>
+            <param name="preserveWhitespace">true if whitespace is to be preserved. This will mean a slightly slower process.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.String,System.Net.ICredentials)">
+            <summary>
+                Create a DataSourceProvider that uses a url and credentials for the data. Uses XmlUrlResolver and XmlReader to read
+                the file.
+            </summary>
+            <param name="url">The url to the well formed xml data file.</param>
+            <param name="credentials">The credentials for accessing the file. null if no credentials.</param>
+            [Obsolete("Please use connection string constructor.")]
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(System.String,System.Boolean)">
+            <summary>
+                Create a DataSourceProvider that uses the passed in string as the xml. This is NOT a filename, this is
+                the actual xml to be queried.
+            </summary>
+            <param name="xmlData">A well formed xml string (not a filename).</param>
+            <param name="preserveWhitespace">true if whitespace is to be preserved. This will mean a slightly slower process.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.#ctor(java.io.InputStream,System.Boolean)">
+            <summary>
+                Create a DataSourceProvider that uses a java InputStream as the data.
+            </summary>
+            <param name="xmlData">A well formed xml data file.</param>
+            <param name="preserveWhitespace">true if whitespace is to be preserved. This will mean a slightly slower process.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.SetNamespaces(WindwardReportsDrivers.net.windward.datasource.xml.XPathNamespace[])">
+            <summary>
+                Explicitly set the namespaces for this datasource. This will remove all the default namespaces (if any) and/or
+                namespaces previously explicitly set.
+            </summary>
+            <param name="namespaces">The namespaces for this XML datasource.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getParamMode">
+            <summary>
+                Get the parameter substitution mode.
+            </summary>
+            <returns>
+                the parameter substitution mode.
+            </returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.setParamMode(System.Int32)">
+            <summary>
+                Set the parameter substitution mode.
+            </summary>
+            <param name="mode">the parameter substitution mode.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.setParameters(java.util.Map)">
+            <summary>
+                Sets the map that is used for ${variable} substitution. The map key values cannot
+                have any of the characters ${} in them. When ${key} is found in any tag, it is replaced with the matching value.
+                The value can be a string, number (int, float, etc), or datetime. The map is copied
+                so on return changes to the passed in map will not affect the data source.
+            </summary>
+            <param name="map">The map of string/value pairs.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getParameters">
+            <summary>
+            Returns the map of variables for this datasource.
+            </summary>
+            <returns>the map of variables for this datasource.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.setDefaultNamespacePrefix(System.String)">
+            <summary>
+                The prefixes for namespaces are pulled from the XML datasource. The default namespace, if one exists, needs
+                to be set. The default is def (ie /def:root/def:elem ).
+            </summary>
+            <param name="prefix">The prefix used for the default namespace in xpath selects.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getDefaultNamespacePrefix">
+            <summary>
+                The prefixes for namespaces are pulled from the XML datasource. The default namespace, if one exists, needs
+                to be set. The default is def (ie /def:root/def:elem ).
+            </summary>
+            <returns>The prefix used for the default namespace in xpath selects.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getRootNode">
+            <summary>
+                Returns the root node for this data set. Outside of forEach loops this is the node all tag requests will be
+                evaluated against.
+            </summary>
+            <returns>The root node.</returns>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.RootNode">
+            <summary>
+                Returns the root node for this data set. Outside of forEach loops this is the node all tag requests will be
+                evaluated against.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.Properties">
+            <summary>
+                All of the properties for this datasource connection. Includes the password unencrypted.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.close">
+            <summary>
+                Called when processing is complete. Used to close any resources opened by this object. Does nothing.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getTagAttributes">
+            <summary>
+                Returns the allowed attributes for all tags.
+            </summary>
+            <returns>The tag attributes.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.validateTag(net.windward.tags.BaseTag)">
+            <summary>
+                Verifys that a tag has all required attributes and no unknown attributes.
+            </summary>
+            <param name="xmlTag">The tag to check.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.approveDenyModifySelect(net.windward.tags.BaseTag)">
+             Verifys that a tag select is approved by a user defined callback
+             Or denies by throwing a DatasourceException or modifies the select
+            
+             @param xmlTag The tag to check
+             @throws net.windward.env.DataSourceException
+                      thrown if illegal parameters passed in.
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getQueryMode(System.String,net.windward.tags.BaseTag)">
+            <summary>
+                Determine the query mode of a given string
+            </summary>
+            <param name="query">Query string to determine the mode of.</param>
+            <param name="tag">The tag this select is for. This may be null.</param>
+            <returns>BaseTag.MODE_NONE, BaseTag.MODE_VALUE, BaseTag.MODE_EVALUATE, or BaseTag.MODE_SELECT</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.populateDatasourceException(net.windward.env.DataSourceException,net.windward.tags.BaseTag,net.windward.datasource.DataSourceNode[])">
+            <summary>
+            Populates that properties in a DataSourceException via DataSourceException.setProperties().
+            </summary>
+            <param name="exception">The exception to populate.</param>
+            <param name="tag">The tag we're processing. null if no tag.</param>
+            <param name="stack">The node stack at the time of the exception. null if not relevant.</param>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.GetNativeValue(System.Xml.XPath.XPathNavigator)">
+            <summary>
+                Return the nav.Value in the native type (bool, int, etc).
+            </summary>
+            <param name="nav">The navigator to read the value of</param>
+            <returns>The value in its native format.</returns>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.setProperties(net.windward.xmlreport.ReportProperties)">
+            <summary>
+            Sets properties used by a report object.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathDataSource.getProperties">
+            <summary>
+            Gets properties currently in use.
+            </summary>
+        </member>
+        <member name="T:WindwardReportsDrivers.net.windward.datasource.xml.XPathNamespace">
+            <summary>
+                A namespace defined for the XPath selects.
+            </summary>
+        </member>
+        <member name="M:WindwardReportsDrivers.net.windward.datasource.xml.XPathNamespace.#ctor(System.String,System.String)">
+            <summary>
+                Initializes a new instance of the class.
+            </summary>
+            <param name="prefix">The prefix as declared in use. Empty string or null for default namespace.</param>
+            <param name="url">The url of the namespace.</param>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathNamespace.Prefix">
+            <summary>
+                The prefix as declared in use. Empty string for default namespace.
+            </summary>
+        </member>
+        <member name="P:WindwardReportsDrivers.net.windward.datasource.xml.XPathNamespace.Url">
+            <summary>
+                The url of the namespace.
+            </summary>
+        </member>
+    </members>
+</doc>

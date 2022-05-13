@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="CopyPDFNetNativeBinaries" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+      <NativeBinary Include="$(MSBuildThisFileDirectory)**\*.dll" />
+    </ItemGroup>
+    <PropertyGroup>
+      <PrepareForRunDependsOn>
+        $(PrepareForRunDependsOn);
+        CopyPDFNetNativeBinaries
+      </PrepareForRunDependsOn>
+    </PropertyGroup>
+    <PropertyGroup>
+      <!-- Suppress Architecture Mismatch error, as PDFNetLoader will take care of this at runtime -->
+      <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+        None
+      </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    </PropertyGroup>
+  <Target Name="CopyPDFNetNativeBinaries">
+    <Copy SourceFiles="@(NativeBinary)" DestinationFiles="@(NativeBinary->'$(OutDir)\%(TargetPath)\%(RecursiveDir)\%(Filename)%(Extension)')">
+      <Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
+    </Copy>
+  </Target>
+</Project>

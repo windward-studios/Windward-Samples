@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AntConfiguration">
-    <defaultAnt bundledAnt="true" />
-  </component>
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
@@ -21,11 +17,6 @@
       <entry name="?*.tld" />
       <entry name="?*.ftl" />
     </wildcardResourcePatterns>
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
-        <processorPath useClasspath="true" />
-      </profile>
-    </annotationProcessing>
   </component>
   <component name="CopyrightManager" default="" />
   <component name="DaemonCodeAnalyzer">
@@ -70,9 +61,11 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="EntryPointsManager">
-    <entry_points version="2.0" />
+  <component name="InspectionProjectProfileManager">
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+    </profile>
+    <version value="1.0" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
@@ -339,27 +332,29 @@
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="Servlet API">
       <CLASSES>
-        <root url="jar://C:/tomcat7/lib/servlet-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../../../../../../tomcat9/lib/servlet-api.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
     </library>
     <library name="Windward Jars">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../../../../jars" />
+        <root url="file://$PROJECT_DIR$/../../../../../../../../jars" />
       </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/../../../../../javadocs" />
-      </JAVADOC>
+      <JAVADOC />
+      <NATIVE>
+        <root url="file://$PROJECT_DIR$/../../../../../../../../jars" />
+      </NATIVE>
       <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../../../../jars" />
+        <root url="file://$PROJECT_DIR$/../../../../../../../../jars" />
       </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/../../../../../jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/../../../../../../../../jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/../../../../../../../../jars" recursive="false" type="SOURCES" />
     </library>
   </component>
 </project>

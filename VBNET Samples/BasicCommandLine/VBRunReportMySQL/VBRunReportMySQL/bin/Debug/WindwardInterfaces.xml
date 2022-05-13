@@ -1,0 +1,710 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WindwardInterfaces</name>
+    </assembly>
+    <members>
+        <member name="T:WindwardInterfaces.net.windward.api.csharp.IReportDataSource">
+            <summary>
+            This supplies a data source to Windward Reports. Implementation of this interface is necessary and sufficient to
+            provide a data source to Windward Reports. This object lives for the lifetime of substituting data into a report.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.api.csharp.IReportDataSource.ParamMode">
+            <summary>
+            The parameter substitution mode.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.api.csharp.IReportDataSource.InternalParameters">
+            <summary>
+            <b>Do not call this property - reserved for internal use by the Windward Designer!</b>
+            
+            This passes a distinct parameter map in each datasource. If you use this the parameters are not shared
+            between datasources. This should only be used when operating on a distinct datasource in AutoTag, not
+            when creating a report.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.api.csharp.IReportDataSource.Close">
+            <summary>
+            Called when processing is complete. Used to close any resources opened by this object.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.api.csharp.IReportDataSource.Datasource">
+            <summary>
+            Return the underlying datasource provider.
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.DatasetParameter">
+            <summary>
+             A parameter for the dataset select.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.DatasetParameter.#ctor(System.String,System.Object)">
+            <summary>
+            Ctreat the object.
+            </summary>
+            <param name="name">The name of this parameter.</param>
+            <param name="value">The value for this parameter.</param>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.DatasetParameter.Name">
+            <summary>
+            The name of this parameter.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.DatasetParameter.Value">
+            <summary>
+            The value for this parameter. This will normally be a String, DateTime, Decimal, Boolean, or an int/float.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.DatasetParameter.Description">
+            <summary>
+            The description for this dataset.
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.DataSourceWrapper">
+            <summary>
+            Utilities for the C# datasources.
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.DataSourceWrapper.PARAM_MODE">
+            <summary>
+            How to handle parameter substitution in selects. The int values of these must match DataSourceProvider.java.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.DataSourceWrapper.PARAM_MODE.SUBSTITUTION">
+            <summary>All ${var...} is handled via string substitution. If the var does NOT start with an underscore, it will use escapes.</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.DataSourceWrapper.PARAM_MODE.PARAMETER_PLUS">
+            <summary>All ${var...} is handled via setParameter() unless the var starts with an underscore like ${_var...}</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.DataSourceWrapper.PARAM_MODE.PARAMETER_ONLY">
+            <summary>All ${var...} is handled via setParameter()</summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.FilterBase">
+            <summary>
+            Base class for SelectFilter and SelectList. Objects of this type can be passed as Map.Entry to
+            DataSourceProvider.setMap().
+            
+            If getGlobalMetaIdentifier is set this list/filter will be applied to any select that uses the column/node
+            defined in getGlobalMetaIdentifier and will add a condition for this item.
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER">
+            <summary>
+            How to override the sort for this item in the select.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER.NO_OVERRIDE">
+            <summary>Do not change sort</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER.ASCENDING">
+            <summary>sort ascending</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER.DESCENDING">
+            <summary>sort descending</summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterBase.#ctor(WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER)">
+            <summary>
+            Create the object.
+            </summary>
+            <param name="sort">Set the sort order if we override it.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterBase.#ctor(WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER,System.String)">
+            <summary>
+            Create the object.
+            </summary>
+            <param name="sort">Set the sort order if we override it.</param>
+            <param name="varName">The name of the var this filter is for.</param>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterBase.Sort">
+            <summary>
+            Set the sort order. If set, we override the order for all "order by" items in the select.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterBase.VarName">
+            <summary>
+            The name of the var this filter is for.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterBase.IsApplyGlobally">
+            <summary>
+            true if this select is to be applied to all tags that include the getGlobalMetaIdentifier column/node.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterBase.GlobalMetaIdentifier">
+            <summary>
+            The meta identifier for a global select. For SQL this is [dbo.]table.column using the raw values (no surrounding
+            spaces) and for XML it is the full XPath to that node. In the case of XPath this must be a simplistic
+            node/node/@attribute. No functions [conditions], etc.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterBase.setGlobal(System.String)">
+            <summary>
+            Set to apply globally with this metadata. isApplyGlobally is set to true on this call. For SQL this is
+            [dbo.]table.column using the raw values (no surrounding spaces) and for XML it is the full XPath to that
+            node. In the case of XPath this must be a simplistic node/node/@attribute. No functions [conditions], etc.
+            </summary>
+            <param name="metaIdentifier">The meta identifier for a global select. If you are using aliases (SQL), this 
+            is the actual table.column, NOT the alias.</param>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.FilterCondition">
+            <summary>
+            A specialized filter value for a select parameter. The filter(s) in this object will be substituted in as the
+            select condition on any select that uses the ${var} in the select where the "var" is the key for this value as
+            passed to DataSourceProvider.setMap().
+            
+            If passed 0 filters that will replace the select condition with true so that all rows are returned.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.#ctor(WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER)">
+            <summary>
+            Create the object.
+            </summary>
+            <param name="sort">Set the sort order if we override it.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.#ctor(WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER,System.String,System.Collections.Generic.IEnumerable{WindwardInterfaces.net.windward.datasource.FilterCondition.Condition},System.Boolean)">
+            <summary>
+            Create the object.
+            </summary>
+            <param name="sort">Set the sort order if we override it.</param>
+            <param name="varName">The name of the var this filter is for. If you are using aliases (SQL), this is the actual 
+            table.column, NOT the alias.</param>
+            <param name="conditions">The conditions for this filter.</param>
+            <param name="_isAndConditions">true if and the conditions, false if or them.</param>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Conditions">
+            <summary>
+            The conditions in this filter.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.IsAndConditions">
+            <summary>
+            true if conditions are to be and-ed, false if to be or-ed.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.ToString">
+            <summary>
+            a string representation of the object.
+            </summary>
+            <returns>a string representation of the object.</returns>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition">
+            <summary>
+            An individual condition in the filter.
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION">
+            <summary>
+            The conditions operation - "x OPERATION y".
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.NONE">
+            <summary>no op</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.EQUALS">
+            <summary>equal</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.NOT_EQUALS">
+            <summary>not equal</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.GREATER_THAN">
+            <summary>greater than (SQL: date/number only, XML: number only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.GREATER_THAN_OR_EQUAL">
+            <summary>greater than or equal (SQL: date/number only, XML: number only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.LESS_THAN">
+            <summary>less than (SQL: date/number only, XML: number only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.LESS_THAN_OR_EQUAL">
+            <summary>less than or equals (SQL: date/number only, XML: number only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.BEGIN_WITH">
+            <summary>starts with (text only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.NOT_BEGIN_WITH">
+            <summary>does not start with (text only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.END_WITH">
+            <summary>ends with (text only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.NOT_END_WITH">
+            <summary>does not end with (text only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.CONTAINS">
+            <summary>contains (text only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.NOT_CONTAINS">
+            <summary>does not contain (text only)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.LIKE">
+            <summary>like (no wildcards added, but existing ones respected)</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION.NOT_LIKE">
+            <summary>not like (no wildcards added, but existing ones respected)</summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.DATA_TYPE">
+            <summary>
+            The data type of the value.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.DATA_TYPE.STRING">
+            <summary>Filtering a string.</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.DATA_TYPE.NUMBER">
+            <summary>Filtering a number.</summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.DATA_TYPE.DATE_TIME">
+            <summary>Filtering a date.</summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.#ctor(System.String,WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION,System.Object)">
+            <summary>
+            A condition for the filter.
+            </summary>
+            <param name="fieldName">The column (SQL) or node (XML) to compare on. 
+            If you are using aliases (SQL), this must use the alias.</param>
+            <param name="opCode">The operation to use.</param>
+            <param name="value">The value for the filter.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.#ctor(System.String,WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION,System.String)">
+            <summary>
+            A condition for the filter with a string value.
+            </summary>
+            <param name="fieldName">The column (SQL) or node (XML) to compare on. 
+            If you are using aliases (SQL), this must use the alias.</param>
+            <param name="opCode">The operation to use.</param>
+            <param name="value">The value for the filter.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.#ctor(System.String,WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION,System.DateTime)">
+            <summary>
+            A condition for the filter with a datetime value.
+            </summary>
+            <param name="fieldName">The column (SQL) or node (XML) to compare on. 
+            If you are using aliases (SQL), this must use the alias.</param>
+            <param name="opCode">The operation to use.</param>
+            <param name="value">The value for the filter.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.#ctor(System.String,WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION,System.Decimal)">
+            <summary>
+            A condition for the filter with a number value.
+            </summary>
+            <param name="fieldName">The column (SQL) or node (XML) to compare on. 
+            If you are using aliases (SQL), this must use the alias.</param>
+            <param name="opCode">The operation to use.</param>
+            <param name="value">The value for the filter.</param>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.FieldName">
+            <summary>
+            The column (SQL) or node (XML) to compare on. 
+            If you are using aliases (SQL), this must use the alias.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OpCode">
+            <summary>
+            The OPERATION to use.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.SqlOpCode">
+            <summary>
+            The text string for the op code in a SQL statement.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.XpathOpCode">
+            <summary>
+            The text string for the op code in an XPath statement. Throws an exception on the opcodes that require
+            a function.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.Value">
+            <summary>
+            The value for the filter.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.ValueAsString">
+            <summary>
+            The value for the filter as a string.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.ValueAsNumber">
+            <summary>
+            The value for the filter as a number.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.ValueAsDateTime">
+            <summary>
+            The value for the filter as a date_time.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.ValueAsSqlWildcards">
+            <summary>
+            For the operations BEGIN_WITH, NOT_BEGIN_WITH, END_WITH, NOT_END_WITH, CONTAINS, NOT_CONTAINS - and
+            the value is a string, it will add wildcards as appropiate. For all other cases it returns the value.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.Type">
+            <summary>
+            The data type.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.ToString">
+            <summary>
+            a string representation of the object.
+            </summary>
+            <returns>a string representation of the object.</returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.getOpCodeText(WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION[])">
+            <summary>
+            Get the text strings to match the opcode list.
+            </summary>
+            <param name="opCodes">Op codes we need strings for.</param>
+            <returns>Matching strings.</returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.getOpCodeText(WindwardInterfaces.net.windward.datasource.FilterCondition.Condition.OPERATION)">
+            <summary>
+            Get the text string to match the opcode.
+            </summary>
+            <param name="opCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.FilterList">
+            <summary>
+            A specialized list value for a select parameter. The list of items must be of type String, Number, or Date and these
+            values will be substituted in as the select condition on any select that uses the ${var} in the select where the
+            "var" is the key for this value as passed to DataSourceProvider.setMap().
+            
+            A list with no items is an error.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.FilterList.#ctor(WindwardInterfaces.net.windward.datasource.FilterBase.SORT_ORDER,System.String,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create the object.
+            </summary>
+            <param name="sort">Set the sort order if we override it.</param>
+            <param name="varName">The name of the var this filter is for.</param>
+            <param name="items">The items in this list. The elements are the parameters to set for the ${var} in the select.</param>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.FilterList.Items">
+            <summary>
+            The items in this list. The elements are the parameters to set for the ${var} in the select.
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.IDataSourceMetaData">
+            <summary>
+            Returns metadata about the node the implementing DataSourceNode class holds.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.IDataSourceMetaData.GetMetaData(net.windward.tags.BaseTag,System.Int32,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+            Calls the select for a tag and returns the nodes returned by the select.
+            </summary>
+            <param name="tag">The tag to run.</param>
+            <param name="index">For a chart tag this is which graph in the chart to run the select on.</param>
+            <param name="stack">The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.</param>
+            <returns>The metadata for the select.</returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.IDataSourceMetaData.GetForEach(net.windward.tags.ForEachTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+            Returns the data from a forEach select. This always returns a .NET DataTable or XmlList.
+            </summary>
+            <param name="tag">The tag to run.</param>
+            <param name="stack">The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.</param>
+            <returns>The requested data.</returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.IDataSourceMetaData.GetQuery(net.windward.tags.BaseTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+            Returns the data from a query select. This always returns a .NET DataTable or XmlList
+            </summary>
+            <param name="tag">The tag to run. Must be a QueryTag or SwitchTag.</param>
+            <param name="stack">The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.</param>
+            <returns>The requested data.</returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.IDataSourceMetaData.GetSet(net.windward.tags.SetTag,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode},java.util.Locale)">
+            <summary>
+            Returns the data from a set. This always returns a .NET DataTable or XmlList.
+            </summary>
+            <param name="tag">The tag to run.</param>
+            <param name="stack">The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.</param>
+            <returns>The requested data.</returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.IDataSourceMetaData.AdjustSelect(System.String,System.Collections.Generic.IList{net.windward.datasource.DataSourceNode})">
+            <summary>
+            Will return the select that will be passed down to the database with all the ${vars}, etc substituted in.
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="stack">The stack of forEach loops in at this point. Node [0] is the root document node so this will always
+                have length of at least 1.</param>
+            <returns>The adjusted select.</returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.IDataSourceMetaData.TopNSelect(System.String,System.Int32)">
+            <summary>
+            Convert the select to return just the top N row from the results. 
+            </summary>
+            <param name="query">The select to adjust.</param>
+            <param name="num">The max number of rows to return. Warning, if reducing for a forEach iteration, must be the step size (or larger).</param>
+            <returns>The select with "top N" added.</returns>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.IDataSourceProviderMetaData">
+            <summary>
+            A datasource provider that has the AutoTag metadata parts also.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.IDataSourceProviderMetaData.RootNode">
+            <summary>
+            Returns the metadata info
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.IDataSourceProviderMetaData.Properties">
+            <summary>
+            All of the properties for this datasource connection. Includes the password unencrypted.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.IDataSourceProviderMetaData.supportsDataSets">
+            <summary>
+            returns if the datasource supports datasets
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.MetaDataElement">
+            <summary>
+            This represents a node of metadata used by AutoTag. This data can be SQL tables, XML lists, or a data element in
+            a user created datasource.
+            </summary>
+        </member>
+        <member name="T:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE">
+            <summary>
+            What type of node it is.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.OTHER">
+            <summary>
+            A type of node that does not fit any of the pre-defined types.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.TABLES">
+            <summary>
+            A SQL set of tables or equivilent (views, stored procedures).
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.TABLE">
+            <summary>
+            A SQL table or equivilent (table, stored procedure).
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.COLUMN">
+            <summary>
+            A SQL column or equivilent (stored procedure parameter).
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.NODE">
+            <summary>
+            An XML node or equivilent.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.ATTRIBUTE">
+            <summary>
+            An XML attribute or equivilent.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.STATUS">
+            <summary>
+            The status of a datasource such as an error was returned on a query.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.STAT">
+            <summary>
+            The statistics of a query such as the number of nodes returned.
+            </summary>
+        </member>
+        <member name="F:WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE.VALUE">
+            <summary>
+            The value of a given node in the datasource.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.#ctor(System.String,System.String,System.Boolean,System.Type)">
+            <summary>
+            Create a mini meta object for result sets.
+            </summary>
+            <param name="name"></param>
+            <param name="fullName"></param>
+            <param name="useFullName"></param>
+            <param name="dataType"></param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.#ctor(System.String,System.String,System.String,System.String,System.Data.DbType,WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE)">
+            <summary>
+            Create a MetaData object.
+            </summary>
+            <param name="name">The name of the node such as the table or column name. This is the name as used so if a column has an alias, this is the alias.</param>
+            <param name="fullName">The full name of this node. So for a column it is actually schema.table.column. null if same as name.</param>
+            <param name="select">The select that created this node. This can be null.</param>
+            <param name="description">The description of the node from the datasource metadata. Null if there is no description.</param>
+            <param name="dbDbType">The data type.</param>
+            <param name="metaType">One of the NODE_TYPE enums.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.#ctor(System.String,System.String,System.String,System.String,System.Data.DbType,WindwardInterfaces.net.windward.datasource.MetaDataElement.NODE_TYPE,System.Collections.Generic.IEnumerable{WindwardInterfaces.net.windward.datasource.MetaDataElement})">
+            <summary>
+            Create a MetaData object.
+            </summary>
+            <param name="name">The name of the node such as the table or column name. This is the name as used so if a column has an alias, this is the alias.</param>
+            <param name="fullName">The full name of this node. So for a column it is actually schema.table.column. null if same as name.</param>
+            <param name="select">The select that created this node. This can be null.</param>
+            <param name="description">The description of the node from the datasource metadata. Null if there is no description.</param>
+            <param name="dbDbType">The data type.</param>
+            <param name="metaType">One of the NODE_TYPE enums.</param>
+            <param name="children">The children nodes of this node. For example the column nodes are children of the table node.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.Clone(System.String)">
+            <summary>
+            Clones the MetaData object. 
+            </summary>
+            <param name="newSelect">New select to be used (Optional)</param>
+            <returns></returns>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.DoesRemapResult(System.Object)">
+            <summary>
+            Looks up dictionary for if data remaps
+            intended for use with enums to real names
+            </summary>
+            <param name="result">Data result to check for remap.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.DataRemapResult(System.Object)">
+            <summary>
+            Looks up dictionary for remapped data
+            intended for use with enums to real names
+            </summary>
+            <param name="result">Data result to check for remap.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.AssignBaseProps(WindwardInterfaces.net.windward.datasource.MetaDataElement)">
+            <summary>
+            Assigns the base member vars (i.e. not Children).
+            </summary>
+            <param name="src">Assign from this.</param>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.Properties">
+            <summary>
+            All the displayed properties for this metadata. Changing the returned values has no effect on this object.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.Name">
+            <summary>
+            The name of the node such as the table or column name. This is the name as used so if a column has an alias, this is the alias.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.FullName">
+            <summary>
+            The full name of this node. So for a column it is actually schema.table.column.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.UniqueName">
+            <summary>
+            The name to use depending on the UseFullName setting.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.UseFullName">
+            <summary>
+            If true use the full name, if false use the Name.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.Select">
+            <summary>
+            The select that created this node. This can be null.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.SubSelect">
+            <summary>
+            The select stripped of the ${var. and } part.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.Description">
+            <summary>
+            The description of the node from the datasource metadata. Null if there is no description.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.DataDbType">
+            <summary>
+            The DbType for this node.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.DataType">
+            <summary>
+            The data type for this data
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataBlob">
+            <summary>
+            True if the DataType is a blob of some kind.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataBoolean">
+            <summary>
+            True if the DataType is a boolean.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataCurrency">
+            <summary>
+            True if the DataType is a currency number. IsDataDecimal also returns true.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataDate">
+            <summary>
+            True if the DataType is a date. Does not return true for time or offset.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataDecimal">
+            <summary>
+            True if the DataType is a decimal number. Will return true for a currency.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataInteger">
+            <summary>
+            True if the DataType is a whole number type from byte up to int64 (and larger someday).
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataNumber">
+            <summary>
+            True if a whole or decimal number.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.IsDataString">
+            <summary>
+            True if the DataType is a string.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.MetaType">
+            <summary>
+            The NODE_TYPE for this node.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.Children">
+            <summary>
+            The children nodes of this node. For example the column nodes are children of the table node.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.FieldSelected">
+            <summary>
+            True if this field is used in it's parent dataset. Used when configuring datasets.
+            </summary>
+        </member>
+        <member name="P:WindwardInterfaces.net.windward.datasource.MetaDataElement.FieldPrimaryKey">
+            <summary>
+            True if this field is the primary key in it's parent dataset. Used when configuring datasets.
+            The primary key is the field used in a B.I. select for the dataset. The other fields are for display only.
+            </summary>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.ToXml(System.Xml.XmlWriter)">
+            <summary>
+            Write this out to XML (for serialization).
+            </summary>
+            <param name="xmlWriter">The writer to serialize to.</param>
+        </member>
+        <member name="M:WindwardInterfaces.net.windward.datasource.MetaDataElement.FromXml(System.Xml.XmlElement)">
+            <summary>
+            Read the xml to deserialize this object.
+            </summary>
+            <param name="elem">The parent element for this part of the XML.</param>
+            <returns>The extracted metadata.</returns>
+        </member>
+    </members>
+</doc>
