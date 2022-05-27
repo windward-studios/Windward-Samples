@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3965481-1b28-43e3-be7b-ea06803eea1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/add_configuration.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/project_maven.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/smart_tomcat_config.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/BasicReportForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/FileList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/GenerateReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/NoFileError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/NoLicenseError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/ParameterError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/ParameterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/ReportForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/RunAllTemplates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/Wait.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/build.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/BasicReportForm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/FileDatasourceTemplate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/FileList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$DatasourceType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$Datatype.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$Format.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/NoFileError.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/NoLicenseError.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/ParameterError.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/ParameterException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/ReportForm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/RunAllTemplates$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/RunAllTemplates.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/SalesforceTemplate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/Template.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/URLDatasourceTemplate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/Wait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27TLZACF2xbZ1rOSFeIfal1VZlT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
+      <option name="adminPort" value="8005" />
+      <option name="contextPath" />
+      <option name="docBase" />
+      <option name="envOptions" />
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8080" />
+      <option name="tomcatInfo" />
+      <option name="vmOptions" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3965481-1b28-43e3-be7b-ea06803eea1c" name="Changes" comment="" />
+      <created>1649339187814</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649339187814</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Servlet" default="compile">
 
-	<property name="servlet_jar" value="C:\Program Files\Apache Software Foundation\Tomcat 9.0\lib\servlet-api.jar"/>
-	<property name="windward_jars" value="../../../../../jars"/>
+	<property name="servlet_jar" value="C:\tomcat9\lib\servlet-api.jar"/>
+	<property name="windward_jars" value="C:\jars"/>
 
 	<property name="src" value="src"/>
 	<property name="build" value="WEB-INF/classes"/>
