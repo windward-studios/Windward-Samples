@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b3965481-1b28-43e3-be7b-ea06803eea1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../AdvancedCommandLine/RunReport.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../AdvancedCommandLine/RunReport.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaServletWalkthrough.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaServletWalkthrough.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_servlet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/open_intellij.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/read.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/BasicReportForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/FileDatasourceTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/FileList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/GenerateReport$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/GenerateReport$DatasourceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/GenerateReport$Datatype.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/GenerateReport$Format.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/GenerateReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/NoFileError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/NoLicenseError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/ParameterError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/ParameterException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/ReportForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/RunAllTemplates$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/RunAllTemplates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/SalesforceTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/Template.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/URLDatasourceTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/net/windward/servletexample/Wait.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +51,26 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../../jars" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
+      <option name="adminPort" value="8005" />
+      <option name="contextPath" />
+      <option name="docBase" />
+      <option name="envOptions" />
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8080" />
+      <option name="tomcatInfo" />
+      <option name="vmOptions" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
