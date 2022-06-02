@@ -22,11 +22,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ServletExample" />
+        <module name="AdvancedServletExample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ServletExample" target="8" />
+      <module name="AdvancedServletExample" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
@@ -225,7 +225,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ServletExample.iml" filepath="$PROJECT_DIR$/ServletExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AdvancedServletExample.iml" filepath="$PROJECT_DIR$/AdvancedServletExample.iml" />
     </modules>
   </component>
   <component name="ProjectReloadState">

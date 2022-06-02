@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3965481-1b28-43e3-be7b-ea06803eea1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/add_configuration.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/project_maven.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/smart_tomcat_config.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/BasicReportForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/FileList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/GenerateReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/NoFileError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/NoLicenseError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/ParameterError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/ParameterException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/ReportForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/RunAllTemplates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/Wait.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/windward/servletexample/build.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/apache_home_page.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/apache_home_screen.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/example_one.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/example_two.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/project_structure.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/required_jars.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_images/run_button.JPG" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/BasicReportForm.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/FileDatasourceTemplate.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/FileList.class" afterDir="false" />
@@ -41,10 +31,10 @@
       <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/Template.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/URLDatasourceTemplate.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/Wait.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServletExample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AdvancedServletExample.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +60,44 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="AdvancedServletExample" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="AdvancedServletExample" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdvancedServletExample" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
+      <option name="adminPort" value="8005" />
+      <option name="contextPath" value="/AdvancedServletExample" />
+      <option name="docBase" value="C:\Users\Yo\Desktop\Work\Windward-Samples\Java Samples\Advanced\AdvancedServlet" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8080" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.62" />
+          <option name="number" value="0" />
+          <option name="path" value="C:\tomcat9" />
+          <option name="version" value="9.0.62.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" />
