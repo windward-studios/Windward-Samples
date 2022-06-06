@@ -49,24 +49,23 @@ Note: The dependencies that contain the word **Maven** will appear later in the 
 1. From inside the `AdvancedServlet` folder navigate to the `WEB-INF` folder and open the `WindwardReport.properties` file.
 2. Replace `[[LICENSE]]` with your license key
 
-### Verify Maven is Installed
-1. Navigate to settings which is under the **Project Structure...** section or by clicking **Ctrl + Alt + S**
+### Load the Maven dependencies
+1. In the top toolbar, navigate to **View** -> **Tool Windows** -> **Maven**
 
-![project structure](./readme_images/project_structure.JPG)
+![project structure](./readme_images/maven_toolbar.JPG)
 
-2. Under **Plugins** search for **Maven**
-3. Install if not already installed
+2. Click the left arrow icon under Maven to reload projects to bring in the Windward Java Engine.
 
 ### Verify Windward Maven Repo
 1. Right-click on **AdvancedServlet** in the Project Window 
 
 ![project maven](./readme_images/project_maven.JPG)
 
-2. Then on the bottom, go to **Maven** -> **Reload project**
+2. Then on the bottom, go to **Maven** -> **Reload project** to bring in the Windward Java Engine.
 
 ### Configuring and Running the Smart Tomcat Plugin
 1. The Smart Tomcat plugin can be installed by using the link in the requirements section or follow the Intellij docs on [managing plugins](https://www.jetbrains.com/help/idea/managing-plugins.html)
-2. Select **Add Configuration...** on the top of the IntelliJ window 
+2. Select **Edit Configuration...** on the top of the IntelliJ window 
 
 ![add configuration](./readme_images/add_configuration.JPG)
 
@@ -79,7 +78,7 @@ Note: The dependencies that contain the word **Maven** will appear later in the 
 6. For **Deployment Directory**, click on the folder icon in the text box and click **OK** without making any changes
 7. Change the **Context Path** to **/JavaServletExample** if not already set
 8. Click **Apply** and then **OK**
-9. The **Add Configuration...** will now be set to **JavaServletExample**
+9. The **Edit Configuration...** will now be set to **JavaServletExample**
 10. Click the play button to run the configuration
 
 ![add configuration](./readme_images/add_configuration.JPG)
