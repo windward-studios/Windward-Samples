@@ -8,8 +8,9 @@ The instructions are for Windows systems but the setup process is similar for an
 - [Java SE JDK 18+](https://www.oracle.com/java/technologies/downloads/) 32 or 64 bit will work
 - [Tomcat 9](https://tomcat.apache.org/download-90.cgi)
 - [IntelliJ](https://www.jetbrains.com/idea/)
-- [Smart Tomcat](https://plugins.jetbrains.com/plugin/9492-smart-tomcat) IntelliJ plugin
+- [Smart Tomcat Plugin](https://plugins.jetbrains.com/plugin/9492-smart-tomcat) IntelliJ plugin
 - [Valid License Key](https://www.windwardstudios.com/trial/download)
+- [Maven Plugin]() 
 
 # Setup
 
@@ -42,9 +43,19 @@ The instructions are for Windows systems but the setup process is similar for an
 
 ![dependencies](./readme_images/required_jars.JPG)
 
+Note: The dependencies that contain the word **Maven** will appear later in the tutorial.
+
 ### Setting the License Key
 1. From inside the `AdvancedServlet` folder navigate to the `WEB-INF` folder and open the `WindwardReport.properties` file.
 2. Replace `[[LICENSE]]` with your license key
+
+### Verify Maven is Installed
+1. Navigate to settings which is under the **Project Structure...** section or by clicking **Ctrl + Alt + S**
+
+![project structure](./readme_images/project_structure.JPG)
+
+2. Under **Plugins** search for **Maven**
+3. Install if not already installed
 
 ### Verify Windward Maven Repo
 1. Right-click on **AdvancedServlet** in the Project Window 
@@ -59,7 +70,10 @@ The instructions are for Windows systems but the setup process is similar for an
 
 ![add configuration](./readme_images/add_configuration.JPG)
 
-3. Click the **+** sign on the left corner to add a new configuration and select Smart Tomcat which display the configurations ![smart tomcat config](./readme_images/smart_tomcat_config.JPG)
+3. Click the **+** sign on the left corner to add a new configuration and select Smart Tomcat which display the configurations 
+
+![smart tomcat config](./readme_images/smart_tomcat_config.JPG)
+
 4. Set the **Name** as **JavaServletExample**
 5. If **Tomcat Server** is not set, then click the "..." and select the Tomcat folder at `C:/tomcat9`
 6. For **Deployment Directory**, click on the folder icon in the text box and click **OK** without making any changes
