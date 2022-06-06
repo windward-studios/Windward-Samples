@@ -5,36 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3965481-1b28-43e3-be7b-ea06803eea1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/readme_images/apache_home_page.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/apache_home_screen.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/example_one.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/example_two.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/project_structure.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/required_jars.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_images/run_button.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/BasicReportForm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/FileDatasourceTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/FileList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$DatasourceType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$Datatype.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport$Format.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/GenerateReport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/NoFileError.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/NoLicenseError.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/ParameterError.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/ParameterException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/ReportForm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/RunAllTemplates$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/RunAllTemplates.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/SalesforceTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/Template.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/URLDatasourceTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/net/windward/servletexample/Wait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdvancedServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdvancedServletExample.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServletExample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AdvancedServletExample.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme_images/required_jars.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/readme_images/required_jars.JPG" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,29 +33,14 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="AdvancedServletExample" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="AdvancedServletExample" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AdvancedServletExample" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/AdvancedServletExample" />
       <option name="docBase" value="C:\Users\Yo\Desktop\Work\Windward-Samples\Java Samples\Advanced\AdvancedServlet" />
-      <option name="envOptions">
-        <map />
-      </option>
+      <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
