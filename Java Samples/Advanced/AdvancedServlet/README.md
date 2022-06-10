@@ -75,10 +75,11 @@ Note: The dependencies that contain the word **Maven** will appear later in the 
 
 4. Set the **Name** as **JavaServletExample**
 5. If **Tomcat Server** is not set, then click the "..." and select the Tomcat folder at `C:/tomcat9`
-6. For **Deployment Directory**, click on the folder icon in the text box and click **OK** without making any changes
+6. For **Deployment Directory**, click on the folder icon and find the path of your current project and set the path to the folder that contains the WEB-INF folder.
+   1. In the default case this is the "AdvancedServlet" folder
 7. Change the **Context Path** to **/JavaServletExample** if not already set
 8. Click **Apply** and then **OK**
-9. The **Edit Configuration...** will now be set to **JavaServletExample**
+9.  The **Edit Configuration...** will now be set to **JavaServletExample**
 10. Click the play button to run the configuration
 
 ![add configuration](./readme_images/add_configuration.JPG)
