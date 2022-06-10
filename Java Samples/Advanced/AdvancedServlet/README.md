@@ -39,7 +39,9 @@ The instructions are for Windows systems but the setup process is similar for an
 
 ![project structure](./readme_images/project_structure.JPG)
 
-3. Verify the correct Java SDK is selected and the **Servlet API** from the Tomcat zip are pointing to the correct location. 
+3. Verify the correct Java SDK is selected and the **Servlet API** from the Tomcat zip are pointing to the correct location.
+   1. Right click on the **Servlet API** and choose *Edit* to update the path.
+   2. Locate the *servlet-api.jar* file located within the *lib* folder of your apache-tomcat directory.
 
 ![dependencies](./readme_images/required_jars.JPG)
 
@@ -54,7 +56,7 @@ Note: The dependencies that contain the word **Maven** will appear later in the 
 
 ![project structure](./readme_images/maven_toolbar.JPG)
 
-2. Click the left arrow icon under Maven to reload projects to bring in the Windward Java Engine.
+1. Click the spinning arrows icon under Maven to reload projects to bring in the Windward Java Engine.
 
 ### Verify Windward Maven Repo
 1. Right-click on **AdvancedServlet** in the Project Window 
