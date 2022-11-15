@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WindwardRestApi.src.Api;
 using WindwardRestApi.src.Model;
 
 public class DocumentProcessor
 {
-	private WindwardClientWrapper client;
+	private WindwardClient client;
 	private DataSourceWrapper dataSourceWrapper = new DataSourceWrapper();
 	private string saveDirectory;
-	private List<Task> requests = new List<Task>();
-	private SaveDocuments docSaver;
+    private SaveDocuments docSaver;
 
 	public DocumentProcessor(string engineUrl, string licenseKey)
 	{
-		client = new WindwardClientWrapper(new Uri(engineUrl), licenseKey);
+        client = new WindwardClient(new Uri(engineUrl));
+        client.LicenseKey = licenseKey;
 	}
 
 	// Function specific to processing our Json orders
-	public void processOrdersJson(string filepath, string templateUrl)
+	public async Task ProcessOrdersJson(string filepath, string templateUrl)
 	{
 		docSaver = new SaveDocuments(saveDirectory);
 		Console.WriteLine("Processing JSON data...");
@@ -27,58 +28,149 @@ public class DocumentProcessor
 		List<string> names = dataSourceWrapper.processOrders(filepath);
 		List<DataSource> dataSources = dataSourceWrapper.GetDataSources();
 
-		// Create an object pairing each datasource to the corresponding customer name
-		var nameAndDataSource = names.Zip(dataSources, (n, d) => new { Name = n, Source = d });
-
-		// Our Invoice template has an input parameter to track the number assigned to the invoice
+        // Our Invoice template has an input parameter to track the number assigned to the invoice
 		// on creation
 		int invoiceNum = 1;
 
 		Console.WriteLine("Creating Requests...");
 
-		// Create a request for each order that was parsed in
-		foreach (var nD in nameAndDataSource)
-		{
-			// Create our template object for this order, and add corresponding data source
-			// and input parameter to it
-			TemplateWrapper temp = new TemplateWrapper(templateUrl, "docx", "pdf");
-			temp.addDataSource(nD.Source);
-			temp.setInputParameterInt("InvoiceNum", invoiceNum);
+        var jobs = await PostAllTemplates(dataSources, templateUrl);
 
-			// Create an async task to handle processing the request,
-			// and add it to a list of all requests
-			requests.Add(processOrderRequest(client.sendRequest(temp), nD.Name));
-			Console.WriteLine("Created request for {0}'s invoice...", nD.Name);
-		}
+        var dsJobPairs = names.Zip(jobs, (name, job) => (name, job));
 
-		Task complete = Task.WhenAll(requests);
-		try
-		{
-			complete.Wait();
-		}
-		catch { }
+        Console.WriteLine("Retrieving Documents");
+        await GetAllDocuments(dsJobPairs);
+    }
+
+
+    private async Task<IEnumerable<string>> PostAllTemplates(IEnumerable<DataSource> dataSources, string templateUrl)
+    {
+        List<Task<string>> jobList = new List<Task<string>>();
+        foreach (var dataSource in dataSources)
+        {
+            Template template = CreateTemplate(templateUrl, "docx", "pdf");
+            template.Datasources.Add(dataSource);
+            template.Parameters.Add(new Parameter("InvoiceNum", 1));
+
+            jobList.Add(PostTemplate(template));
+        }
+
+        await Task.WhenAll(jobList);
+        return jobList.Select(job => job.Result);
+    }
+
+    private async Task GetAllDocuments(IEnumerable<(string, string)> stringJobPairs)
+    {
+        foreach (var stringJobPair in stringJobPairs)
+        {
+            Console.WriteLine($"Retrieving documentL: {stringJobPair.Item1}");
+            Document document;
+            try
+            {
+                document = await GetDocument(stringJobPair.Item2);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"Processing Failed for Document: {stringJobPair.Item1}");
+                continue;
+            }
+
+            await docSaver.SaveInvoiceDocument(document, stringJobPair.Item1);
+        }
+    }
+
+    private Template CreateTemplate(string templateUrl, string templateFormatExtension, string outputFormatExtension)
+    {
+        Template.OutputFormatEnum outputFormat;
+        Template.FormatEnum templateFormat;
+        switch (outputFormatExtension.ToLower())
+        {
+            case "pdf":
+                outputFormat = Template.OutputFormatEnum.Pdf;
+                break;
+            case "docx":
+                outputFormat = Template.OutputFormatEnum.Docx;
+                break;
+            case "xlsx":
+                outputFormat = Template.OutputFormatEnum.Xlsx;
+                break;
+            case "pptx":
+                outputFormat = Template.OutputFormatEnum.Pptx;
+                break;
+            default:
+                outputFormat = Template.OutputFormatEnum.Pdf;
+                break;
+        }
+        switch (templateFormatExtension.ToLower())
+        {
+            case "docx":
+                templateFormat = Template.FormatEnum.Docx;
+                break;
+            case "xlsx":
+                templateFormat = Template.FormatEnum.Xlsx;
+                break;
+            case "pptx":
+                templateFormat = Template.FormatEnum.Pptx;
+                break;
+            default:
+                templateFormat = Template.FormatEnum.Docx;
+                break;
+        }
+
+        // Create the template object based on the given information
+        return  new Template(outputFormat, templateUrl, templateFormat);
 	}
-	public void setSaveDirectory(string filepath)
+
+    private async Task<string> PostTemplate(Template template)
+    {
+        try
+        {
+            return (await client.PostDocument(template)).Guid;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+	}
+
+    private async Task<Document> GetDocument(string id)
+    {
+        System.Net.HttpStatusCode status = await client.GetDocumentStatus(id);
+
+        // Status code 302 means the document is completed and ready to be retrieved
+        while (status != (System.Net.HttpStatusCode)302)
+        {
+            // Check if there were any errors while processing the template
+            if (status == (System.Net.HttpStatusCode)401 || status == (System.Net.HttpStatusCode)404 || status == (System.Net.HttpStatusCode)500)
+            {
+                try
+                {
+                    ServerException err = await client.GetError(id);
+                    Console.WriteLine("Error with request: " + id);
+                    Console.WriteLine(err.Type);
+                    Console.WriteLine(err.Message);
+                    throw err;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+            // Pause before checking the status again
+            await Task.Delay(100);
+            status = await client.GetDocumentStatus(id);
+        }
+
+        // Retrieve the generated document, and remove the completed request from the server
+        Document doc = await client.GetDocument(id);
+        await client.DeleteDocument(id);
+        return doc;
+    }
+
+	public void SetSaveDirectory(string filepath)
 	{
 		saveDirectory = filepath;
 	}
-
-	// Handle the created requests after the request has been sent
-	// to the RESTful engine
-	private async Task processOrderRequest(Task<string> task, string name)
-	{
-		while (!task.IsCompleted)
-		{
-			await Task.Delay(100);
-		}
-		
-		// Retreive the completed document
-		Document doc = await client.getDocument(task.Result);
-		Console.WriteLine("{0}'s invoice is complete...", name);
-
-		// Save the completed document
-		docSaver.saveInvoiceDocument(doc, name);
-	}
-
-
 }

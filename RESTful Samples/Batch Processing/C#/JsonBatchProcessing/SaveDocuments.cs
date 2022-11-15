@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using WindwardRestApi.src.Model;
 
 public class SaveDocuments
@@ -12,9 +13,10 @@ public class SaveDocuments
 
 	// Saves the generated invoice to the location given,
 	// naming the file according to the customer's last name
-	public void saveInvoiceDocument(Document doc, string name)
-	{
+	public async Task SaveInvoiceDocument(Document doc, string name)
+    {
+        Directory.CreateDirectory(saveDirectory);
 		string filepath = Path.GetFullPath(saveDirectory + name + ".pdf");
-		File.WriteAllBytes(filepath, doc.Data);
+        await File.WriteAllBytesAsync(filepath, doc.Data);
 	}
 }
