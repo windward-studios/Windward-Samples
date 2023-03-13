@@ -244,7 +244,7 @@ public class RunReport {
         if (isHTMLOutput(cmdLine.getReportFilename()) && ProcessHtml.isSplitPagesFromProperties()) {
             reportOutput = null;
         }
-        else if ((!cmdLine.getReportFilename().endsWith(".prn")) && (!cmdLine.getReportFilename().endsWith(".svg")) &&
+        else if ((!cmdLine.getReportFilename().endsWith(".prn"))) &&
                 (!cmdLine.getReportFilename().endsWith(".eps")) && (!cmdLine.getReportFilename().endsWith(".bmp")) &&
                 (!cmdLine.getReportFilename().endsWith(".gif")) && (!cmdLine.getReportFilename().endsWith(".jpg")) &&
                 (!cmdLine.getReportFilename().endsWith(".png")) && (!cmdLine.getReportFilename().endsWith(".tif")) &&
@@ -548,8 +548,6 @@ public class RunReport {
 
         if (cmdLine.getReportFilename().endsWith(".eps"))
             return new ProcessImage(template, HtmlImage.RENDER_EPS);
-        if (cmdLine.getReportFilename().endsWith(".svg"))
-            return new ProcessImage(template, HtmlImage.RENDER_SVG);
         if (cmdLine.getReportFilename().endsWith(".bmp"))
             return new ProcessImage(template, HtmlImage.BITMAP_BMP, 600);
         if (cmdLine.getReportFilename().endsWith(".gif"))
