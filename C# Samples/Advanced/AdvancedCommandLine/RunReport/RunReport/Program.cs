@@ -202,7 +202,7 @@ namespace RunReport
             }
         }
 
-        private static string[] extImages = { "bmp", "eps", "gif", "jpg", "png", "svg" };
+        private static string[] extImages = { "bmp", "eps", "gif", "jpg", "png" };
         private static string[] extHtmls = { "htm", "html", "xhtml" };
 
         private static PerfCounters RunOneReport(CommandLine cmdLine, bool preservePodFraming)
@@ -601,8 +601,6 @@ namespace RunReport
                     return new ReportPptx(template, output);
                 case "rtf":
                     return new ReportRtf(template, output);
-                case "svg":
-                    return new ReportImage(template, ReportImage.FORMAT.SVG);
                 case "tif":
                 case "tiff":
                     return new ReportImage(template, ReportImage.FORMAT.TIF, 600);
