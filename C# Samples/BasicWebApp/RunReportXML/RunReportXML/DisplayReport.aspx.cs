@@ -29,12 +29,12 @@ namespace BasicWindwardEngine
             FileStream Xml = File.OpenRead(basePath + "Windward Trucking 2 - Data.xml");
 
             // Make a data object to connect to our xml file
-            IReportDataSource data = new XmlDataSourceImpl(Xml, false);
+            IReportDataSource data = new SaxonDataSourceImpl(Xml);
 
             // Run the report process
             myReport.ProcessSetup();
             // The second parameter is "" to tell the process that our data is the unnamed data source
-            myReport.ProcessData(data, "");
+            myReport.ProcessData(data, "sax");
             myReport.ProcessComplete();
 
             // Close out of our template file
