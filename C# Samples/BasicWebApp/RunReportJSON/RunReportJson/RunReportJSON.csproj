@@ -60,8 +60,11 @@
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\DevExpress.XtraTreeList.v18.2.dll</HintPath>
     </Reference>
+    <Reference Include="Fizzler, Version=1.2.1.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\Fizzler.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.AWT.WinForms, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.AWT.WinForms.dll</HintPath>
@@ -150,8 +153,8 @@
     <Reference Include="IKVM.Runtime.JNI, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.Runtime.JNI.dll</HintPath>
     </Reference>
-    <Reference Include="Kailua, Version=22.3.0.48, Culture=neutral, PublicKeyToken=86d340ffca32cc5b, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\Kailua.dll</HintPath>
+    <Reference Include="Kailua, Version=24.0.2.2, Culture=neutral, PublicKeyToken=86d340ffca32cc5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\Kailua.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
@@ -216,17 +219,17 @@
     <Reference Include="Microsoft.Spatial, Version=7.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Spatial.7.10.0\lib\net45\Microsoft.Spatial.dll</HintPath>
     </Reference>
-    <Reference Include="morph, Version=22.3.0.48, Culture=neutral, PublicKeyToken=9ea30334d9e0e42e, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\morph.dll</HintPath>
+    <Reference Include="morph, Version=24.0.2.2, Culture=neutral, PublicKeyToken=9ea30334d9e0e42e, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\morph.dll</HintPath>
     </Reference>
     <Reference Include="netchartdir, Version=6.4.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\netchartdir.dll</HintPath>
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\netchartdir.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OfficeOutputBuilder, Version=22.3.0.48, Culture=neutral, PublicKeyToken=fd5c9ef088b129c8, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\OfficeOutputBuilder.dll</HintPath>
+    <Reference Include="OfficeOutputBuilder, Version=24.0.2.2, Culture=neutral, PublicKeyToken=fd5c9ef088b129c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\OfficeOutputBuilder.dll</HintPath>
     </Reference>
     <Reference Include="PDFNet, Version=9.2.7.9274, Culture=neutral, PublicKeyToken=45663c462b939c60, processorArchitecture=x86">
       <HintPath>..\packages\PDFNet.9.2.0\lib\net40\PDFNet.dll</HintPath>
@@ -236,10 +239,13 @@
       <HintPath>..\packages\PDFNet.9.2.0\lib\net40\PDFNetLoader.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\PresentationCore.dll</HintPath>
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\PresentationCore.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\PresentationFramework.dll</HintPath>
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=3.4.0.0, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\Svg.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -253,7 +259,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
@@ -322,31 +328,31 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindowsBase.dll</HintPath>
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindowsBase.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardAccessProviders, Version=22.3.0.48, Culture=neutral, PublicKeyToken=b881cd11cd0e11b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardAccessProviders.dll</HintPath>
+    <Reference Include="WindwardAccessProviders, Version=24.0.2.2, Culture=neutral, PublicKeyToken=b881cd11cd0e11b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardAccessProviders.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardInterfaces, Version=22.3.0.48, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardInterfaces.dll</HintPath>
+    <Reference Include="WindwardInterfaces, Version=24.0.2.2, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardODataDrivers, Version=22.3.0.48, Culture=neutral, PublicKeyToken=d3bc1f5a00857bfd, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardODataDrivers.dll</HintPath>
+    <Reference Include="WindwardODataDrivers, Version=24.0.2.2, Culture=neutral, PublicKeyToken=d3bc1f5a00857bfd, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardODataDrivers.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardPlatform, Version=22.3.0.48, Culture=neutral, PublicKeyToken=f9383c8eeffa86ec, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardPlatform.dll</HintPath>
+    <Reference Include="WindwardPlatform, Version=24.0.2.2, Culture=neutral, PublicKeyToken=f9383c8eeffa86ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardPlatform.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardReports, Version=22.3.0.48, Culture=neutral, PublicKeyToken=34ffe15f4bbb8e53, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardReports.dll</HintPath>
+    <Reference Include="WindwardReports, Version=24.0.2.2, Culture=neutral, PublicKeyToken=34ffe15f4bbb8e53, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardReports.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardReportsAPI, Version=22.3.0.48, Culture=neutral, PublicKeyToken=9159ad800b91f253, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardReportsAPI.dll</HintPath>
+    <Reference Include="WindwardReportsAPI, Version=24.0.2.2, Culture=neutral, PublicKeyToken=9159ad800b91f253, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardReportsAPI.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardReportsDrivers, Version=22.3.0.48, Culture=neutral, PublicKeyToken=adf7e40e645242d1, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardReportsDrivers.dll</HintPath>
+    <Reference Include="WindwardReportsDrivers, Version=24.0.2.2, Culture=neutral, PublicKeyToken=adf7e40e645242d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardReportsDrivers.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardSalesforceDriver, Version=22.3.0.48, Culture=neutral, PublicKeyToken=f05a69edafd4b950, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindwardEngine.22.3.0.48\lib\net451\WindwardSalesforceDriver.dll</HintPath>
+    <Reference Include="WindwardSalesforceDriver, Version=24.0.2.2, Culture=neutral, PublicKeyToken=f05a69edafd4b950, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardSalesforceDriver.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
