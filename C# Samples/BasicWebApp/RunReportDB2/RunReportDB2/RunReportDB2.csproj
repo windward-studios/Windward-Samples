@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RunReportDB2</RootNamespace>
     <AssemblyName>RunReportDB2</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -46,40 +46,250 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IKVM.OpenJDK.Core, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\dll\IKVM.OpenJDK.Core.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Fizzler, Version=1.2.1.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\Fizzler.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Localedata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Nashorn.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.5.0.2, Culture=neutral, PublicKeyToken=00d957d768bec828, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.WINDWARD.8.5.0.2\lib\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="Kailua, Version=24.0.2.2, Culture=neutral, PublicKeyToken=86d340ffca32cc5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\Kailua.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AnalysisServices.AdomdClient.12.0.2000.8\lib\net40\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.5\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.5\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.identitymodel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.7.0.0\lib\net35\microsoft.identitymodel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.5.2.9\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=7.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Core.7.10.0\lib\net45\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=7.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Edm.7.10.0\lib\net45\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=7.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Spatial.7.10.0\lib\net45\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="morph, Version=24.0.2.2, Culture=neutral, PublicKeyToken=9ea30334d9e0e42e, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\morph.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir, Version=6.4.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeOutputBuilder, Version=24.0.2.2, Culture=neutral, PublicKeyToken=fd5c9ef088b129c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\OfficeOutputBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\PresentationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=3.4.0.0, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\Svg.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.5\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="WindwardInterfaces, Version=11.1.16.0, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\dll\WindwardInterfaces.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindowsBase.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardReports, Version=11.1.15.0, Culture=neutral, PublicKeyToken=34ffe15f4bbb8e53, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\dll\WindwardReports.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="WindwardAccessProviders, Version=24.0.2.2, Culture=neutral, PublicKeyToken=b881cd11cd0e11b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardAccessProviders.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardReportsAPI, Version=11.1.15.0, Culture=neutral, PublicKeyToken=9159ad800b91f253, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\dll\WindwardReportsAPI.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="WindwardInterfaces, Version=24.0.2.2, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="WindwardReportsDrivers, Version=11.1.15.0, Culture=neutral, PublicKeyToken=adf7e40e645242d1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\dll\WindwardReportsDrivers.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="WindwardODataDrivers, Version=24.0.2.2, Culture=neutral, PublicKeyToken=d3bc1f5a00857bfd, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardODataDrivers.dll</HintPath>
+    </Reference>
+    <Reference Include="WindwardPlatform, Version=24.0.2.2, Culture=neutral, PublicKeyToken=f9383c8eeffa86ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="WindwardReports, Version=24.0.2.2, Culture=neutral, PublicKeyToken=34ffe15f4bbb8e53, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardReports.dll</HintPath>
+    </Reference>
+    <Reference Include="WindwardReportsAPI, Version=24.0.2.2, Culture=neutral, PublicKeyToken=9159ad800b91f253, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardReportsAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="WindwardReportsDrivers, Version=24.0.2.2, Culture=neutral, PublicKeyToken=adf7e40e645242d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardReportsDrivers.dll</HintPath>
+    </Reference>
+    <Reference Include="WindwardSalesforceDriver, Version=24.0.2.2, Culture=neutral, PublicKeyToken=f05a69edafd4b950, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEngine.24.0.2.2\lib\net451\WindwardSalesforceDriver.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -106,7 +316,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
