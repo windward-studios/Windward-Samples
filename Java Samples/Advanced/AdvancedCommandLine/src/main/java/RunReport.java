@@ -244,7 +244,7 @@ public class RunReport {
         if (isHTMLOutput(cmdLine.getReportFilename()) && ProcessHtml.isSplitPagesFromProperties()) {
             reportOutput = null;
         }
-        else if ((!cmdLine.getReportFilename().endsWith(".prn"))) &&
+        else if ((!cmdLine.getReportFilename().endsWith(".prn")) &&
                 (!cmdLine.getReportFilename().endsWith(".eps")) && (!cmdLine.getReportFilename().endsWith(".bmp")) &&
                 (!cmdLine.getReportFilename().endsWith(".gif")) && (!cmdLine.getReportFilename().endsWith(".jpg")) &&
                 (!cmdLine.getReportFilename().endsWith(".png")) && (!cmdLine.getReportFilename().endsWith(".tif")) &&
