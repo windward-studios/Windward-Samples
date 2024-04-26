@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RunReportOData</RootNamespace>
     <AssemblyName>RunReportOData</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -33,29 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindwardInterfaces, Version=14.0.186.0, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windward Studios\Windward .NET Engine\dll\WindwardInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="WindwardReports, Version=14.0.186.0, Culture=neutral, PublicKeyToken=34ffe15f4bbb8e53, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windward Studios\Windward .NET Engine\dll\WindwardReports.dll</HintPath>
-    </Reference>
-    <Reference Include="WindwardReportsAPI, Version=14.0.186.0, Culture=neutral, PublicKeyToken=9159ad800b91f253, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windward Studios\Windward .NET Engine\dll\WindwardReportsAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="WindwardReportsDrivers, Version=14.0.186.0, Culture=neutral, PublicKeyToken=adf7e40e645242d1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windward Studios\Windward .NET Engine\dll\WindwardReportsDrivers.dll</HintPath>
-    </Reference>
+    <PackageReference Include="FluentEngine">
+      <Version>*</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RunReportOData.cs" />
