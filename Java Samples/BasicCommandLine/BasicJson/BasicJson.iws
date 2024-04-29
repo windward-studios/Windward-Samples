@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd4dc20f-6c07-4b08-8f8d-b8dad4bc5eec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../BasicDb2/BasicDb2.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicDb2/BasicDb2.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicJson.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BasicJson.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicJson.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/BasicJson.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicJson.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BasicJson.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BasicJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicJson.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,9 +84,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -160,7 +156,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9263",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicJson/BasicJson.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicMysql/BasicMysql.ipr",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -256,6 +252,7 @@
       <option name="presentableId" value="Default" />
       <updated>1338411865374</updated>
       <workItem from="1714403685636" duration="145000" />
+      <workItem from="1714403892428" duration="17000" />
     </task>
     <servers />
   </component>

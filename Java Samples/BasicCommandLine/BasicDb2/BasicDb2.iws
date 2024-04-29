@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d12a387d-4256-4fb5-aa8e-41b458492933" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/BasicDb2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BasicDb2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicDb2.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/BasicDb2.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicDb2.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BasicDb2.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BasicDb2.java" beforeDir="false" />
-    </list>
+    <list default="true" id="d12a387d-4256-4fb5-aa8e-41b458492933" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,6 +199,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;WATE-9263&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Windward-Samples/Java Samples/BasicCommandLine/BasicJson/BasicJson.ipr&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -315,6 +311,7 @@
       <option name="presentableId" value="Default" />
       <updated>1338411150231</updated>
       <workItem from="1714403243143" duration="325000" />
+      <workItem from="1714403659109" duration="201000" />
     </task>
     <servers />
   </component>
