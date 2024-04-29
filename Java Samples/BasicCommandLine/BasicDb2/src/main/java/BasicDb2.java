@@ -53,8 +53,7 @@ public class BasicDb2 {
             report.processComplete();
 			template.close();
 			reportStream.close();
-            System.out.println("Launching report " + fileReport.getAbsolutePath());
-            SystemWrapper.LaunchFile(fileReport.getAbsolutePath());
+            System.out.println("Report Complete at: " + fileReport.getAbsolutePath());
 
         } catch (Exception e) {
             // Uh oh, just in case
