@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb1d029-bd70-4291-b4ed-72ba3ea63cda" name="Default" comment="" />
+    <list default="true" id="3cb1d029-bd70-4291-b4ed-72ba3ea63cda" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Advanced/AdvancedServlet/AdvancedServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/AdvancedServlet/AdvancedServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/src/RunUsingDatasets.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/src/main/java/RunUsingDatasets.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +73,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -75,12 +85,16 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
+  <component name="ProjectId" id="2fmSHQVf3X1A6SH6bgQTXyQTqcM" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -166,23 +180,23 @@
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/BasicMysql.ipr" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="C:\Users\marcusj\IdeaProjects\BasicMysql\lib" />
-    <property name="dynamic.classpath" value="false" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "wate-9262",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -255,6 +269,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -280,6 +295,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411595833</updated>
+      <workItem from="1714404674089" duration="333000" />
     </task>
     <servers />
   </component>
@@ -308,6 +324,9 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
