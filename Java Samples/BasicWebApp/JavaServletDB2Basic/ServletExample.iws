@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4252518-83f5-4a23-8e4f-a7bfda15a026" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServletExample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/GenerateDB2Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/GenerateDB2Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
-    </list>
+    <list default="true" id="b4252518-83f5-4a23-8e4f-a7bfda15a026" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,9 +196,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9260",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletDB2Basic/ServletExample.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletMSSQL/ServletExample.ipr",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.7468355",
@@ -280,7 +269,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1334761628036</updated>
-      <workItem from="1714405218116" duration="93000" />
+      <workItem from="1714405218116" duration="175000" />
     </task>
     <servers />
   </component>
