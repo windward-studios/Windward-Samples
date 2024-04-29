@@ -45,8 +45,7 @@ public class BasicJson {
 			report.processComplete();
 			template.close();
 			reportStream.close();
-            System.out.println("Launching report " + fileReport.getAbsolutePath());
-            SystemWrapper.LaunchFile(fileReport.getAbsolutePath());
+            System.out.println("Report saved at: " + fileReport.getAbsolutePath());
 			
         } catch (Exception e) {
             // Uh oh, just in case
