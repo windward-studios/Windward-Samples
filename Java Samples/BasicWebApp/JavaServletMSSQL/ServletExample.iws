@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4252518-83f5-4a23-8e4f-a7bfda15a026" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaServletDB2Basic/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletDB2Basic/ServletExample.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/GenerateMSSQLReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/GenerateMSSQLReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
-    </list>
+    <list default="true" id="b4252518-83f5-4a23-8e4f-a7bfda15a026" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,9 +195,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9260",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletMSSQL/ServletExample.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletMySQLBasic/ServletExample.ipr",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.7468355",
@@ -312,7 +305,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1334761628036</updated>
-      <workItem from="1714405393864" duration="37000" />
+      <workItem from="1714405393864" duration="113000" />
     </task>
     <servers />
   </component>
