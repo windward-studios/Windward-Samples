@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b6ed513-5ecc-4640-a99b-d510d1d253ec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/RunReport.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RunReport.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RunReport.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/RunReport.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RunReport.iws" beforeDir="false" afterPath="$PROJECT_DIR$/RunReport.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicCommandLine/BasicMysql/BasicMysql.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../BasicCommandLine/BasicSql/BasicSql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicCommandLine/BasicSql/BasicSql.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../BasicCommandLine/BasicSql/BasicSql.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicCommandLine/BasicSql/BasicSql.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../BasicCommandLine/BasicSql/BasicSql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../BasicCommandLine/BasicSql/BasicSql.iws" afterDir="false" />
-    </list>
+    <list default="true" id="5b6ed513-5ecc-4640-a99b-d510d1d253ec" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +149,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "wate-9262",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/Advanced/AdvancedCommandLine/RunReport.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/Advanced/AdvancedServlet/AdvancedServletExample.ipr",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.7468355",
@@ -250,7 +240,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1299105236142</updated>
-      <workItem from="1714404713479" duration="71000" />
+      <workItem from="1714404713479" duration="156000" />
     </task>
     <servers />
   </component>
