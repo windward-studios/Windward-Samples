@@ -5,17 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4e65e29-f241-40b4-a86f-011216d7835e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicCommandLine/BasicMysql/BasicMysql.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicCommandLine/BasicMysql/BasicMysql.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicCommandLine/BasicMysql/BasicMysql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicCommandLine/BasicMysql/BasicMysql.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/ServletExample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/ServletExample.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UsingDatasets.iws" beforeDir="false" afterPath="$PROJECT_DIR$/UsingDatasets.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/ServletExample.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/ServletExample.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/com/windwardreports/GenerateDB2Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/GenerateDB2Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/GenerateDB2Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/GenerateDB2Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletDB2Basic/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/GenerateMSSQLReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/GenerateMSSQLReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMSSQL/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/GenerateSQLReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/GenerateSQLReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletMySQLBasic/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/com/windwardreports/GenerateOracleReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/main/java/com/windwardreports/GenerateOracleReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BasicWebApp/JavaServletOracleBasic/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +245,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1353010572272</updated>
-      <workItem from="1714404967628" duration="349000" />
+      <workItem from="1714404967628" duration="645000" />
     </task>
     <servers />
   </component>

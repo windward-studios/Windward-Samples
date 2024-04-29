@@ -22,10 +22,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaServletDB2Basic" />
+        <module name="Java" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Java" target="1.8" />
       <module name="JavaServletDB2Basic" target="1.8" />
       <module name="ServletExample" target="1.8" />
     </bytecodeTargetLevel>
@@ -76,9 +77,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-  </component>
-  <component name="EntryPointsManager">
-    <entry_points version="2.0" />
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="InspectionProjectProfileManager">
@@ -248,7 +246,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaServletDB2Basic.iml" filepath="$PROJECT_DIR$/JavaServletDB2Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java.iml" filepath="$PROJECT_DIR$/Java.iml" />
     </modules>
   </component>
   <component name="ProjectReloadState">
@@ -787,6 +785,18 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: jakarta.servlet:jakarta.servlet-api:6.0.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="jakarta.servlet" artifactId="jakarta.servlet-api" version="6.0.0" />
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.ws.rs:javax.ws.rs-api:2.0-m10" type="java-imported" external-system-id="Maven">

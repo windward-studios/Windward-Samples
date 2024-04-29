@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4252518-83f5-4a23-8e4f-a7bfda15a026" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/ServletExample.iws" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/GenerateSQLReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/GenerateSQLReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/GenerateSQLReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/GenerateSQLReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/GenerateOracleReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/GenerateOracleReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,9 +105,9 @@
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1912" />
     <option name="y" value="-288" />
@@ -203,7 +211,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9260",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletMySQLBasic/ServletExample.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletMSSQL/ServletExample.ipr",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.7468355",
@@ -310,7 +318,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1334761628036</updated>
-      <workItem from="1714405507225" duration="50000" />
+      <workItem from="1714405507225" duration="106000" />
+      <workItem from="1714405801866" duration="197000" />
     </task>
     <servers />
   </component>

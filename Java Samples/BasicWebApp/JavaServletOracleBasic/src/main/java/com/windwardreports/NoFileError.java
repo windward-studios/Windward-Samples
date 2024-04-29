@@ -10,9 +10,8 @@ package com.windwardreports;
 import java.io.*;
 import java.text.*;
 import java.util.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 /**
  * This class displays the error if a file could not be found.
  *
@@ -20,7 +19,7 @@ import javax.servlet.http.*;
  * @version 1.0  March 20, 2003
  */
 
-public class NoLicenseError extends HttpServlet {
+public class NoFileError extends HttpServlet {
 
 	/**
 	 * Called by the server (via the service method) to allow a servlet to handle a GET request.  
@@ -43,24 +42,15 @@ public class NoLicenseError extends HttpServlet {
     	out.println("<html>");
         out.println("<head>");
 
-		out.println( "<title>Windward Reports demo - No License Exception</title>" );
+		out.println( "<title>Windward Reports demo - File Not Found Exception</title>" );
     	out.println( "</head>" );
 	    out.println( "<body bgcolor=\"white\">" );
 
-		out.println( "<h1>License Exception</h1>" );
-
+		out.println( "<h1>Could not find template or data file</h1>" );
 		out.println( "<h2>Error</h2>" );
 		out.println( (String) request.getAttribute( "javax.servlet.error.message" ) + "<br>" );
-	
-		out.println( "<h2>WindwardReports.properties location</h2>" );
-		ServletContext context = getServletContext();
-		String propFile = context.getInitParameter( "PropFile" );
-		if (propFile == null)
-			propFile = ".";
-		propFile = context.getRealPath( propFile );
-		out.println( propFile + "<br>" );
-	
-		out.println( "<h2>License Exception</h2>" );
+
+		out.println( "<h2>Exception</h2>" );
 		out.println( request.getAttribute( "javax.servlet.error.exception" ).toString() + "<br>" );
 		
 		out.println("</body>");

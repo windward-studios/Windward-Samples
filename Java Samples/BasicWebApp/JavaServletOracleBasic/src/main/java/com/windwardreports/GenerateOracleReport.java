@@ -6,13 +6,18 @@
 */
 
 package com.windwardreports;
+
 import java.io.*;
 import java.lang.String;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import net.windward.datasource.*;
+import net.windward.datasource.jdbc.JdbcDataSource;
 import net.windward.xmlreport.*;
-import net.windward.datasource.dom4j.Dom4jDataSource;
 
 /**
  * This class generates the report and returns it to the browser.
@@ -21,9 +26,10 @@ import net.windward.datasource.dom4j.Dom4jDataSource;
  * @version 1.1  October 22, 2010
  */
 
-public class GenerateXMLReport extends HttpServlet {
+public class GenerateOracleReport extends HttpServlet {
 
     private String propFile = ".";
+
     /**
      * Called by the servlet container to indicate to a servlet that the servlet is being
      * placed into service. Set the location of WindwardReports.properties here.
@@ -69,8 +75,7 @@ public class GenerateXMLReport extends HttpServlet {
 
         ServletContext context = getServletContext();
         HttpSession session = request.getSession();
-        String template = "/files/template.docx";
-        String data = "/files/data.xml";
+        String template = "/files/Oracle - Template.docx";
 
         // make sure we have a license key
         try {
@@ -87,7 +92,6 @@ public class GenerateXMLReport extends HttpServlet {
 
         // get an input stream to the template & xml
         InputStream templateFile = context.getResourceAsStream(template);
-        InputStream xmlFile = context.getResourceAsStream(data);
         ByteArrayOutputStream reportStream = new ByteArrayOutputStream();
 
         // if can't find the files - we're done
@@ -96,13 +100,22 @@ public class GenerateXMLReport extends HttpServlet {
             throw new ServletException("Could not open template and/or data file", fnfe);
         }
 
-        // create the report
+		// reminder to include the Oracle JDBC connector in the appserver lib
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
+		} catch (Exception e) {
+			throw new ServletException("Please add the Oracle JDBC connector to your classpath. Details at http://rpt.me/OracleJDBC", e);
+		}
+
+		// create the report
         ProcessReport report;
         try {
             report = new ProcessPdf(templateFile, reportStream);
             report.processSetup();
-            DataSourceProvider dsp= new Dom4jDataSource(xmlFile);
-            report.processData(dsp, "Orders");
+            //setup our Oracle datasource
+            DataSourceProvider dsp = new JdbcDataSource("oracle.jdbc.driver.OracleDriver",
+					"jdbc:oracle:thin:@//oracle.windward.net:1521", "HR", "HR");
+            report.processData(dsp, "ORACLE");
             dsp.close();
         } catch (Exception se) {
             log("Setup error", se);
@@ -117,7 +130,6 @@ public class GenerateXMLReport extends HttpServlet {
         }
 
         templateFile.close();
-        xmlFile.close();
 
         //display the pdf page
         response.setContentType("application/pdf");

@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4252518-83f5-4a23-8e4f-a7bfda15a026" name="Default" comment="" />
+    <list default="true" id="b4252518-83f5-4a23-8e4f-a7bfda15a026" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/GenerateDB2Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/GenerateDB2Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/GenerateMSSQLReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/GenerateMSSQLReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMSSQL/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/GenerateSQLReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/GenerateSQLReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletMySQLBasic/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/ServletExample.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/BasicReportForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/BasicReportForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/GenerateOracleReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/GenerateOracleReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/NoFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/NoFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/NoLicenseError.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/NoLicenseError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaServletOracleBasic/src/com/windwardreports/Wait.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaServletOracleBasic/src/main/java/com/windwardreports/Wait.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,9 +126,9 @@
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -199,7 +233,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9260",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletMSSQL/ServletExample.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicWebApp/JavaServletOracleBasic/ServletExample.ipr",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.7468355",
@@ -242,6 +276,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="JavaServletDB2Basic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="JavaServletDB2Basic" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
@@ -270,6 +317,7 @@
       <option name="presentableId" value="Default" />
       <updated>1334761628036</updated>
       <workItem from="1714405218116" duration="175000" />
+      <workItem from="1714406111859" duration="83000" />
     </task>
     <servers />
   </component>

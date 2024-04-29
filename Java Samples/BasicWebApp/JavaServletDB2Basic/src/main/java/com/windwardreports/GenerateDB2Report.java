@@ -9,8 +9,8 @@ package com.windwardreports;
 
 import java.io.*;
 import java.lang.String;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 
 import net.windward.datasource.*;
 import net.windward.datasource.jdbc.JdbcDataSource;

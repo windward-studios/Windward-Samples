@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.apryse.fluent</groupId>
-    <artifactId>JavServletMySQLBasic</artifactId>
+    <artifactId>Java</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <repositories>
@@ -23,7 +23,14 @@
             <artifactId>FluentDocs</artifactId>
             <version>LATEST</version>
         </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
