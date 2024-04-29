@@ -43,20 +43,20 @@ namespace ErrorHandlingVerify
                 {
                     case ("0"):
                         Console.Out.WriteLine("Track Errors: None");
-                        report.TrackErrors = (int)Report.ERROR_HANDLING.NONE;
+                        report.TrackErrors = Report.ERROR_HANDLING.NONE;
                         break;
                     case ("1"):
                         Console.Out.WriteLine("Track Errors: Error Handling");
-                        report.TrackErrors = (int)Report.ERROR_HANDLING.TRACK_ERRORS;
+                        report.TrackErrors = Report.ERROR_HANDLING.TRACK_ERRORS;
                         break;
                     case ("2"):
                         Console.Out.WriteLine("Track Errors: Verify");
-                        report.TrackErrors = (int)Report.ERROR_HANDLING.VERIFY;
+                        report.TrackErrors = Report.ERROR_HANDLING.VERIFY;
                         break;
                     case ("3"):
                     default:
                         Console.Out.WriteLine("Track Errors: All");
-                        report.TrackErrors = (int)Report.ERROR_HANDLING.ALL;
+                        report.TrackErrors = Report.ERROR_HANDLING.ALL;
                         break;
                 }
 
@@ -79,7 +79,7 @@ namespace ErrorHandlingVerify
                 template.Close();
 
                 // Print errors found by Error Handling and Verify to the command line and the file "Issues.txt"
-                ErrorInfo outputissues = report.GetErrorInfo();
+                ErrorInfo outputissues = (ErrorInfo)report.GetErrorInfo();
                 java.util.List errors = outputissues.getErrors();
 
                 Console.Out.WriteLine();

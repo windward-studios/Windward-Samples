@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FilterVariablesXML</RootNamespace>
     <AssemblyName>FilterVariablesXML</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -51,31 +51,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IKVM.OpenJDK.Core, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\dll\IKVM.OpenJDK.Core.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindwardInterfaces, Version=11.1.16.0, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\dll\WindwardInterfaces.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="WindwardReportsAPI, Culture=neutral, PublicKeyToken=9159ad800b91f253, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\dll\WindwardReportsAPI.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="WindwardReportsDrivers, Culture=neutral, PublicKeyToken=adf7e40e645242d1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\dll\WindwardReportsDrivers.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <PackageReference Include="FluentEngine">
+      <Version>*</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RunXML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="FilterVariablesXML.exe.config" />
   </ItemGroup>
   <ItemGroup>
