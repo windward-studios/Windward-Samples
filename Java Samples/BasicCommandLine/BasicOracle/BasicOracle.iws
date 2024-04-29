@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d12a387d-4256-4fb5-aa8e-41b458492933" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../BasicOData/BasicOData.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicOData/BasicOData.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicOracle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BasicOracle.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicOracle.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/BasicOracle.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicOracle.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BasicOracle.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BasicOracle.java" beforeDir="false" />
-    </list>
+    <list default="true" id="d12a387d-4256-4fb5-aa8e-41b458492933" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +203,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9263",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicOracle/BasicOracle.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicSalesforce/BasicSalesforce.ipr",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -328,7 +322,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411150231</updated>
-      <workItem from="1714404164018" duration="66000" />
+      <workItem from="1714404164018" duration="105000" />
     </task>
     <servers />
   </component>

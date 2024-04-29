@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cb1d029-bd70-4291-b4ed-72ba3ea63cda" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../BasicDb2/BasicDb2.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicDb2/BasicDb2.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BasicJson/BasicJson.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicJson/BasicJson.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BasicMysql.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BasicOracle/BasicOracle.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicOracle/BasicOracle.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BasicSalesforce/src/BasicSalesforce.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,6 +187,10 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9263",
     "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicMysql/BasicMysql.ipr",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -305,7 +308,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411595833</updated>
-      <workItem from="1714403910135" duration="65000" />
+      <workItem from="1714403910135" duration="384000" />
     </task>
     <servers />
   </component>
