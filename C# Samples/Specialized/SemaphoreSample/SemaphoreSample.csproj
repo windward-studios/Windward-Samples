@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SemaphoreSample</RootNamespace>
     <AssemblyName>SemaphoreSample</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -34,23 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IKVM.OpenJDK.Core, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\dll\IKVM.OpenJDK.Core.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindwardInterfaces, Version=11.1.34.0, Culture=neutral, PublicKeyToken=3e725dfad4fab7c2, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\dll\WindwardInterfaces.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="WindwardReportsAPI">
-      <HintPath>..\..\..\..\..\dll\WindwardReportsAPI.dll</HintPath>
-    </Reference>
+    <PackageReference Include="FluentEngine">
+      <Version>*</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyRunReport.cs" />
