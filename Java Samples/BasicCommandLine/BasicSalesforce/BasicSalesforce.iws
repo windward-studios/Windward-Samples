@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb1d029-bd70-4291-b4ed-72ba3ea63cda" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../BasicMysql/BasicMysql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicMysql/BasicMysql.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BasicOracle/BasicOracle.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicOracle/BasicOracle.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicSalesforce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSalesforce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicSalesforce.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSalesforce.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicSalesforce.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSalesforce.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BasicSalesforce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicSalesforce.java" afterDir="false" />
-    </list>
+    <list default="true" id="3cb1d029-bd70-4291-b4ed-72ba3ea63cda" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,7 +195,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "WATE-9263",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicSalesforce/BasicSalesforce.ipr",
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicSql/BasicSql.ipr",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -292,7 +285,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411595833</updated>
-      <workItem from="1714404270309" duration="74000" />
+      <workItem from="1714404270309" duration="116000" />
     </task>
     <servers />
   </component>
