@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d5f9ab0-3c8f-45c5-982c-8f36ae8779e5" name="Default" comment="" />
+    <list default="true" id="9d5f9ab0-3c8f-45c5-982c-8f36ae8779e5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BasicSalesforce/BasicSalesforce.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicSalesforce/BasicSalesforce.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicSql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSql.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicSql.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSql.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicSql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSql.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasicSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicSql.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,10 +56,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-
     <breakpoint_rules />
     <ui_properties />
-
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -79,7 +87,7 @@
     </option>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
+  "associatedIndex": 2
 }]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -87,7 +95,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
-  <component name="ProjectId" id="2fmOJIAnaPrK7P591lHosRmP31G" />
+  <component name="ProjectId" id="2fmRhaoGjdFhxh9qiASlgeUgA4u" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -173,9 +181,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-
     "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicSql/BasicSql.ipr",
-
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -259,9 +265,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411794706</updated>
-
       <workItem from="1714402714020" duration="13000" />
-
     </task>
     <servers />
   </component>
@@ -293,9 +297,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
