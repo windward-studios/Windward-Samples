@@ -56,7 +56,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
+    <breakpoint_rules />
+    <ui_properties />
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -180,12 +181,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "WATE-9263",
     "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicSql/BasicSql.ipr",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.7468355",
-r.settings.migration": "true"
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -268,7 +265,7 @@ r.settings.migration": "true"
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411794706</updated>
-      <workItem from="1714404387283" duration="73000" />
+      <workItem from="1714402714020" duration="13000" />
     </task>
     <servers />
   </component>

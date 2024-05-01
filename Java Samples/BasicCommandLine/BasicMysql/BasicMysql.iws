@@ -82,7 +82,7 @@
     </option>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
+  "associatedIndex": 3
 }]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -90,9 +90,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
-
-  <component name="ProjectId" id="2fmQji0tlQriSUqjX8lQQsDJHGU" />
-
+  <component name="ProjectId" id="2fmSHQVf3X1A6SH6bgQTXyQTqcM" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -310,7 +308,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411595833</updated>
-      <workItem from="1714403910135" duration="384000" />
+      <workItem from="1714404674089" duration="333000" />
     </task>
     <servers />
   </component>
