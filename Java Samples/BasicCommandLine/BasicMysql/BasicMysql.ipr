@@ -176,6 +176,7 @@
       <module fileurl="file://$PROJECT_DIR$/BasicMySql.iml" filepath="$PROJECT_DIR$/BasicMySql.iml" />
     </modules>
   </component>
+
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
@@ -204,6 +205,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
   </component>
+
   <component name="libraryTable">
     <library name="Maven: ChartDirector:ChartDirector:6.0.0" type="java-imported" external-system-id="Maven">
       <properties groupId="ChartDirector" artifactId="ChartDirector" version="6.0.0" />

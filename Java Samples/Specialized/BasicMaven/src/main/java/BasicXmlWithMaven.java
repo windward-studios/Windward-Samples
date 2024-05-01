@@ -47,7 +47,6 @@ public class BasicXmlWithMaven {
             template.close();
             reportStream.close();
             System.out.println("Launching report " + fileReport.getAbsolutePath());
-            SystemWrapper.LaunchFile(fileReport.getAbsolutePath());
 
         } catch (Exception e) {
             // Uh oh, just in case
