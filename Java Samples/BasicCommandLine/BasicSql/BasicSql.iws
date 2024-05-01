@@ -7,13 +7,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <ui_properties converted="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -47,8 +46,10 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+
     <breakpoint_rules />
     <ui_properties />
+
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -64,6 +65,9 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -169,7 +173,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+
     "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicSql/BasicSql.ipr",
+
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -253,7 +259,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411794706</updated>
+
       <workItem from="1714402714020" duration="13000" />
+
     </task>
     <servers />
   </component>
