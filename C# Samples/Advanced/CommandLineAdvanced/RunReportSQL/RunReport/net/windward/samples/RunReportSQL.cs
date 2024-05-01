@@ -207,52 +207,34 @@ namespace RunReportSQL.net.windward.samples {
                     foreach (CommandLine.DatasourceInfo dsInfo in cmdLine.Datasources) {
 
                         // build the datasource
-                        IReportDataSource datasource;
+                        IReportDataSource datasource = null;
                         Stream dsStream = null;
                         Stream schemaStream = null;
                         switch (dsInfo.Type) {
                             // An XML datasource.
                             case CommandLine.DatasourceInfo.TYPE.XML:
-                                if (!cmdLine.IsPerformance) {
+                                if (!cmdLine.IsPerformance)
+                                {
                                     if (string.IsNullOrEmpty(dsInfo.SchemaFilename))
                                         Console.Out.WriteLine(string.Format("XML datasource: {0}", dsInfo.Filename));
                                     else
                                         Console.Out.WriteLine(string.Format("XML datasource: {0}, schema {1}", dsInfo.Filename, dsInfo.SchemaFilename));
-                                }
 
-                                // http or ftp access - assume no schema
-                                if (dsInfo.Filename.IndexOf(':') > 1) {
-                                    WebClient myClient = new WebClient();
-                                    if (dsInfo.Username != null && dsInfo.Password != null)
-                                        myClient.Credentials = new NetworkCredential(dsInfo.Username, dsInfo.Password);
-                                    datasource = new XmlDataSourceImpl(dsInfo.Filename, myClient.Credentials);
-                                }
-
-                                // Note: we have not (yet) implemented using username/password when opening local files
-                                else {
                                     // just an XML file
-                                    if (string.IsNullOrEmpty(dsInfo.SchemaFilename)) {
+                                    if (string.IsNullOrEmpty(dsInfo.SchemaFilename))
+                                    {
                                         dsStream = new FileStream(dsInfo.Filename, FileMode.Open, FileAccess.Read);
                                         datasource = new XmlDataSourceImpl(dsStream, false);
                                     }
 
                                     // XML file & schema file
-                                    else {
+                                    else
+                                    {
                                         dsStream = new FileStream(dsInfo.Filename, FileMode.Open, FileAccess.Read);
                                         schemaStream = new FileStream(dsInfo.SchemaFilename, FileMode.Open, FileAccess.Read);
                                         datasource = new XmlDataSourceImpl(dsStream, schemaStream, false);
                                     }
                                 }
-                                break;
-
-                            // An XML REST datasource.
-                            case CommandLine.DatasourceInfo.TYPE.REST:
-                                if (!cmdLine.IsPerformance)
-                                    Console.Out.WriteLine(string.Format("XML datasource via REST: {0}", dsInfo.Filename));
-
-                                // no schema supported (yet)
-                                datasource = new XmlDataSourceImpl(dsInfo.Filename, DotNetDatasourceBase.CONNECT_MODE.REST, dsInfo.Username,
-                                                                   dsInfo.Password);
                                 break;
 
                             case CommandLine.DatasourceInfo.TYPE.JSON:
@@ -274,16 +256,6 @@ namespace RunReportSQL.net.windward.samples {
                                 if (!cmdLine.IsPerformance)
                                     Console.Out.WriteLine(string.Format("SalesForce datasource: {0}", dsInfo.Filename));
                                 datasource = new SFDataSourceImpl(dsInfo.Username, dsInfo.Password, true);
-                                break;
-
-                            // An XML SharePoint datasource.
-                            case CommandLine.DatasourceInfo.TYPE.SHAREPOINT:
-                                if (!cmdLine.IsPerformance)
-                                    Console.Out.WriteLine(string.Format("XML datasource via SharePoint: {0}", dsInfo.Filename));
-
-                                // no schema supported (yet)
-                                datasource = new XmlDataSourceImpl(dsInfo.Filename, DotNetDatasourceBase.CONNECT_MODE.SHAREPOINT, dsInfo.Username,
-                                                                   dsInfo.Password);
                                 break;
 
                             case CommandLine.DatasourceInfo.TYPE.SQL:

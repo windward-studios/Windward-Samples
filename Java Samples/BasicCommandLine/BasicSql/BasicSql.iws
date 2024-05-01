@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d5f9ab0-3c8f-45c5-982c-8f36ae8779e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../BasicMysql/BasicMysql.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicMysql/BasicMysql.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BasicMysql/BasicMysql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicMysql/BasicMysql.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicSql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSql.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicSql.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSql.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicSql.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BasicSql.iws" afterDir="false" />
-    </list>
+    <list default="true" id="9d5f9ab0-3c8f-45c5-982c-8f36ae8779e5" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +46,10 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
+
+    <breakpoint_rules />
+    <ui_properties />
+
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -82,8 +79,7 @@
     </option>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
+  "associatedIndex": 4
 }]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -91,7 +87,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
-  <component name="ProjectId" id="2fmSH159eBApmXsbgZKgZoc93aU" />
+  <component name="ProjectId" id="2fmOJIAnaPrK7P591lHosRmP31G" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -177,8 +173,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "wate-9262",
-    "last_opened_file_path": "C:/Windward-Samples/Java Samples/Advanced/AdvancedCommandLine/RunReport.ipr",
+
+    "last_opened_file_path": "C:/Windward-Samples/Java Samples/BasicCommandLine/BasicSql/BasicSql.ipr",
+
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -262,7 +259,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1338411794706</updated>
-      <workItem from="1714404672867" duration="39000" />
+
+      <workItem from="1714402714020" duration="13000" />
+
     </task>
     <servers />
   </component>
@@ -295,12 +294,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BasicSql.java">

@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb1d029-bd70-4291-b4ed-72ba3ea63cda" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Advanced/AdvancedServlet/AdvancedServletExample.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/AdvancedServlet/AdvancedServletExample.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/UsingDatasets.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/src/RunUsingDatasets.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Advanced/Datasets/UsingDatasets/src/main/java/RunUsingDatasets.java" afterDir="false" />
-    </list>
+    <list default="true" id="3cb1d029-bd70-4291-b4ed-72ba3ea63cda" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,21 +173,9 @@
       </pane>
     </panes>
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "wate-9262",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RunManager">

@@ -14,6 +14,10 @@
       <entry name="?*.ftl" />
     </wildcardResourcePatterns>
   </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright />
+
+  </component>
   <component name="CopyrightManager" default="" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
@@ -21,7 +25,9 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
@@ -157,9 +163,11 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
   </component>
+
   <component name="libraryTable">
     <library name="SqlServer Connector">
       <CLASSES>
