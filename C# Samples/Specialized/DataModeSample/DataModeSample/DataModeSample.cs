@@ -1,5 +1,4 @@
 ﻿using net.windward.api.csharp;
-using net.windward.xmlreport;
 using System;
 using System.IO;
 using WindwardInterfaces.net.windward.api.csharp;
@@ -43,7 +42,7 @@ namespace DataModeSample
             // Sets the data file to contain all the information from the tags and data in the DataModeTemplate
             //report.DataMode = Report.DATA_MODE.DATA | Report.DATA_MODE.SELECT | Report.DATA_MODE.ALL_ATTRIBUTES | Report.DATA_MODE.INCLUDE_BITMAPS;
 
-            // Embeds the data file within the DOCX file and sets the data file to contain the select attributes from the tags in the DataModeTemplate
+            // Embeds the data file within the DOCX file and sets the data file to contain the data from the tags in the DataModeTemplate
             //report.DataMode = Report.DATA_MODE.EMBED | Report.DATA_MODE.DATA;
             /**
              * ---------------------------------------------------------------------------
@@ -65,7 +64,7 @@ namespace DataModeSample
             output.Close();
             template.Close();
 
-            // Opens the finished report
+            // All finished!
             Console.WriteLine("Finished generating report: " + output.Name);
             Console.WriteLine("Finished generating data file: " + output.Name);
             Console.ReadKey();

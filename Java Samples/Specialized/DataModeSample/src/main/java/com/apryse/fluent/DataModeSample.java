@@ -54,7 +54,7 @@ public class DataModeSample {
             // Sets the data file to contain all the information from the tags and data in the DataModeTemplate
             //report.setDataMode(ProcessReportAPI.DATA_MODE_DATA | ProcessReportAPI.DATA_MODE_SELECT | ProcessReportAPI.DATA_MODE_ALL_ATTRIBUTES | ProcessReportAPI.DATA_MODE_INCLUDE_BITMAPS);
 
-            // Embeds the data file within the DOCX file and sets the data file to contain the select attributes from the tags in the DataModeTemplate
+            // Embeds the data file within the DOCX file and sets the data file to contain the data from the tags in the DataModeTemplate
             //report.setDataMode(ProcessReportAPI.DATA_MODE_EMBED | ProcessReportAPI.DATA_MODE_DATA);
             /**
              * ---------------------------------------------------------------------------
