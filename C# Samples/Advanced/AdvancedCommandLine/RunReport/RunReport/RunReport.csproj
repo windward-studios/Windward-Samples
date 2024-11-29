@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C">
+      <HintPath>..\..\..\..\..\C</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\WindwardEngine.21.5.2.6\lib\net451\DevExpress.Data.v18.2.dll</HintPath>
     </Reference>
@@ -173,9 +177,6 @@
     </Reference>
     <Reference Include="netchartdir, Version=6.4.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204, processorArchitecture=MSIL">
       <HintPath>..\packages\WindwardEngine.21.5.2.6\lib\net451\netchartdir.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="OfficeOutputBuilder, Version=21.5.2.6, Culture=neutral, PublicKeyToken=fd5c9ef088b129c8, processorArchitecture=MSIL">
       <HintPath>..\packages\WindwardEngine.21.5.2.6\lib\net451\OfficeOutputBuilder.dll</HintPath>
