@@ -1,85 +1,107 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using JsonBatchProcessing;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using WindwardRestApi.src.Api;
 using WindwardRestApi.src.Model;
+using Document = WindwardRestApi.src.Model.Document;
+using Parameter = WindwardRestApi.src.Model.Parameter;
 
 public class DocumentProcessor
 {
-	private WindwardClient client;
-	private DataSourceWrapper dataSourceWrapper = new DataSourceWrapper();
-	private string saveDirectory;
+    private WindwardClient client;
+    private string saveDirectory;
     private SaveDocuments docSaver;
 
-	public DocumentProcessor(string engineUrl, string licenseKey)
-	{
+    public DocumentProcessor(string engineUrl, string licenseKey, string saveLocation)
+    {
         client = new WindwardClient(new Uri(engineUrl));
         client.LicenseKey = licenseKey;
-	}
-
-	// Function specific to processing our Json orders
-	public async Task ProcessOrdersJson(string filepath, string templateUrl)
-	{
-		docSaver = new SaveDocuments(saveDirectory);
-		Console.WriteLine("Processing JSON data...");
-
-		// Process the datafile
-		List<string> names = dataSourceWrapper.processOrders(filepath);
-		List<DataSource> dataSources = dataSourceWrapper.GetDataSources();
-
-        // Our Invoice template has an input parameter to track the number assigned to the invoice
-		// on creation
-		int invoiceNum = 1;
-
-		Console.WriteLine("Creating Requests...");
-
-        var jobs = await PostAllTemplates(dataSources, templateUrl);
-
-        var dsJobPairs = names.Zip(jobs, (name, job) => (name, job));
-
-        Console.WriteLine("Retrieving Documents");
-        await GetAllDocuments(dsJobPairs);
+        saveDirectory = saveLocation;
     }
 
-
-    private async Task<IEnumerable<string>> PostAllTemplates(IEnumerable<DataSource> dataSources, string templateUrl)
+    // Function specific to processing our Json orders
+    public async Task ProcessOrdersJson(string filepath, byte[] templateBytes)
     {
-        List<Task<string>> jobList = new List<Task<string>>();
+        docSaver = new SaveDocuments(saveDirectory);
+        Console.WriteLine("Processing JSON data...");
+
+        // For this particular template, we are using a JSON file that contains an array of orders.
+        // Each order is a JSON object that contains the information needed to generate an invoice.
+        // Here we are splitting the JSON file into an individual JSON file for each order.
+        // Each document will then be generated using one of these JSON files, so we create a DataSource object for each JSON file.
+        // For a template that was setup differently you could use a single DataSource object that contains all of the data for all of the documents, then use an input parameter, so the engine is able to filter on the data required for the document.
+        JObject orderJson = JObject.Parse(File.ReadAllText(filepath));
+        IList<JToken> orders = orderJson["Orders"].Children().ToList();
+
+        List<(string, DataSource)> dataSources = new List<(string, DataSource)>();
+
+        // Here we are creating a DataSource object for each order, and adding it to our list of data sources.
+        // We'll store it in a tuple alongside the last name of the person the invoice is for, so we can use that info to save the document later.
+        foreach (var order in orders)
+        {
+            byte[] data = System.Text.Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(order));
+            dataSources.Add((order["LastName"].ToString(), new JsonDataSource("Order", data)));
+        }
+
+
+        // Now that we have our list of data sources we will kick of a document generation job for each one. If you were instead using a single DataSource object, you would loop through a set of input parameters instead.
+        HashSet<Task<DocumentResult>> jobList = new HashSet<Task<DocumentResult>>();
         foreach (var dataSource in dataSources)
         {
-            Template template = CreateTemplate(templateUrl, "docx", "pdf");
-            template.Datasources.Add(dataSource);
+            Template template = CreateTemplate(templateBytes, "docx", "pdf");
+            // Here we are setting the DataSource for the template to be the current order. If we were using a single DataSource object, we would set this to the same value every time.
+            template.Datasources.Add(dataSource.Item2);
+            // Here we are setting an input parameter for the template. In this case the value passed in doesn't matter much, since the template doesn't use it, but this is where you would set any input parameters that your template needs.
+            // This could be set differently each time.
             template.Parameters.Add(new Parameter("InvoiceNum", 1));
 
-            jobList.Add(PostTemplate(template));
+            // Notice how on this line we kick of a new task that handles each individual document generation job.
+            Task<DocumentResult> result = new Task<DocumentResult>(() =>
+            {
+                // here we are sending the post request for the engine to start generating the document.
+                string jobId = PostTemplate(template).Result;
+                // here we are waiting for the document to be generated, and then retrieving it.
+                Document doc = GetDocument(jobId).Result;
+                return new DocumentResult { JobName = dataSource.Item1, Document = doc };
+            });
+            // Now we start running the task and add it to our list of jobs.
+            result.Start();
+            jobList.Add(result);
+
         }
 
-        await Task.WhenAll(jobList);
-        return jobList.Select(job => job.Result);
-    }
-
-    private async Task GetAllDocuments(IEnumerable<(string, string)> stringJobPairs)
-    {
-        foreach (var stringJobPair in stringJobPairs)
+        // Now that all of our jobs are running, we will wait for them to complete.
+        int numJobs = jobList.Count;
+        int jobsCompleted = 0;
+        while (jobsCompleted < numJobs)
         {
-            Console.WriteLine($"Retrieving documentL: {stringJobPair.Item1}");
-            Document document;
-            try
+            // These jobs will not necessarily complete in order, so we'll use Task.WhenAny to get the first one that completes.
+            Task<DocumentResult> result = (await Task.WhenAny<DocumentResult>(jobList));
+            // We can then remove it from our list of jobs, and save the document.
+            bool removeResult = jobList.Remove(result);
+            if (!removeResult)
             {
-                document = await GetDocument(stringJobPair.Item2);
+                Console.WriteLine("Error removing result from job list");
             }
-            catch (Exception)
-            {
-                Console.WriteLine($"Processing Failed for Document: {stringJobPair.Item1}");
-                continue;
-            }
-
-            await docSaver.SaveInvoiceDocument(document, stringJobPair.Item1);
+            DocumentResult docResult = result.Result;
+            await docSaver.SaveInvoiceDocument(docResult.Document, docResult.JobName);
+            jobsCompleted++;
         }
     }
 
-    private Template CreateTemplate(string templateUrl, string templateFormatExtension, string outputFormatExtension)
+    /// <summary>
+    /// This will create our template object that we will send to our RESTful engine.
+    /// </summary>
+    /// <param name="templateBytes"></param>
+    /// <param name="templateFormatExtension"></param>
+    /// <param name="outputFormatExtension"></param>
+    /// <returns></returns>
+    private Template CreateTemplate(byte[] templateBytes, string templateFormatExtension, string outputFormatExtension)
     {
         Template.OutputFormatEnum outputFormat;
         Template.FormatEnum templateFormat;
@@ -118,31 +140,59 @@ public class DocumentProcessor
         }
 
         // Create the template object based on the given information
-        return  new Template(outputFormat, templateUrl, templateFormat);
-	}
+        return new Template(outputFormat, templateBytes, templateFormat);
+    }
 
+    /// <summary>
+    /// Posts the template to the RESTful engine to start document generation.
+    /// </summary>
+    /// <param name="template"></param>
+    /// <returns></returns>
     private async Task<string> PostTemplate(Template template)
     {
         try
         {
-            return (await client.PostDocument(template)).Guid;
+            Console.WriteLine("Starting Document Generation...");
+            var guid = (await client.PostDocument(template)).Guid;
+            Console.WriteLine($"Document Generation started with id: {guid}");
+            return guid;
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
             throw;
         }
-	}
+    }
 
+    /// <summary>
+    /// Waits for the document to be generated, and retrieves it from the RESTful engine.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     private async Task<Document> GetDocument(string id)
     {
+        Console.WriteLine($"Waiting for document {id} to be generated...");
         System.Net.HttpStatusCode status = await client.GetDocumentStatus(id);
 
+        int notFoundCount = 0;
         // Status code 302 means the document is completed and ready to be retrieved
         while (status != (System.Net.HttpStatusCode)302)
         {
+            Console.WriteLine($"Document {id} status: {status}");
+            if (status == (System.Net.HttpStatusCode)404)
+            {
+                notFoundCount++;
+                if (notFoundCount > 5)
+                {
+                    Console.WriteLine("Document not found after 5 attempts");
+                    throw new Exception("Document not found");
+                }
+                Console.WriteLine("Document not found, retrying...");
+            }
             // Check if there were any errors while processing the template
-            if (status == (System.Net.HttpStatusCode)401 || status == (System.Net.HttpStatusCode)404 || status == (System.Net.HttpStatusCode)500)
+            if (status == (System.Net.HttpStatusCode)401 ||
+                status == (System.Net.HttpStatusCode)500)
             {
                 try
                 {
@@ -158,19 +208,15 @@ public class DocumentProcessor
                     throw;
                 }
             }
+
             // Pause before checking the status again
             await Task.Delay(100);
             status = await client.GetDocumentStatus(id);
         }
-
+        Console.WriteLine($"Document {id} completed");
         // Retrieve the generated document, and remove the completed request from the server
         Document doc = await client.GetDocument(id);
         await client.DeleteDocument(id);
         return doc;
     }
-
-	public void SetSaveDirectory(string filepath)
-	{
-		saveDirectory = filepath;
-	}
 }
