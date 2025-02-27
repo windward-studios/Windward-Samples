@@ -9,5 +9,7 @@ namespace JsonBatchProcessing
     {
         public string JobName { get; set; }
         public Document Document { get; set; }
+
+        public string JobId { get; set; }
     }
 }

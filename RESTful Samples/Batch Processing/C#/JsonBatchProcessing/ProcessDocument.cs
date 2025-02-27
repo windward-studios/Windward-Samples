@@ -36,7 +36,7 @@ public class DocumentProcessor
         // Each document will then be generated using one of these JSON files, so we create a DataSource object for each JSON file.
         // In a production scenario each of these JSON files would likely be the result of an API call or be generated on the fly for the purpose of document generation.
         // For a template that was setup differently you could use a single DataSource object that contains all of the data for all of the documents, then use an input parameter, so the engine is able to filter on the data required for the document.
-        JObject orderJson = JObject.Parse(File.ReadAllText(filepath));
+        JObject orderJson = JObject.Parse(await File.ReadAllTextAsync(filepath));
         IList<JToken> orders = orderJson["Orders"].Children().ToList();
 
         List<(string, DataSource)> dataSources = new List<(string, DataSource)>();
@@ -66,9 +66,14 @@ public class DocumentProcessor
             {
                 // here we are sending the post request for the engine to start generating the document.
                 string jobId = PostTemplate(template).Result;
+                if(jobId == null)
+                {
+                    Console.WriteLine($"Error starting document generation for job name: {dataSource.Item1}");
+                    return null;
+                }
                 // here we are waiting for the document to be generated, and then retrieving it.
-                Document doc = GetDocument(jobId).Result;
-                return new DocumentResult { JobName = dataSource.Item1, Document = doc };
+                Document doc = GetDocument(jobId, dataSource.Item1).Result;
+                return new DocumentResult { JobName = dataSource.Item1, Document = doc, JobId = jobId};
             });
             // Now we start running the task and add it to our list of jobs.
             result.Start();
@@ -90,6 +95,11 @@ public class DocumentProcessor
                 Console.WriteLine("Error removing result from job list");
             }
             DocumentResult docResult = result.Result;
+            if (docResult.Document == null)
+            {
+                Console.WriteLine($"Error generating document. Document Name: {docResult.JobName}; Document Job Id: {docResult.JobId}");
+                continue;
+            }
             await docSaver.SaveInvoiceDocument(docResult.Document, docResult.JobName);
             jobsCompleted++;
         }
@@ -161,35 +171,38 @@ public class DocumentProcessor
         catch (Exception e)
         {
             Console.WriteLine(e);
-            throw;
+            return null;
         }
     }
 
     /// <summary>
     /// Waits for the document to be generated, and retrieves it from the RESTful engine.
     /// </summary>
-    /// <param name="id"></param>
+    /// <param name="documentJobId"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
-    private async Task<Document> GetDocument(string id)
+    private async Task<Document> GetDocument(string documentJobId, string documentName)
     {
-        Console.WriteLine($"Waiting for document {id} to be generated...");
-        System.Net.HttpStatusCode status = await client.GetDocumentStatus(id);
+        string documentLogIdentifier = $"(Job ID: {documentJobId}, Document Name: {documentName})";
+        Console.WriteLine($"Waiting for document {documentLogIdentifier} to be generated...");
+        System.Net.HttpStatusCode status = await client.GetDocumentStatus(documentJobId);
 
         int notFoundCount = 0;
         // Status code 302 means the document is completed and ready to be retrieved
         while (status != (System.Net.HttpStatusCode)302)
         {
-            Console.WriteLine($"Document {id} status: {status}");
+            Console.WriteLine($"Document {documentLogIdentifier} status: {status}");
+
+            // If there is a 404 error, the document likely hasn't been written to persistent storage yet. We'll wait a bit and try again.
             if (status == (System.Net.HttpStatusCode)404)
             {
                 notFoundCount++;
                 if (notFoundCount > 5)
                 {
-                    Console.WriteLine("Document not found after 5 attempts");
-                    throw new Exception("Document not found");
+                    Console.WriteLine($"Document {documentLogIdentifier} not found after 5 attempts");
+                    return null;
                 }
-                Console.WriteLine("Document not found, retrying...");
+                Console.WriteLine($"Document {documentLogIdentifier} not found, retrying...");
             }
             // Check if there were any errors while processing the template
             if (status == (System.Net.HttpStatusCode)401 ||
@@ -197,27 +210,60 @@ public class DocumentProcessor
             {
                 try
                 {
-                    ServerException err = await client.GetError(id);
-                    Console.WriteLine("Error with request: " + id);
+                    ServerException err = await client.GetError(documentJobId);
+                    Console.WriteLine("Error with request: " + documentLogIdentifier);
                     Console.WriteLine(err.Type);
                     Console.WriteLine(err.Message);
-                    throw err;
+                    return null;
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine($"An error occurred getting document error: {documentLogIdentifier}");
                     Console.WriteLine(e);
-                    throw;
+                    return null;
                 }
             }
 
             // Pause before checking the status again
             await Task.Delay(100);
-            status = await client.GetDocumentStatus(id);
+            try
+            {
+                status = await client.GetDocumentStatus(documentJobId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"An error occurred getting document status: {documentLogIdentifier}");
+                Console.WriteLine(e);
+                return null;
+            }
+            
         }
-        Console.WriteLine($"Document {id} completed");
+        Console.WriteLine($"Document {documentLogIdentifier} completed");
         // Retrieve the generated document, and remove the completed request from the server
-        Document doc = await client.GetDocument(id);
-        await client.DeleteDocument(id);
+        Document doc;
+        try
+        {
+            doc = await client.GetDocument(documentJobId);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"An error occurred getting document: {documentLogIdentifier}");
+            Console.WriteLine(e);
+            return null;
+        }
+
+        Console.WriteLine($"Document {documentLogIdentifier} retrieved");
+        try
+        {
+            await client.DeleteDocument(documentJobId);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"An error occurred attempting to delete the document {documentLogIdentifier} from the server. Still able to return generated document:");
+            Console.WriteLine(e);
+        }
+
+        
         return doc;
     }
 }
