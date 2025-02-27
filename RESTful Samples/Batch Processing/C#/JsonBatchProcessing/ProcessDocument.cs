@@ -34,6 +34,7 @@ public class DocumentProcessor
         // Each order is a JSON object that contains the information needed to generate an invoice.
         // Here we are splitting the JSON file into an individual JSON file for each order.
         // Each document will then be generated using one of these JSON files, so we create a DataSource object for each JSON file.
+        // In a production scenario each of these JSON files would likely be the result of an API call or be generated on the fly for the purpose of document generation.
         // For a template that was setup differently you could use a single DataSource object that contains all of the data for all of the documents, then use an input parameter, so the engine is able to filter on the data required for the document.
         JObject orderJson = JObject.Parse(File.ReadAllText(filepath));
         IList<JToken> orders = orderJson["Orders"].Children().ToList();
