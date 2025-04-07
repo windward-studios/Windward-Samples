@@ -10,6 +10,7 @@ import net.windward.datasource.DataSourceProvider;
 import net.windward.datasource.jdbc.JdbcDataSource;
 import net.windward.env.SystemWrapper;
 import net.windward.xmlreport.ProcessPdf;
+import net.windward.xmlreport.ProcessReport;
 import net.windward.xmlreport.ProcessReportAPI;
 import net.windward.env.SystemWrapper;
 
@@ -60,5 +61,7 @@ public class BasicSql {
             // Uh oh, just in case
             e.printStackTrace();
         }
+        // release the license key
+        ProcessReport.shutdown();
     }
 }
